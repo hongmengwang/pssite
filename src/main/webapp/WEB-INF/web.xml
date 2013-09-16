@@ -2,12 +2,12 @@
 <web-app xmlns="http://java.sun.com/xml/ns/javaee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
-		  http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+		 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
          version="2.5">
 
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath*:spring-*.xml</param-value>
+        <param-value>/WEB-INF/classes/spring-*.xml</param-value>
     </context-param>
 
     <servlet>
@@ -15,7 +15,7 @@
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>classpath*:spring-mvc.xml</param-value>
+            <param-value>/WEB-INF/classes/spring-mvc.xml</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
@@ -24,6 +24,10 @@
         <servlet-name>dispatchServlet</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
 
     <welcome-file-list>
         <welcome-file>index</welcome-file>

@@ -1,10 +1,14 @@
 package com.wanghongmeng.pssite.front.controller;
 
+import com.wanghongmeng.pssite.front.model.Person;
+import com.wanghongmeng.pssite.front.service.FrontService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
+
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -15,16 +19,13 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 public class FrontController {
-
-//    @RequestMapping(value = "/index" ,method = RequestMethod.GET)
-//    public ModelAndView test(ModelAndView modalAndView){
-//        modalAndView.setViewName("main");
-//        return modalAndView ;
-//    }
+    @Autowired
+    private FrontService frontService;
 
     @RequestMapping(value = "/index" ,method = RequestMethod.GET)
-    public String test(ModelAndView modalAndView){
-        return "main" ;
+    @ResponseBody
+    public List<Person> test(){
+        List<Person> personList = frontService.queryPerson();
+        return personList;
     }
-
 }
