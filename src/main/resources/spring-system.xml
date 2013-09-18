@@ -24,7 +24,9 @@
         <property name="password" value="${jdbc.mysql.pssite.password}" />
         <property name="maxPoolSize" value="${jdbc.mysql.pssite.maxPoolSize}" />
         <property name="minPoolSize" value="${jdbc.mysql.pssite.minPoolSize}" />
+        <property name="initialPoolSize" value="${jdbc.mysql.pssite.initialPoolSize}" />
         <property name="maxStatements" value="${jdbc.mysql.pssite.maxStatements}" />
+        <property name="maxIdleTime" value="${jdbc.mysql.pssite.maxIdleTime}" />
         <property name="acquireRetryAttempts" value="${jdbc.mysql.pssite.acquireRetryAttempts}"/>
         <property name="acquireRetryDelay" value="${jdbc.mysql.pssite.acquireRetryDelay}"/>
         <property name="testConnectionOnCheckin" value="${jdbc.mysql.pssite.testConnectionOnCheckin}"/>
@@ -45,14 +47,14 @@
         </property>
     </bean>
 
-    <!--<bean id="pssiteMapper" class="org.mybatis.spring.mapper.MapperScannerConfigurer">-->
-        <!--<property name="basePackage" value="com.wanghongmeng.pssite.front.mapper" />-->
-        <!--<property name="sqlSessionFactoryBeanName" ref="pssiteSessionFactory"/>-->
-    <!--</bean>-->
-    <bean id="pssiteMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
-        <property name="mapperInterface" value="com.wanghongmeng.pssite.front.persistence.FrontMapper" />
-        <property name="sqlSessionFactory" ref="pssiteSessionFactory"/>
+    <bean id="pssiteMapper" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.wanghongmeng.pssite.front.mapper" />
+        <property name="sqlSessionFactoryBeanName" ref="pssiteSessionFactory"/>
     </bean>
+    <!--<bean id="pssiteMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">-->
+        <!--<property name="mapperInterface" value="com.wanghongmeng.pssite.front.persistence.FrontMapper" />-->
+        <!--<property name="sqlSessionFactory" ref="pssiteSessionFactory"/>-->
+    <!--</bean>-->
 
     <bean id="pssiteTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="pssiteDataSource" />
