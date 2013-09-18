@@ -158,6 +158,22 @@
 
     <build>
         <finalName>pssite</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.java</include>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                    <include>**/*.properties</include>
+                </includes>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -168,31 +184,31 @@
                     <encoding>${encoding}</encoding>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>2.6</version>
-                <configuration>
-                    <encoding>${encoding}</encoding>
-                </configuration>
-            </plugin>
-            <plugin>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>all</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>single</goal>
-                        </goals>
-                        <configuration>
-                            <descriptors>
-                                <descriptor>src/main/assembly/all.xml</descriptor>
-                            </descriptors>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+            <!--<plugin>-->
+                <!--<groupId>org.apache.maven.plugins</groupId>-->
+                <!--<artifactId>maven-resources-plugin</artifactId>-->
+                <!--<version>2.6</version>-->
+                <!--<configuration>-->
+                    <!--<encoding>${encoding}</encoding>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
+            <!--<plugin>-->
+                <!--<artifactId>maven-assembly-plugin</artifactId>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<id>all</id>-->
+                        <!--<phase>package</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>single</goal>-->
+                        <!--</goals>-->
+                        <!--<configuration>-->
+                            <!--<descriptors>-->
+                                <!--<descriptor>src/main/assembly/all.xml</descriptor>-->
+                            <!--</descriptors>-->
+                        <!--</configuration>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
             <!--<plugin>-->
                 <!--<groupId>org.apache.maven.plugins</groupId>-->
                 <!--<artifactId>maven-war-plugin</artifactId>-->
@@ -204,22 +220,22 @@
                     <!--&lt;!&ndash;<webXml>src/main/webapp/WEB-INF/web.xml</webXml>&ndash;&gt;-->
                 <!--</configuration>-->
             <!--</plugin>-->
-            <plugin>
-                <groupId>org.mortbay.jetty</groupId>
-                <artifactId>jetty-maven-plugin</artifactId>
-                <version>8.1.12.v20130726</version>
-                <configuration>
-                    <scanIntervalSeconds>5</scanIntervalSeconds>
-                    <connectors>
-                        <connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
-                            <port>9090</port>
-                        </connector>
-                    </connectors>
-                    <webAppConfig>
-                        <contextPath>/wlspay</contextPath>
-                    </webAppConfig>
-                </configuration>
-            </plugin>
+            <!--<plugin>-->
+                <!--<groupId>org.mortbay.jetty</groupId>-->
+                <!--<artifactId>jetty-maven-plugin</artifactId>-->
+                <!--<version>8.1.12.v20130726</version>-->
+                <!--<configuration>-->
+                    <!--<scanIntervalSeconds>5</scanIntervalSeconds>-->
+                    <!--<connectors>-->
+                        <!--<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">-->
+                            <!--<port>9090</port>-->
+                        <!--</connector>-->
+                    <!--</connectors>-->
+                    <!--<webAppConfig>-->
+                        <!--<contextPath>/wlspay</contextPath>-->
+                    <!--</webAppConfig>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
             <!--<plugin>-->
             <!--<groupId>org.codehaus.cargo</groupId>-->
             <!--<artifactId>cargo-maven2-plugin</artifactId>-->
