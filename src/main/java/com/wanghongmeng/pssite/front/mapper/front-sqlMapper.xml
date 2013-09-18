@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace和定义的Mapper接口对应，并实现其中的方法 -->
+<mapper namespace="com.sohu.wls.accrueincome.persistence.SmscoreMapper">
+
+    <select id="queryQxtSmsPart_1" resultType="Qxt">
+        <![CDATA[
+            select b.appname "f",
+            decode(a.gwid,501,'移动10657500',503,'移动10690060',155,'联通10690060',421,'电信10690060',504,'梦网移动10657120',505,'梦网联通10655077',506,'梦网电信10659057',507,'国都10690195') "c",
+            sum(a.mt) "s" from t_cmcc_send_count a,v_app@phs159 b
+            where a.comefrom = b.appid and trunc(logdate) >= to_date(#{startDate},'yyyy-mm-dd')
+            and trunc(logdate) <= to_date(#{endDate},'yyyy-mm-dd')  and a.gwid in (501,503,421,155,504,505,506,507)
+            group by b.appname,decode(a.gwid,501,'移动10657500',503,'移动10690060',155,'联通10690060',421,'电信10690060',504,'梦网移动10657120',505,'梦网联通10655077',506,'梦网电信10659057',507,'国都10690195')
+            order by b.appname,2 desc
+        ]]>
+    </select>
+
+    <select id="queryQxtSmsPart_2" resultType="Qxt">
+        <![CDATA[
+            select appname "f",sendtype "c",sum(mt) "s" from (select b.appname,decode(a.sendtype,'0','有贡献','1','无贡献','未知') sendtype,a.mt
+            from t_cmcc_send_count a,v_app@phs159 b where a.comefrom = b.appid and trunc(logdate) >= to_date(#{startDate},'yyyy-mm-dd')
+            and trunc(logdate) <= to_date(#{endDate},'yyyy-mm-dd') and (a.gwid<=33 or a.gwid=401 or a.gwid=156)) c
+            group by c.appname,c.sendtype
+        ]]>
+    </select>
+
+</mapper>
