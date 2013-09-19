@@ -22,9 +22,14 @@ public class FrontController {
     @Autowired
     private FrontService frontService;
 
-    @RequestMapping(value = "/index" ,method = RequestMethod.GET)
+    @RequestMapping(value = "/" ,method = RequestMethod.GET)
+    public String index(){
+        return "front/index";
+    }
+
+    @RequestMapping(value = "/front/person" ,method = RequestMethod.GET)
     @ResponseBody
-    public List<Person> test(){
+    public List<Person> listPerson(){
         List<Person> personList = frontService.queryPerson();
         return personList;
     }

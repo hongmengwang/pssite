@@ -1,0 +1,11 @@
+create database pssite default charset 'utf8';
+
+CREATE TABLE t_person (
+  id INT(11) NOT NULL AUTO_INCREMENT COMMENT '自增长主键',
+  name VARCHAR(10) DEFAULT NULL COMMENT '人物名称',
+  nick VARCHAR(10) DEFAULT NULL COMMENT '任务简称',
+  pic VARCHAR(30) DEFAULT NULL COMMENT '图片',
+  comments VARCHAR(50) DEFAULT NULL COMMENT '说明',
+  order_num TINYINT(1) DEFAULT NULL COMMENT '排序',
+  PRIMARY KEY (id)
+) ENGINE=MYISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
