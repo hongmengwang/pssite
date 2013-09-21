@@ -1,6 +1,8 @@
 package com.wanghongmeng.pssite.front.persistence;
 
 import com.wanghongmeng.pssite.front.model.Person;
+import com.wanghongmeng.pssite.front.model.Diary;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -12,5 +14,8 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public interface FrontMapper {
+
     List<Person> queryPerson();
+
+    List<Diary> queryDiary(@Param("nick") String nick);
 }

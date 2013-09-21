@@ -1,6 +1,7 @@
 package com.wanghongmeng.pssite.front.service;
 
 import com.wanghongmeng.pssite.front.dao.FrontDao;
+import com.wanghongmeng.pssite.front.model.Diary;
 import com.wanghongmeng.pssite.front.model.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,5 +22,9 @@ public class FrontService {
 
     public List<Person> queryPerson(){
         return frontDao.queryPerson();
+    }
+
+    public List<Diary> queryDiary(String nick){
+        return frontDao.queryDiary(nick);
     }
 }

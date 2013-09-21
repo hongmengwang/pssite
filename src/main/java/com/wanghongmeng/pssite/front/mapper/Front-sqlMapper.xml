@@ -2,9 +2,24 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.2//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.wanghongmeng.pssite.front.persistence.FrontMapper">
 
+    <resultMap id="diary" type="Diary">
+        <result column="person_id" property="personId" />
+        <result column="entry_date" property="entryDate" />
+    </resultMap>
+
     <select id="queryPerson" resultType="Person">
         <![CDATA[
             select name,nick,pic,comments from t_person order by order_num
+        ]]>
+    </select>
+
+    <select id="queryDiary" resultMap="diary">
+        <![CDATA[
+            select d.person_id,d.content,d.pic,d.entry_date
+            from t_diary d inner join t_person p
+            on d.person_id = p.id
+            where p.nick = #{nick}
+            order by d.entry_date desc
         ]]>
     </select>
 

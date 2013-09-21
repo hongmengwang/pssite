@@ -1,5 +1,6 @@
 package com.wanghongmeng.pssite.front.dao;
 
+import com.wanghongmeng.pssite.front.model.Diary;
 import com.wanghongmeng.pssite.front.model.Person;
 import com.wanghongmeng.pssite.front.persistence.FrontMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,10 @@ public class FrontDao {
 
     public List<Person> queryPerson(){
         return frontMapper.queryPerson();
+    }
+
+    public List<Diary> queryDiary(String nick){
+        return frontMapper.queryDiary(nick);
     }
 
 }
