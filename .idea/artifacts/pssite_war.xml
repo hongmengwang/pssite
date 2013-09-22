@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="pssite:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="pssite.war">
-      <element id="artifact" artifact-name="pssite:war exploded" />
-    </root>
-  </artifact>
-</component>
