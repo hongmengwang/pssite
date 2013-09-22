@@ -2,6 +2,7 @@ package com.wanghongmeng.pssite.front.dao;
 
 import com.wanghongmeng.pssite.front.model.Diary;
 import com.wanghongmeng.pssite.front.model.Person;
+import com.wanghongmeng.pssite.front.model.Photo;
 import com.wanghongmeng.pssite.front.persistence.FrontMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -26,6 +27,10 @@ public class FrontDao {
 
     public List<Diary> queryDiary(String nick){
         return frontMapper.queryDiary(nick);
+    }
+
+    public List<Photo> queryPhoto(){
+        return frontMapper.queryPhoto();
     }
 
 }

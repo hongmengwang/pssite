@@ -4,5 +4,6 @@
     <typeAliases>
         <typeAlias type="com.wanghongmeng.pssite.front.model.Person" alias="Person"/>
         <typeAlias type="com.wanghongmeng.pssite.front.model.Diary" alias="Diary"/>
+        <typeAlias type="com.wanghongmeng.pssite.front.model.Photo" alias="Photo"/>
     </typeAliases>
 </configuration>
