@@ -1,5 +1,24 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>test</title>
+    <c:set var="context" value="<%=request.getContextPath()%>" scope="session" />
+    <script type="text/javascript" src="${context}/static/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="${context}/static/js/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="${context}/static/js/jquery.transform-0.8.0.min.js"></script>
+    <script type="text/javascript" src="${context}/static/js/cufon-yui.js"></script>
+    <script type="text/javascript" src="${context}/static/js/Note_this_400.font.js"></script>
+    <script type="text/javascript" src="${context}/static/js/front.person.photo.js"></script>
+    <%--<link rel="styleshee    t" href="${context}/static/css/bootstrap.min.css">--%>
+    <link rel="stylesheet" href="${context}/static/css/front.menu.css">
+    <link rel="stylesheet" href="${context}/static/css/front.person.photo.css">
+    <link rel="stylesheet" href="${context}/static/css/front.whole.css">
+</head>
+<body>
 <table style="margin-top: 10px;">
     <tr style="vertical-align: top;">
         <td>
@@ -46,3 +65,4 @@
                 </li>
             </ul>
         </td>
+        <td>

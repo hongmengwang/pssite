@@ -1,23 +1,3 @@
-*{
-	margin:0;
-	padding:0;
-}
-body{
-	font-family:"Myriad Pro", "Trebuchet MS", sans-serif;
-	text-transform:uppercase;
-	text-shadow: 1px 1px 2px #ccc;
-	font-size:14px;
-	background:#333;
-	color:#333;
-}
-h1{
-	font-size:32px;
-	padding:20px;
-	color:#fff;
-	z-index:999;
-	position:relative;
-	font-weight:normal;
-}
 .loader{
 	width:70px;
 	height:70px;
