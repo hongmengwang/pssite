@@ -65,4 +65,4 @@
                 </li>
             </ul>
         </td>
-        <td>
+        <td style="width:100%">

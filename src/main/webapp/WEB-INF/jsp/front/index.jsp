@@ -44,8 +44,8 @@
                                     <img style="border: 0 none;height: auto;max-width: 100%;vertical-align: middle;" alt="${person.name}" src="${person.pic}" />
                                 </a>
                                 <div class="caption">
-                                    <h3 style="text-shadow:none;line-height: 20px;"><a href="front/${person.nick}/diary">${person.name}</a></h3>
-                                    <h4 style="text-shadow:none;">${person.comments}</h4>
+                                    <h4 style="text-shadow:none;line-height: 20px;display: inline;"><a href="front/${person.nick}/diary">${person.name}</a></h4>
+                                    <h5 style="text-shadow:none;display: inline;">- ${person.comments}</h5>
                                 </div>
                             </div>
                         </li>
