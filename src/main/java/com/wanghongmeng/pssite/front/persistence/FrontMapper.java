@@ -2,6 +2,7 @@ package com.wanghongmeng.pssite.front.persistence;
 
 import com.wanghongmeng.pssite.front.model.Person;
 import com.wanghongmeng.pssite.front.model.Diary;
+import com.wanghongmeng.pssite.front.model.Photo;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -18,4 +19,6 @@ public interface FrontMapper {
     List<Person> queryPerson();
 
     List<Diary> queryDiary(@Param("nick") String nick);
+
+    List<Photo> queryPhoto();
 }

@@ -8,11 +8,8 @@
     <title>test</title>
     <c:set var="context" value="<%=request.getContextPath()%>" scope="session" />
     <script type="text/javascript" src="${context}/static/js/jquery-1.4.4.min.js"></script>
-    <script type="text/javascript" src="${context}/static/js/angular.min.js"></script>
-    <script type="text/javascript" src="${context}/static/js/front-controller.js"></script>
     <link rel="stylesheet" href="${context}/static/css/style.css">
     <link rel="stylesheet" href="${context}/static/css/whole.css">
-    <link rel="shortcut icon" href="${context}/static/images/favico.ico">
 </head>
 <body>
 <table style="margin-left: 100px;">
@@ -22,31 +19,36 @@
             <div class="wrapper">
                 <div id="ps_container" class="ps_container">
                     <div class="ps_image_wrapper">
-                        <img src="static/images/1.jpg" />
+                        <c:forEach items="${photoList}" var="photo" varStatus="status">
+                            <c:if test="${status.count == 1}"><img src="${photo.pic}"/></c:if>
+                        </c:forEach>
                     </div>
                     <div class="ps_next"></div>
                     <div class="ps_prev"></div>
                     <ul class="ps_nav">
-                        <li class="selected"><a href="static/images/1.jpg" rel="static/images/1.jpg">Image 1</a></li>
-                        <li><a href="static/images/2.jpg" rel="static/images/2.jpg">Image 2</a></li>
-                        <li><a href="static/images/3.jpg" rel="static/images/3.jpg">Image 3</a></li>
-                        <li><a href="static/images/4.jpg" rel="static/images/4.jpg">Image 4</a></li>
+                        <c:forEach items="${photoList}" var="photo">
+                            <li><a href="${photo.pic}" rel="${photo.pic}"></a></li>
+                        </c:forEach>
                     </ul>
                 </div>
             </div>
         </td>
         <td>
             <div style="margin-left: 100px;margin-top: 20px;">
-                <ul class="thumbnails" ng-controller="getPerson">
-                    <li class="span3" ng-repeat="person in personList">
-                        <div class="thumbnail">
-                            <a href="front/{{ person.nick }}/diary"><img style="border: 0 none;height: auto;max-width: 100%;vertical-align: middle;" alt="{{ person.name }}" src="{{ person.pic }}" /></a>
-                            <div class="caption">
-                                <h3 style="text-shadow:none;line-height: 20px;"><a href="front/{{ person.nick }}/diary">{{ person.name }}</a></h3>
-                                <h4 style="text-shadow:none;">{{ person.comments  }}</h4>
+                <ul class="thumbnails">
+                    <c:forEach items="${personList}" var="person">
+                        <li class="span3">
+                            <div class="thumbnail">
+                                <a href="front/${person.nick}/diary">
+                                    <img style="border: 0 none;height: auto;max-width: 100%;vertical-align: middle;" alt="${person.name}" src="${person.pic}" />
+                                </a>
+                                <div class="caption">
+                                    <h3 style="text-shadow:none;line-height: 20px;"><a href="front/${person.nick}/diary">${person.name}</a></h3>
+                                    <h4 style="text-shadow:none;">${person.comments}</h4>
+                                </div>
                             </div>
-                        </div>
-                    </li>
+                        </li>
+                    </c:forEach>
                 </ul>
             </div>
         </td>
@@ -252,9 +254,10 @@
             current = idx;
             //animate the new width of the ps_image_wrapper
             //(same like new image width)
-            $ps_image_wrapper.stop().animate({
-                width	: newImageWidth + 'px'
-            },350);
+//            $ps_image_wrapper.stop().animate({
+//                width	: newImageWidth + 'px'
+//            },350);
+            $ps_image_wrapper.stop().animate({},350);
             //animate the new image in
             $newImage.stop().animate({
                 left	: '0px'

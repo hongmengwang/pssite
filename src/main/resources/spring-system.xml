@@ -56,22 +56,22 @@
         <property name="sqlSessionFactory" ref="pssiteSessionFactory"/>
     </bean>
 
-    <bean id="pssiteTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="pssiteDataSource" />
-    </bean>
+    <!--<bean id="pssiteTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">-->
+        <!--<property name="dataSource" ref="pssiteDataSource" />-->
+    <!--</bean>-->
 
-    <tx:advice id="pssiteTxAdvice" transaction-manager="pssiteTransactionManager">
-        <tx:attributes>
-            <tx:method name="*" read-only="true"/>
-            <tx:method name="add*" propagation="REQUIRED" timeout="20" />
-            <tx:method name="delete*" propagation="REQUIRED" timeout="20" />
-            <tx:method name="update*" propagation="REQUIRED" timeout="20" />
-        </tx:attributes>
-    </tx:advice>
+    <!--<tx:advice id="pssiteTxAdvice" transaction-manager="pssiteTransactionManager">-->
+        <!--<tx:attributes>-->
+            <!--<tx:method name="*" read-only="true"/>-->
+            <!--<tx:method name="add*" propagation="REQUIRED" timeout="20" />-->
+            <!--<tx:method name="delete*" propagation="REQUIRED" timeout="20" />-->
+            <!--<tx:method name="update*" propagation="REQUIRED" timeout="20" />-->
+        <!--</tx:attributes>-->
+    <!--</tx:advice>-->
 
-    <aop:config proxy-target-class="true">
-        <aop:pointcut id="pssiteTransaction" expression="execution(* com.wanghongmeng.pssite.*.*(..))" />
-        <aop:advisor advice-ref="pssiteTxAdvice" pointcut-ref="pssiteTransaction" />
-    </aop:config>
+    <!--<aop:config proxy-target-class="true">-->
+        <!--<aop:pointcut id="pssiteTransaction" expression="execution(* com.wanghongmeng.pssite.*.*(..))" />-->
+        <!--<aop:advisor advice-ref="pssiteTxAdvice" pointcut-ref="pssiteTransaction" />-->
+    <!--</aop:config>-->
 
 </beans>
