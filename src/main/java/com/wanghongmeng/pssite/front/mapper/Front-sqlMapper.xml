@@ -9,19 +9,19 @@
 
     <select id="queryPerson" resultType="Person">
         <![CDATA[
-            select name,nick,pic,comments from t_person order by order_num
+            select id,name,nick,pic,comments from t_person order by order_num
         ]]>
     </select>
 
     <select id="queryPhoto" resultType="Photo">
         <![CDATA[
-            select pic from t_photo order by order_num
+            select id,pic from t_photo order by order_num
         ]]>
     </select>
 
     <select id="queryDiary" resultMap="diary">
         <![CDATA[
-            select d.person_id,d.content,d.pic,d.entry_date
+            select d.id,d.person_id,d.content,d.pic,d.entry_date
             from t_person_diary d inner join t_person p
             on d.person_id = p.id
             where p.nick = #{nick}

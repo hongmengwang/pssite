@@ -13,56 +13,70 @@
     <script type="text/javascript" src="${context}/static/js/cufon-yui.js"></script>
     <script type="text/javascript" src="${context}/static/js/Note_this_400.font.js"></script>
     <script type="text/javascript" src="${context}/static/js/front.person.photo.js"></script>
+    <script type="text/javascript" src="${context}/static/js/front.whole.js"></script>
     <%--<link rel="styleshee    t" href="${context}/static/css/bootstrap.min.css">--%>
     <link rel="stylesheet" href="${context}/static/css/front.menu.css">
     <link rel="stylesheet" href="${context}/static/css/front.person.photo.css">
     <link rel="stylesheet" href="${context}/static/css/front.whole.css">
+    <script type="text/javascript">
+        var duoshuoQuery = {short_name:"wanghongmeng"};
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = 'http://static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0]
+                    || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script>
 </head>
 <body>
-<table style="margin-top: 10px;">
+<table style="margin-top: 10px;width:100%">
     <tr style="vertical-align: top;">
-        <td>
-            <ul class="ca-menu">
-                <li>
-                    <a href="${context}/">
-                        <span class="ca-icon">Z</span>
-                        <div class="ca-content">
-                            <h2 class="ca-main">首页</h2>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="${context}/front/${nick}/diary" <c:if test="${catagory == 'diary'}">class="active"</c:if>>
-                        <span class="ca-icon">N</span>
-                        <div class="ca-content">
-                            <h2 class="ca-main">心情日记</h2>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="${context}/front/${nick}/photo" <c:if test="${catagory == 'photo'}">class="active"</c:if>>
-                        <span class="ca-icon">I</span>
-                        <div class="ca-content">
-                            <h2 class="ca-main">照片墙</h2>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="${context}/front/${nick}/share" <c:if test="${catagory == 'share'}">class="active"</c:if>>
-                        <span class="ca-icon">R</span>
-                        <div class="ca-content">
-                            <h2 class="ca-main">分享</h2>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="${context}/front/${nick}/me" <c:if test="${catagory == 'me'}">class="active"</c:if>>
-                        <span class="ca-icon">Q</span>
-                        <div class="ca-content">
-                            <h2 class="ca-main">关于我</h2>
-                        </div>
-                    </a>
-                </li>
-            </ul>
+        <td style="width:25%;">
+            <div style="width: 100%;position: fixed;_position: absolute;_top: expression(documentElement.scrollTop + 'px');">
+                <ul class="ca-menu">
+                    <li>
+                        <a href="${context}/">
+                            <span class="ca-icon">Z</span>
+                            <div class="ca-content">
+                                <h2 class="ca-main">首页</h2>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="${context}/front/${nick}/diary" <c:if test="${catagory == 'diary'}">class="active"</c:if>>
+                            <span class="ca-icon">N</span>
+                            <div class="ca-content">
+                                <h2 class="ca-main">心情日记</h2>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="${context}/front/${nick}/photo" <c:if test="${catagory == 'photo'}">class="active"</c:if>>
+                            <span class="ca-icon">I</span>
+                            <div class="ca-content">
+                                <h2 class="ca-main">照片墙</h2>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="${context}/front/${nick}/share" <c:if test="${catagory == 'share'}">class="active"</c:if>>
+                            <span class="ca-icon">R</span>
+                            <div class="ca-content">
+                                <h2 class="ca-main">分享</h2>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="${context}/front/${nick}/me" <c:if test="${catagory == 'me'}">class="active"</c:if>>
+                            <span class="ca-icon">Q</span>
+                            <div class="ca-content">
+                                <h2 class="ca-main">关于我</h2>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </td>
         <td style="width:100%">
