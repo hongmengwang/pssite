@@ -61,7 +61,7 @@
                         <c:if test="${diary.pic != null && diary.pic != ''}">
                             <p><img src="${context}/${diary.pic}" width="500" /></p>
                         </c:if>
-                        <a class="comBtn" href="javascript:void(0)" onclick="showReply('comDiv${diary.id}')">评论</a>
+                        <div class="comdiv"><a class="combtn" href="javascript:void(0)" onclick="showReply('comDiv${diary.id}')">评论</a></div>
                         <div id="comDiv${diary.id}">
                             <div class="ds-thread" data-thread-key="diary${diary.id}"></div>
                         </div>

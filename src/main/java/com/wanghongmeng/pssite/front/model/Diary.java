@@ -9,7 +9,7 @@ package com.wanghongmeng.pssite.front.model;
  */
 public class Diary {
     private int id;
-    private String personId;
+    private int personId;
     private String content;
     private String pic;
     private String entryDate;
@@ -22,11 +22,11 @@ public class Diary {
         this.id = id;
     }
 
-    public String getPersonId() {
-        return personId == null ? "" : personId.trim();
+    public int getPersonId() {
+        return personId;
     }
 
-    public void setPersonId(String personId) {
+    public void setPersonId(int personId) {
         this.personId = personId;
     }
 
@@ -63,13 +63,15 @@ public class Diary {
             return false;
         }
         Diary diary = (Diary)obj;
-        return diary.getPersonId().equals(getPersonId()) && diary.getContent().equals(getContent()) && diary.getPic().equals(getPic());
+        return diary.getPersonId() == getPersonId()
+               && diary.getContent().equals(getContent())
+               && diary.getPic().equals(getPic());
     }
 
     @Override
     public int hashCode() {
         int result = 17;
-        result = 37 * result + getPersonId().hashCode() ;
+        result = 37 * result + String.valueOf(getPersonId()).hashCode() ;
         result = 37 * result + getContent().hashCode();
         result = 37 * result + getPic().hashCode();
         return result;
@@ -79,10 +81,10 @@ public class Diary {
     public String toString() {
         StringBuilder str = new StringBuilder();
         str.append("Diary=[");
-        str.append("personId=" + getPersonId()).append(",");
-        str.append("content=" + getContent()).append(",");
-        str.append("pic=" + getPic()).append(",");
-        str.append("entryDate=" + getEntryDate());
+        str.append("personId=").append(getPersonId()).append(",");
+        str.append("content=").append(getContent()).append(",");
+        str.append("pic=").append(getPic()).append(",");
+        str.append("entryDate=").append(getEntryDate());
         str.append("]");
         return str.toString();
     }

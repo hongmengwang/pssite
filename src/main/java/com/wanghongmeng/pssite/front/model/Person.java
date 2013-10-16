@@ -86,11 +86,11 @@ public class Person {
     public String toString() {
         StringBuilder str = new StringBuilder();
         str.append("Person=[");
-        str.append("name=" + getName()).append(",");
-        str.append("nick=" + getNick()).append(",");
-        str.append("pic=" + getPic()).append(",");
-        str.append("comments=" + getComments()).append(",");
-        str.append("orderNum=" + getOrderNum());
+        str.append("name=").append(getName()).append(",");
+        str.append("nick=").append(getNick()).append(",");
+        str.append("pic=").append(getPic()).append(",");
+        str.append("comments=").append(getComments()).append(",");
+        str.append("orderNum=").append(getOrderNum());
         str.append("]");
         return str.toString();
     }

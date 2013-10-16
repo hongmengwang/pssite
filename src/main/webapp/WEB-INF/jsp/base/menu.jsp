@@ -18,17 +18,6 @@
     <link rel="stylesheet" href="${context}/static/css/front.menu.css">
     <link rel="stylesheet" href="${context}/static/css/front.person.photo.css">
     <link rel="stylesheet" href="${context}/static/css/front.whole.css">
-    <script type="text/javascript">
-        var duoshuoQuery = {short_name:"wanghongmeng"};
-        (function() {
-            var ds = document.createElement('script');
-            ds.type = 'text/javascript';ds.async = true;
-            ds.src = 'http://static.duoshuo.com/embed.js';
-            ds.charset = 'UTF-8';
-            (document.getElementsByTagName('head')[0]
-                    || document.getElementsByTagName('body')[0]).appendChild(ds);
-        })();
-    </script>
 </head>
 <body>
 <table style="margin-top: 10px;width:100%">
@@ -53,7 +42,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="${context}/front/${nick}/photo" <c:if test="${catagory == 'photo'}">class="active"</c:if>>
+                        <a href="${context}/front/${nick}/album" <c:if test="${catagory == 'album'}">class="active"</c:if>>
                             <span class="ca-icon">I</span>
                             <div class="ca-content">
                                 <h2 class="ca-main">照片墙</h2>

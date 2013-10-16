@@ -1,9 +1,10 @@
 package com.wanghongmeng.pssite.front.service;
 
 import com.wanghongmeng.pssite.front.dao.FrontDao;
+import com.wanghongmeng.pssite.front.model.Album;
 import com.wanghongmeng.pssite.front.model.Diary;
+import com.wanghongmeng.pssite.front.model.IndexPhoto;
 import com.wanghongmeng.pssite.front.model.Person;
-import com.wanghongmeng.pssite.front.model.Photo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,7 +30,11 @@ public class FrontService {
         return frontDao.queryDiary(nick);
     }
 
-    public List<Photo> queryPhoto(){
+    public List<IndexPhoto> queryPhoto(){
         return frontDao.queryPhoto();
+    }
+
+    public List<Album> queryAlbum(String nick){
+        return frontDao.queryAlbum(nick);
     }
 }

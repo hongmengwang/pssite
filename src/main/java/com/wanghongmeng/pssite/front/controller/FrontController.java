@@ -1,15 +1,16 @@
 package com.wanghongmeng.pssite.front.controller;
 
+import com.wanghongmeng.pssite.base.Constants;
+import com.wanghongmeng.pssite.front.model.Album;
 import com.wanghongmeng.pssite.front.model.Diary;
+import com.wanghongmeng.pssite.front.model.IndexPhoto;
 import com.wanghongmeng.pssite.front.model.Person;
-import com.wanghongmeng.pssite.front.model.Photo;
 import com.wanghongmeng.pssite.front.service.FrontService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -28,10 +29,8 @@ public class FrontController {
 
     @RequestMapping(value = "/" ,method = RequestMethod.GET)
     public ModelAndView index(ModelAndView modelAndView){
-        List<Photo> photoList = frontService.queryPhoto();
-        List<Person> personList = frontService.queryPerson();
-        modelAndView.addObject("photoList",photoList);
-        modelAndView.addObject("personList",personList);
+        modelAndView.addObject("photoList",frontService.queryPhoto());
+        modelAndView.addObject("personList",frontService.queryPerson());
         modelAndView.setViewName("front/index");
         return modelAndView;
     }
@@ -51,15 +50,28 @@ public class FrontController {
 //    }
 
     @RequestMapping(value = "/front/{nick}/{catagory}" ,method = RequestMethod.GET)
-    public ModelAndView index(@PathVariable("nick") String nick,@PathVariable("catagory") String catagory,ModelAndView modelAndView){
-        List<Diary> diaryList = frontService.queryDiary(nick);
+    public ModelAndView catagory(@PathVariable("nick") String nick,@PathVariable("catagory") String catagory,ModelAndView modelAndView){
         modelAndView.addObject("nick",nick);
         modelAndView.addObject("catagory",catagory);
-        modelAndView.addObject("diaryList",diaryList);
-        modelAndView.setViewName("front/" + catagory);
+        if(Constants.CATAGORY_DIARY.equals(catagory)){
+            modelAndView.addObject("diaryList",frontService.queryDiary(nick));
+        }
+        if(Constants.CATAGORY_ALBUM.equals(catagory)){
+            modelAndView.addObject("albumList",frontService.queryAlbum(nick));
+        }
+            modelAndView.setViewName("front/" + catagory);
         return modelAndView;
     }
 
+
+//    @RequestMapping(value = "/front/{nick}/{catagory}" ,method = RequestMethod.GET)
+//    public ModelAndView album(@PathVariable("nick") String nick,@PathVariable("catagory") String catagory,ModelAndView modelAndView){
+//        modelAndView.addObject("nick",nick);
+//        modelAndView.addObject("catagory",catagory);
+//        modelAndView.addObject("albumList",frontService.queryAlbum(nick));
+//        modelAndView.setViewName("front/" + catagory);
+//        return modelAndView;
+//    }
 //    @RequestMapping(value = "/front/{nick}/diary/list" ,method = RequestMethod.GET)
 //    @ResponseBody
 //    public List<Diary> getDiary(@PathVariable("nick") String nick){

@@ -7,15 +7,23 @@
         <result column="entry_date" property="entryDate" />
     </resultMap>
 
+    <resultMap id="album" type="album">
+        <result column="person_id" property="personId" />
+        <result column="album_name" property="albumName" />
+        <result column="album_cover" property="albumCover" />
+        <result column="entry_date" property="entryDate" />
+        <result column="order_num" property="orderNum" />
+    </resultMap>
+
     <select id="queryPerson" resultType="Person">
         <![CDATA[
             select id,name,nick,pic,comments from t_person order by order_num
         ]]>
     </select>
 
-    <select id="queryPhoto" resultType="Photo">
+    <select id="queryPhoto" resultType="IndexPhoto">
         <![CDATA[
-            select id,pic from t_photo order by order_num
+            select id,pic from t_index_photo order by order_num
         ]]>
     </select>
 
@@ -26,6 +34,16 @@
             on d.person_id = p.id
             where p.nick = #{nick}
             order by d.entry_date desc
+        ]]>
+    </select>
+
+    <select id="queryAlbum" resultMap="album">
+        <![CDATA[
+            select d.id,d.person_id,d.album_name,d.album_cover,d.entry_date
+            from t_album d inner join t_person p
+            on d.person_id = p.id
+            where p.nick = #{nick}
+            order by d.entry_date,d.order_num desc
         ]]>
     </select>
 
