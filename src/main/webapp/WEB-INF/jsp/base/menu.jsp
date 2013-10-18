@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>test</title>
     <c:set var="context" value="<%=request.getContextPath()%>" scope="session" />
+    <%--<link rel="styleshee    t" href="${context}/static/css/bootstrap.min.css">--%>
+    <link rel="stylesheet" href="${context}/static/css/front.menu.css">
+    <link rel="stylesheet" href="${context}/static/css/front.person.photo.css">
+    <link rel="stylesheet" href="${context}/static/css/front.whole.css">
     <script type="text/javascript" src="${context}/static/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="${context}/static/js/jquery-1.4.4.min.js"></script>
     <script type="text/javascript" src="${context}/static/js/jquery.transform-0.8.0.min.js"></script>
@@ -14,16 +18,12 @@
     <script type="text/javascript" src="${context}/static/js/Note_this_400.font.js"></script>
     <script type="text/javascript" src="${context}/static/js/front.person.photo.js"></script>
     <script type="text/javascript" src="${context}/static/js/front.whole.js"></script>
-    <%--<link rel="styleshee    t" href="${context}/static/css/bootstrap.min.css">--%>
-    <link rel="stylesheet" href="${context}/static/css/front.menu.css">
-    <link rel="stylesheet" href="${context}/static/css/front.person.photo.css">
-    <link rel="stylesheet" href="${context}/static/css/front.whole.css">
 </head>
 <body>
 <table style="margin-top: 10px;width:100%">
     <tr style="vertical-align: top;">
         <td style="width:25%;">
-            <div style="width: 100%;position: fixed;_position: absolute;_top: expression(documentElement.scrollTop + 'px');">
+            <div style="width: 25%;position: fixed;_position: absolute;_top: expression(documentElement.scrollTop + 'px');">
                 <ul class="ca-menu">
                     <li>
                         <a href="${context}/">

@@ -1,9 +1,6 @@
 package com.wanghongmeng.pssite.front.persistence;
 
-import com.wanghongmeng.pssite.front.model.Album;
-import com.wanghongmeng.pssite.front.model.IndexPhoto;
-import com.wanghongmeng.pssite.front.model.Person;
-import com.wanghongmeng.pssite.front.model.Diary;
+import com.wanghongmeng.pssite.front.model.*;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -24,4 +21,6 @@ public interface FrontMapper {
     List<IndexPhoto> queryPhoto();
 
     List<Album> queryAlbum(@Param("nick") String nick);
+
+    List<AlbumPhoto> queryAlbumPhoto(@Param("albumId") int albumId);
 }

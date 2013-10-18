@@ -15,6 +15,12 @@
         <result column="order_num" property="orderNum" />
     </resultMap>
 
+    <resultMap id="albumPhoto" type="albumPhoto">
+        <result column="album_id" property="albumId" />
+        <result column="pic_path" property="picPath" />
+        <result column="entry_date" property="entryDate" />
+    </resultMap>
+
     <select id="queryPerson" resultType="Person">
         <![CDATA[
             select id,name,nick,pic,comments from t_person order by order_num
@@ -44,6 +50,14 @@
             on d.person_id = p.id
             where p.nick = #{nick}
             order by d.entry_date,d.order_num desc
+        ]]>
+    </select>
+
+    <select id="queryAlbumPhoto" resultMap="albumPhoto">
+        <![CDATA[
+            select album_id,pic_path,comments,entry_date
+            from t_album_photo
+            where album_id = #{albumId}
         ]]>
     </select>
 

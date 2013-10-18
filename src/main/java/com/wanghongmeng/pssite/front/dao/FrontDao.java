@@ -1,9 +1,6 @@
 package com.wanghongmeng.pssite.front.dao;
 
-import com.wanghongmeng.pssite.front.model.Album;
-import com.wanghongmeng.pssite.front.model.Diary;
-import com.wanghongmeng.pssite.front.model.IndexPhoto;
-import com.wanghongmeng.pssite.front.model.Person;
+import com.wanghongmeng.pssite.front.model.*;
 import com.wanghongmeng.pssite.front.persistence.FrontMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -38,5 +35,7 @@ public class FrontDao {
         return frontMapper.queryAlbum(nick);
     }
 
-
+    public List<AlbumPhoto> queryAlbumPhoto(int albumId){
+        return frontMapper.queryAlbumPhoto(albumId);
+    }
 }

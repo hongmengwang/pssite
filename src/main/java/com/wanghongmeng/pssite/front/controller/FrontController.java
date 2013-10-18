@@ -59,19 +59,18 @@ public class FrontController {
         if(Constants.CATAGORY_ALBUM.equals(catagory)){
             modelAndView.addObject("albumList",frontService.queryAlbum(nick));
         }
-            modelAndView.setViewName("front/" + catagory);
+        modelAndView.setViewName("front/" + catagory);
         return modelAndView;
     }
 
 
-//    @RequestMapping(value = "/front/{nick}/{catagory}" ,method = RequestMethod.GET)
-//    public ModelAndView album(@PathVariable("nick") String nick,@PathVariable("catagory") String catagory,ModelAndView modelAndView){
-//        modelAndView.addObject("nick",nick);
-//        modelAndView.addObject("catagory",catagory);
-//        modelAndView.addObject("albumList",frontService.queryAlbum(nick));
-//        modelAndView.setViewName("front/" + catagory);
-//        return modelAndView;
-//    }
+    @RequestMapping(value = "/front/{nick}/album/{albumId}" ,method = RequestMethod.GET)
+    public ModelAndView albumPhoto(@PathVariable("nick") String nick,@PathVariable("albumId") int albumId,ModelAndView modelAndView){
+        modelAndView.addObject("photoList",frontService.queryAlbumPhoto(albumId));
+        modelAndView.setViewName("front/albumphoto");
+        return modelAndView;
+    }
+
 //    @RequestMapping(value = "/front/{nick}/diary/list" ,method = RequestMethod.GET)
 //    @ResponseBody
 //    public List<Diary> getDiary(@PathVariable("nick") String nick){
