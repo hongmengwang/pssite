@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="${context}/static/css/front.menu.css">
     <link rel="stylesheet" href="${context}/static/css/front.person.photo.css">
     <link rel="stylesheet" href="${context}/static/css/front.whole.css">
+    <link rel="stylesheet" href="${context}/static/css/style3.css">
     <script type="text/javascript" src="${context}/static/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="${context}/static/js/jquery-1.4.4.min.js"></script>
     <script type="text/javascript" src="${context}/static/js/jquery.transform-0.8.0.min.js"></script>

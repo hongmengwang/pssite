@@ -55,7 +55,7 @@
 
     <select id="queryAlbumPhoto" resultMap="albumPhoto">
         <![CDATA[
-            select album_id,pic_path,comments,entry_date
+            select id,album_id,pic_path,comments,entry_date
             from t_album_photo
             where album_id = #{albumId}
         ]]>
