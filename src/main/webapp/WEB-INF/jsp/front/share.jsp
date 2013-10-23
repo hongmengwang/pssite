@@ -1,30 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <jsp:include page="../base/menu.jsp" />
-<script language="javascript" type="text/javascript">
-    function dyniframesize(down) {
-        var pTar = null;
-        if (document.getElementById){
-            pTar = document.getElementById(down);
-        }
-        else{
-            eval('pTar = ' + down + ';');
-        }
-        if (pTar && !window.opera){
-//begin resizing iframe
-            pTar.style.display="block"
-            if (pTar.contentDocument && pTar.contentDocument.body.offsetHeight){
-//ns6 syntax
-                pTar.height = pTar.contentDocument.body.offsetHeight +20;
-                pTar.width = pTar.contentDocument.body.scrollWidth+20;
-            }
-            else if (pTar.Document && pTar.Document.body.scrollHeight){
-//ie5+ syntax
-                pTar.height = pTar.Document.body.scrollHeight;
-                pTar.width = pTar.Document.body.scrollWidth;
-            }
-        }
-    }
-</script>
-<iframe src ="http://localhost/wordpress" frameborder="0" marginheight="0" marginwidth="0" frameborder="0" scrolling="auto" id="ifm" name="ifm" onload="javascript:dyniframesize('ifm');" width="100%">
-</iframe>
+<iframe src="http://localhost/wordpress" id="Iframe" frameborder="0" scrolling="auto" width="100%" height="520px" style="overflow-x: none;"></iframe>
+<%--<iframe src="./ue.html" id="Iframe" frameborder="0" scrolling="no" style="border:0px;width:1000px;" onload="autoHeight();"></iframe>--%>
+<%--<script type="text/javascript">--%>
+    <%--function autoHeight(){--%>
+        <%--var iframe = document.getElementById("Iframe");--%>
+        <%--if(iframe.Document){//ie自有属性--%>
+            <%--iframe.style.height = iframe.Document.documentElement.scrollHeight;--%>
+        <%--}else if(iframe.contentDocument){//ie,firefox,chrome,opera,safari--%>
+            <%--iframe.height = iframe.contentDocument.body.offsetHeight ;--%>
+        <%--}--%>
+    <%--}--%>
+<%--</script>--%>
 <jsp:include page="../base/footer.jsp" />

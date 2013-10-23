@@ -15,6 +15,7 @@
     <script type="text/javascript" src="${context}/static/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="${context}/static/js/jquery-1.4.4.min.js"></script>
     <script type="text/javascript" src="${context}/static/js/jquery.transform-0.8.0.min.js"></script>
+    <script type="text/javascript" src="${context}/static/js/jquery.idTabs.min.js"></script>
     <script type="text/javascript" src="${context}/static/js/cufon-yui.js"></script>
     <script type="text/javascript" src="${context}/static/js/Note_this_400.font.js"></script>
     <script type="text/javascript" src="${context}/static/js/front.person.photo.js"></script>
@@ -69,4 +70,4 @@
                 </ul>
             </div>
         </td>
-        <td style="width:100%">
+        <td style="width:100%;">
