@@ -13,6 +13,12 @@ public class Person {
     private String nick;
     private String pic;
     private String comments;
+    private String sex;
+    private String marriage;
+    private String school;
+    private String company;
+    private String about;
+    private String birth;
     private int orderNum;
 
     public String getComments() {
@@ -62,6 +68,55 @@ public class Person {
     public void setPic(String pic) {
         this.pic = pic;
     }
+
+    public String getSex() {
+        return sex == null ? "" : sex.trim();
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getMarriage() {
+        return marriage == null ? "" : marriage.trim();
+    }
+
+    public void setMarriage(String marriage) {
+        this.marriage = marriage;
+    }
+
+    public String getSchool() {
+        return school == null ? "" : school.trim();
+    }
+
+    public void setSchool(String school) {
+        this.school = school;
+    }
+
+    public String getCompany() {
+        return company == null ? "" : company.trim();
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
+    }
+
+    public String getAbout() {
+        return about == null ? "" : about.trim();
+    }
+
+    public void setAbout(String about) {
+        this.about = about;
+    }
+
+    public String getBirth() {
+        return birth == null ? "" : birth.trim();
+    }
+
+    public void setBirth(String birth) {
+        this.birth = birth;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (obj == this){
@@ -90,6 +145,11 @@ public class Person {
         str.append("nick=").append(getNick()).append(",");
         str.append("pic=").append(getPic()).append(",");
         str.append("comments=").append(getComments()).append(",");
+        str.append("sex=").append(getSex()).append(",");
+        str.append("marriage=").append(getMarriage()).append(",");
+        str.append("school=").append(getSchool()).append(",");
+        str.append("company=").append(getCompany()).append(",");
+        str.append("about=").append(getAbout()).append(",");
         str.append("orderNum=").append(getOrderNum());
         str.append("]");
         return str.toString();

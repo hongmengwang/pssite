@@ -7,7 +7,7 @@
         <result column="entry_date" property="entryDate" />
     </resultMap>
 
-    <resultMap id="album" type="album">
+    <resultMap id="album" type="Album">
         <result column="person_id" property="personId" />
         <result column="album_name" property="albumName" />
         <result column="album_cover" property="albumCover" />
@@ -15,10 +15,14 @@
         <result column="order_num" property="orderNum" />
     </resultMap>
 
-    <resultMap id="albumPhoto" type="albumPhoto">
+    <resultMap id="albumPhoto" type="AlbumPhoto">
         <result column="album_id" property="albumId" />
         <result column="pic_path" property="picPath" />
         <result column="entry_date" property="entryDate" />
+    </resultMap>
+
+    <resultMap id="about" type="About">
+        <result column="person_id" property="personId" />
     </resultMap>
 
     <select id="queryPerson" resultType="Person">
@@ -61,4 +65,21 @@
         ]]>
     </select>
 
+    <select id="queryPersonByNick" resultType="Person">
+        <![CDATA[
+            select id,name,nick,pic,comments,sex,marriage,school,company,about,birth
+            from t_person
+            where nick = #{nick}
+        ]]>
+    </select>
+
+    <select id="queryAbout" resultMap="about">
+        <![CDATA[
+            select a.id,a.person_id,a.item,a.content
+            from t_person_about a inner join t_person p
+            on a.person_id = p.id
+            where p.nick = #{nick}
+            order by a.order_num
+        ]]>
+    </select>
 </mapper>

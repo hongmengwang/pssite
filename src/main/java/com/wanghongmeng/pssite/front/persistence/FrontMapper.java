@@ -23,4 +23,8 @@ public interface FrontMapper {
     List<Album> queryAlbum(@Param("nick") String nick);
 
     List<AlbumPhoto> queryAlbumPhoto(@Param("albumId") int albumId);
+
+    Person queryPersonByNick(@Param("nick") String nick);
+
+    List<About> queryAbout(@Param("nick") String nick);
 }

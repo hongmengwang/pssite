@@ -38,4 +38,12 @@ public class FrontService {
     public List<AlbumPhoto> queryAlbumPhoto(int albumId){
         return frontDao.queryAlbumPhoto(albumId);
     }
+
+    public Person queryPersonByNick(String nick){
+        return frontDao.queryPersonByNick(nick);
+    }
+
+    public List<About> queryAbout(String nick){
+        return frontDao.queryAbout(nick);
+    }
 }

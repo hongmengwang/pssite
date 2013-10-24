@@ -73,5 +73,4 @@
          </c:forEach>
     </section>
 </section>
-</script>
 <jsp:include page="../base/footer.jsp" />

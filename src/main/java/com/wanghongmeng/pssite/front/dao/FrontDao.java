@@ -38,4 +38,12 @@ public class FrontDao {
     public List<AlbumPhoto> queryAlbumPhoto(int albumId){
         return frontMapper.queryAlbumPhoto(albumId);
     }
+
+    public Person queryPersonByNick(String nick){
+        return frontMapper.queryPersonByNick(nick);
+    }
+
+    public List<About> queryAbout(String nick){
+        return frontMapper.queryAbout(nick);
+    }
 }

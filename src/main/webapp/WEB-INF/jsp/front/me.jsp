@@ -1,17 +1,30 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <jsp:include page="../base/menu.jsp" />
-<div id="usual1" class="usual">
-    <ul>
-        <li><a href="#tab1" class="selected">Tab 1</a></li>
-        <li><a href="#tab2">Tab 2</a></li>
-        <li><a href="#tab3">Tab 3</a></li>
-    </ul>
-    <div id="tab1">This is tab 1.</div>
-    <div id="tab2">More content in tab 2.</div>
-    <div id="tab3">Tab 3 is always last!</div>
-</div>
-
-<script type="text/javascript">
-    $("#usual1 ul").idTabs();
-</script>
+<section id=wraper>
+    <section id=main>
+        <c:forEach items="${aboutList}" var="about">
+            <article class='article'>
+                <div class='border'>
+                    <div class='jarakgrid'>
+                        <h6>${about.item}</h6>
+                        <div class='hr'></div>
+                        <p>
+                            <c:if test="${fn:contains(about.item,'标签')}">
+                                <c:set value="${fn:split(about.content, ',') }" var="tags" />
+                                <c:forEach items="${tags}" var="tag">
+                                    <span class="label">${tag}</span>
+                                </c:forEach>
+                            </c:if>
+                            <c:if test="${!fn:contains(about.item,'标签')}">
+                                ${about.content}
+                            </c:if>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </c:forEach>
+    </section>
+</section>
 <jsp:include page="../base/footer.jsp" />

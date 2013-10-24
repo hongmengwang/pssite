@@ -7,5 +7,6 @@
         <typeAlias type="com.wanghongmeng.pssite.front.model.IndexPhoto" alias="IndexPhoto"/>
         <typeAlias type="com.wanghongmeng.pssite.front.model.Album" alias="Album"/>
         <typeAlias type="com.wanghongmeng.pssite.front.model.AlbumPhoto" alias="AlbumPhoto"/>
+        <typeAlias type="com.wanghongmeng.pssite.front.model.About" alias="About"/>
     </typeAliases>
 </configuration>

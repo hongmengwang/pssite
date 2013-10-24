@@ -59,6 +59,9 @@ public class FrontController {
         if(Constants.CATAGORY_ALBUM.equals(catagory)){
             modelAndView.addObject("albumList",frontService.queryAlbum(nick));
         }
+        if(Constants.CATAGORY_ME.equals(catagory)){
+            modelAndView.addObject("aboutList",frontService.queryAbout(nick));
+        }
         modelAndView.setViewName("front/" + catagory);
         return modelAndView;
     }
