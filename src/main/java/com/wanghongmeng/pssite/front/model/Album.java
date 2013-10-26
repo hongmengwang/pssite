@@ -1,5 +1,7 @@
 package com.wanghongmeng.pssite.front.model;
 
+import com.wanghongmeng.pssite.base.Constants;
+
 /**
  * Created with IntelliJ IDEA.
  * User: wanghongmeng
@@ -40,7 +42,7 @@ public class Album {
     }
 
     public String getAlbumCover() {
-        return albumCover == null ? "" : albumCover.trim();
+        return albumCover == null ? "" : Constants.URL_STATIC_PREFIX + albumCover.trim();
     }
 
     public void setAlbumCover(String albumCover) {

@@ -35,6 +35,10 @@ public class FrontDao {
         return frontMapper.queryAlbum(nick);
     }
 
+    public Album queryAlbumById(int id){
+        return frontMapper.queryAlbumById(id);
+    }
+
     public List<AlbumPhoto> queryAlbumPhoto(int albumId){
         return frontMapper.queryAlbumPhoto(albumId);
     }

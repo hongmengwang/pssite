@@ -49,11 +49,19 @@
 
     <select id="queryAlbum" resultMap="album">
         <![CDATA[
-            select d.id,d.person_id,d.album_name,d.album_cover,d.entry_date
-            from t_album d inner join t_person p
-            on d.person_id = p.id
+            select a.id,a.person_id,a.album_name,a.album_cover,a.entry_date
+            from t_album a inner join t_person p
+            on a.person_id = p.id
             where p.nick = #{nick}
-            order by d.entry_date,d.order_num desc
+            order by a.entry_date,a.order_num desc
+        ]]>
+    </select>
+
+    <select id="queryAlbumById" resultMap="album">
+        <![CDATA[
+            select id,person_id,album_name,album_cover,entry_date
+            from t_album
+            where id = ${id}
         ]]>
     </select>
 

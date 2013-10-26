@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <jsp:include page="../base/menu.jsp" />
-<iframe src="http://localhost/wordpress" id="Iframe" frameborder="0" scrolling="auto" width="100%" height="520px" style="overflow-x: none;"></iframe>
+<iframe src="http://share.wanghongmeng.com" id="Iframe" frameborder="0" scrolling="auto" width="100%" height="520px" style="overflow-x: none;"></iframe>
 <%--<iframe src="./ue.html" id="Iframe" frameborder="0" scrolling="no" style="border:0px;width:1000px;" onload="autoHeight();"></iframe>--%>
 <%--<script type="text/javascript">--%>
     <%--function autoHeight(){--%>

@@ -35,6 +35,9 @@
         border-bottom: 1px solid rgba(0, 0, 0, 0.13);
         width: 100%;
     }
+    #ds-thread #ds-reset .ds-comments-info{
+        display: none;
+    }
 </style>
 <ul class="thumbnails">
     <c:forEach items="${photoList}" var="photo">

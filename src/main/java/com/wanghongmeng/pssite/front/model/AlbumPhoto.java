@@ -1,5 +1,7 @@
 package com.wanghongmeng.pssite.front.model;
 
+import com.wanghongmeng.pssite.base.Constants;
+
 import java.lang.String;
 
 /**
@@ -33,7 +35,7 @@ public class AlbumPhoto {
     }
 
     public String getPicPath() {
-        return picPath == null ? "" : picPath.trim();
+        return picPath == null ? "" : Constants.URL_STATIC_PREFIX  + picPath.trim();
     }
 
     public void setPicPath(String picPath) {

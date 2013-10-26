@@ -5,12 +5,13 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>test</title>
-    <c:set var="context" value="<%=request.getContextPath()%>" scope="session" />
-    <script type="text/javascript" src="${context}/static/js/jquery-1.4.4.min.js"></script>
-    <script type="text/javascript" src="${context}/static/js/front.index.photo.js"></script>
-    <link rel="stylesheet" href="${context}/static/css/front.index.photo.css">
-    <link rel="stylesheet" href="${context}/static/css/front.whole.css">
+    <meta name="keywords" content="${title},${keyword}" />
+    <meta name="description" content="${description}" />
+    <title>${title}</title>
+    <link rel="stylesheet" href="${staticPrefix}/css/front.index.photo.css">
+    <link rel="stylesheet" href="${staticPrefix}/css/front.whole.css">
+    <script type="text/javascript" src="${staticPrefix}/js/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="${staticPrefix}/js/front.index.photo.js"></script>
 </head>
 <body>
 <table style="margin-left: 100px;">

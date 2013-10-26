@@ -1,10 +1,6 @@
 package com.wanghongmeng.pssite.front.controller;
 
 import com.wanghongmeng.pssite.base.Constants;
-import com.wanghongmeng.pssite.front.model.Album;
-import com.wanghongmeng.pssite.front.model.Diary;
-import com.wanghongmeng.pssite.front.model.IndexPhoto;
-import com.wanghongmeng.pssite.front.model.Person;
 import com.wanghongmeng.pssite.front.service.FrontService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,8 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-
-import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -29,8 +23,9 @@ public class FrontController {
 
     @RequestMapping(value = "/" ,method = RequestMethod.GET)
     public ModelAndView index(ModelAndView modelAndView){
+        modelAndView.addObject("title",Constants.TITLE);
         modelAndView.addObject("photoList",frontService.queryPhoto());
-        modelAndView.addObject("personList",frontService.queryPerson());
+        modelAndView.addObject("personList", frontService.queryPerson());
         modelAndView.setViewName("front/index");
         return modelAndView;
     }
@@ -54,12 +49,18 @@ public class FrontController {
         modelAndView.addObject("nick",nick);
         modelAndView.addObject("catagory",catagory);
         if(Constants.CATAGORY_DIARY.equals(catagory)){
+            modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_DIARY);
             modelAndView.addObject("diaryList",frontService.queryDiary(nick));
         }
         if(Constants.CATAGORY_ALBUM.equals(catagory)){
+            modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_ALBUM);
             modelAndView.addObject("albumList",frontService.queryAlbum(nick));
         }
+        if(Constants.CATAGORY_SHARE.equals(catagory)){
+            modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_SHARE);
+        }
         if(Constants.CATAGORY_ME.equals(catagory)){
+            modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_ME);
             modelAndView.addObject("aboutList",frontService.queryAbout(nick));
         }
         modelAndView.setViewName("front/" + catagory);
@@ -69,6 +70,7 @@ public class FrontController {
 
     @RequestMapping(value = "/front/{nick}/album/{albumId}" ,method = RequestMethod.GET)
     public ModelAndView albumPhoto(@PathVariable("nick") String nick,@PathVariable("albumId") int albumId,ModelAndView modelAndView){
+        modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_ALBUM + "-" + frontService.queryAlbumById(albumId).getAlbumName());
         modelAndView.addObject("photoList",frontService.queryAlbumPhoto(albumId));
         modelAndView.setViewName("front/albumphoto");
         return modelAndView;

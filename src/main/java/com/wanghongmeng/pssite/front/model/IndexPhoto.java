@@ -1,5 +1,7 @@
 package com.wanghongmeng.pssite.front.model;
 
+import com.wanghongmeng.pssite.base.Constants;
+
 /**
  * Created with IntelliJ IDEA.
  * User: hongmengwang
@@ -21,7 +23,7 @@ public class IndexPhoto {
     }
 
     public String getPic() {
-        return pic == null ? "" : pic.trim();
+        return pic == null ? "" : Constants.URL_STATIC_PREFIX + pic.trim();
     }
 
     public void setPic(String pic) {
