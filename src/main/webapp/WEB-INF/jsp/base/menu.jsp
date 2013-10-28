@@ -8,16 +8,15 @@
     <meta name="keywords" content="${title},${keyword}" />
     <meta name="description" content="${description}" />
     <title>${title}</title>
+    <link rel="stylesheet" href="${staticPrefix}/css/front.index.photo.css">
     <link rel="stylesheet" href="${staticPrefix}/css/front.menu.css">
     <link rel="stylesheet" href="${staticPrefix}/css/front.person.photo.css">
     <link rel="stylesheet" href="${staticPrefix}/css/front.whole.css">
-    <link rel="stylesheet" href="${staticPrefix}/css/style3.css">
-    <script type="text/javascript" src="${staticPrefix}/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="${staticPrefix}/css/front.album.css">
     <script type="text/javascript" src="${staticPrefix}/js/jquery-1.4.4.min.js"></script>
-    <script type="text/javascript" src="${staticPrefix}/js/jquery.transform-0.8.0.min.js"></script>
-    <script type="text/javascript" src="${staticPrefix}/js/cufon-yui.js"></script>
-    <script type="text/javascript" src="${staticPrefix}/js/Note_this_400.font.js"></script>
+    <script type="text/javascript" src="${staticPrefix}/js/front.index.photo.js"></script>
     <script type="text/javascript" src="${staticPrefix}/js/front.person.photo.js"></script>
+    <script type="text/javascript" src="${staticPrefix}/js/front.alubm.js"></script>
     <script type="text/javascript" src="${staticPrefix}/js/front.whole.js"></script>
 </head>
 <body>
