@@ -1,6 +1,6 @@
 package com.wanghongmeng.pssite.front.interceptor;
 
-import com.wanghongmeng.pssite.base.Constants;
+import com.wanghongmeng.pssite.base.util.Constants;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 

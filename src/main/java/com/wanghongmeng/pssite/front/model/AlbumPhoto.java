@@ -1,6 +1,6 @@
 package com.wanghongmeng.pssite.front.model;
 
-import com.wanghongmeng.pssite.base.Constants;
+import com.wanghongmeng.pssite.base.util.Constants;
 
 import java.lang.String;
 

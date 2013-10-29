@@ -1,4 +1,4 @@
-package com.wanghongmeng.pssite.base;
+package com.wanghongmeng.pssite.base.util;
 
 /**
  * Created with IntelliJ IDEA.

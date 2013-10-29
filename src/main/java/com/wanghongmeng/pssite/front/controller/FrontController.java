@@ -1,6 +1,6 @@
 package com.wanghongmeng.pssite.front.controller;
 
-import com.wanghongmeng.pssite.base.Constants;
+import com.wanghongmeng.pssite.base.util.Constants;
 import com.wanghongmeng.pssite.front.service.FrontService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
