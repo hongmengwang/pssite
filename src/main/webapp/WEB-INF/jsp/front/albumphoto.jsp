@@ -38,6 +38,12 @@
     #ds-thread #ds-reset .ds-comments-info{
         display: none;
     }
+    #ds-wrapper #ds-reset .ds-dialog-footer span{
+        display:none;
+    }
+    #ds-wrapper #ds-reset .ds-logo{
+        visibility: hidden;
+    }
 </style>
 <script>
     $(document).ready(function(){

@@ -48,6 +48,12 @@
         border-bottom: 1px solid rgba(0, 0, 0, 0.13);
         width: 100%;
     }
+    #ds-wrapper #ds-reset .ds-dialog-footer span{
+        display:none;
+    }
+    #ds-wrapper #ds-reset .ds-logo{
+        visibility: hidden;
+    }
 </style>
 <section id=wraper>
     <section id=main>
