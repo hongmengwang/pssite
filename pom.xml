@@ -122,6 +122,11 @@
             <version>1.1.0.Final</version>
         </dependency>
         <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.5</version>
+        </dependency>
+        <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
             <version>1.2.17</version>
@@ -140,6 +145,26 @@
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis-spring</artifactId>
             <version>1.2.0</version>
+        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>memcached</groupId>-->
+            <!--<artifactId>memcached</artifactId>-->
+            <!--<version>2.2.6</version>-->
+        <!--</dependency>-->
+        <dependency>
+            <groupId>com.googlecode.xmemcached</groupId>
+            <artifactId>xmemcached</artifactId>
+            <version>1.4.3</version>
+        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.google.code.simple-spring-memcached</groupId>-->
+            <!--<artifactId>spring-cache</artifactId>-->
+            <!--<version>3.2.0</version>-->
+        <!--</dependency>-->
+        <dependency>
+            <groupId>com.google.code.simple-spring-memcached</groupId>
+            <artifactId>xmemcached-provider</artifactId>
+            <version>3.2.1</version>
         </dependency>
         <dependency>
             <groupId>org.jboss.spec</groupId>
