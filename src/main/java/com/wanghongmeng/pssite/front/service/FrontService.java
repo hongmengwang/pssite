@@ -23,8 +23,8 @@ public class FrontService {
         return frontDao.queryPerson();
     }
 
-    public List<Diary> queryDiary(String nick){
-        return frontDao.queryDiary(nick);
+    public List<PersonDiary> queryPersonDiary(String nick){
+        return frontDao.queryPersonDiary(nick);
     }
 
     public List<IndexPhoto> queryIndexPhoto(){
@@ -35,8 +35,8 @@ public class FrontService {
         return frontDao.queryAlbum(nick);
     }
 
-    public Album queryAlbumById(int id){
-        return frontDao.queryAlbumById(id);
+    public Album queryAlbumById(int albumId){
+        return frontDao.queryAlbumById(albumId);
     }
 
     public List<AlbumPhoto> queryAlbumPhoto(int albumId){
@@ -47,7 +47,7 @@ public class FrontService {
         return frontDao.queryPersonByNick(nick);
     }
 
-    public List<About> queryMe(String nick){
-        return frontDao.queryMe(nick);
+    public List<PersonAbout> queryPersonAbout(String nick){
+        return frontDao.queryPersonAbout(nick);
     }
 }

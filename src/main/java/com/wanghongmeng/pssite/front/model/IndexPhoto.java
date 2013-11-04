@@ -13,7 +13,7 @@ import java.io.Serializable;
  */
 public class IndexPhoto implements Serializable {
     private int id;
-    private String pic;
+    private String picPath;
     private int orderNum;
 
     public int getId() {
@@ -24,12 +24,12 @@ public class IndexPhoto implements Serializable {
         this.id = id;
     }
 
-    public String getPic() {
-        return pic == null ? "" : Constants.URL_STATIC_PREFIX + pic.trim();
+    public String getPicPath() {
+        return picPath == null ? "" : Constants.URL_STATIC_PREFIX + picPath.trim();
     }
 
-    public void setPic(String pic) {
-        this.pic = pic;
+    public void setPicPath(String picPath) {
+        this.picPath = picPath;
     }
 
     public int getOrderNum() {
@@ -49,13 +49,13 @@ public class IndexPhoto implements Serializable {
             return false;
         }
         IndexPhoto indexPhoto = (IndexPhoto)obj;
-        return indexPhoto.getPic().equals(getPic());
+        return indexPhoto.getPicPath().equals(getPicPath());
     }
 
     @Override
     public int hashCode() {
         int result = 17;
-        result = 37 * result + getPic().hashCode();
+        result = 37 * result + getPicPath().hashCode();
         return result;
     }
 
@@ -63,7 +63,7 @@ public class IndexPhoto implements Serializable {
     public String toString() {
         StringBuilder str = new StringBuilder();
         str.append("IndexPhoto=[");
-        str.append("pic=").append(getPic()).append(",");
+        str.append("picPath=").append(getPicPath()).append(",");
         str.append("orderNum=").append(getOrderNum());
         str.append("]");
         return str.toString();

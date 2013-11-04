@@ -1,6 +1,7 @@
 package com.wanghongmeng.pssite.front.controller;
 
 import com.wanghongmeng.pssite.base.util.Constants;
+import com.wanghongmeng.pssite.front.model.Album;
 import com.wanghongmeng.pssite.front.service.FrontService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,6 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -24,7 +27,7 @@ public class FrontController {
     @RequestMapping(value = "/" ,method = RequestMethod.GET)
     public ModelAndView index(ModelAndView modelAndView){
         modelAndView.addObject("title",Constants.TITLE);
-        modelAndView.addObject("photoList",frontService.queryIndexPhoto());
+        modelAndView.addObject("indexPhotoList",frontService.queryIndexPhoto());
         modelAndView.addObject("personList", frontService.queryPerson());
         modelAndView.setViewName("front/index");
         return modelAndView;
@@ -40,7 +43,7 @@ public class FrontController {
 //    @RequestMapping(value = "/front/person" ,method = RequestMethod.GET)
 //    @ResponseBody
 //    public List<Person> getPerson(){
-//        List<Person> personList = frontService.queryPerson();
+//        List<Person> personList = frontService.queryPersonAbout();
 //        return personList;
 //    }
 
@@ -50,7 +53,7 @@ public class FrontController {
         modelAndView.addObject("catagory",catagory);
         if(Constants.CATAGORY_DIARY.equals(catagory)){
             modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_DIARY);
-            modelAndView.addObject("diaryList",frontService.queryDiary(nick));
+            modelAndView.addObject("personDiaryList",frontService.queryPersonDiary(nick));
         }
         if(Constants.CATAGORY_ALBUM.equals(catagory)){
             modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_ALBUM);
@@ -59,9 +62,9 @@ public class FrontController {
         if(Constants.CATAGORY_SHARE.equals(catagory)){
             modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_SHARE);
         }
-        if(Constants.CATAGORY_ME.equals(catagory)){
-            modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_ME);
-            modelAndView.addObject("aboutList",frontService.queryMe(nick));
+        if(Constants.CATAGORY_ABOUT.equals(catagory)){
+            modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_ABOUT);
+            modelAndView.addObject("personAboutList",frontService.queryPersonAbout(nick));
         }
         modelAndView.setViewName("front/" + catagory);
         return modelAndView;
@@ -70,16 +73,18 @@ public class FrontController {
 
     @RequestMapping(value = "/front/{nick}/album/{albumId}" ,method = RequestMethod.GET)
     public ModelAndView albumPhoto(@PathVariable("nick") String nick,@PathVariable("albumId") int albumId,ModelAndView modelAndView){
+        Object o = frontService.queryAlbumById(albumId);
+        Album list = frontService.queryAlbumById(albumId);
         modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_ALBUM + "-" + frontService.queryAlbumById(albumId).getAlbumName());
-        modelAndView.addObject("photoList",frontService.queryAlbumPhoto(albumId));
-        modelAndView.setViewName("front/albumphoto");
+        modelAndView.addObject("albumPhotoList",frontService.queryAlbumPhoto(albumId));
+        modelAndView.setViewName("front/albumPhoto");
         return modelAndView;
     }
 
 //    @RequestMapping(value = "/front/{nick}/diary/list" ,method = RequestMethod.GET)
 //    @ResponseBody
 //    public List<Diary> getDiary(@PathVariable("nick") String nick){
-//        List<Diary> diaryList = frontService.queryDiary(nick);
+//        List<Diary> diaryList = frontService.queryPersonDiary(nick);
 //        return diaryList;
 //    }
 }

@@ -16,7 +16,11 @@ public interface FrontMapper {
 
     List<Person> queryPerson();
 
-    List<Diary> queryDiary(@Param("nick") String nick);
+    List<PersonDiary> queryPersonDiary(@Param("nick") String nick);
+
+    List<PersonAbout> queryPersonAbout(@Param("nick") String nick);
+
+    Person queryPersonByNick(@Param("nick") String nick);
 
     List<IndexPhoto> queryIndexPhoto();
 
@@ -25,8 +29,4 @@ public interface FrontMapper {
     Album queryAlbumById(@Param("id") int id);
 
     List<AlbumPhoto> queryAlbumPhoto(@Param("albumId") int albumId);
-
-    Person queryPersonByNick(@Param("nick") String nick);
-
-    List<About> queryMe(@Param("nick") String nick);
 }

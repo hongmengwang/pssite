@@ -20,17 +20,17 @@ public class FrontDao {
     @Autowired
     private FrontMapper frontMapper;
 
-//    @ReadThroughAssignCache(namespace = "frontDao",assignedKey = "queryPerson",expiration = 86400)
+//    @ReadThroughAssignCache(namespace = "frontDao",assignedKey = "queryPersonAbout",expiration = 86400)
     @Cacheable(value = "memcached",key = "'frontDao:queryPerson'")
     public List<Person> queryPerson(){
         return frontMapper.queryPerson();
     }
 
-//    @ReadThroughSingleCache(namespace = "frontDao:queryDiary",expiration = 86400)
-//    public List<Diary> queryDiary(@ParameterValueKeyProvider String nick){
-    @Cacheable(value = "memcached",key = "'frontDao:queryDiary:' + #nick")
-    public List<Diary> queryDiary(String nick){
-        return frontMapper.queryDiary(nick);
+//    @ReadThroughSingleCache(namespac  e = "frontDao:queryPersonDiary",expiration = 86400)
+//    public List<Diary> queryPersonDiary(@ParameterValueKeyProvider String nick){
+    @Cacheable(value = "memcached",key = "'frontDao:queryPersonDiary:' + #nick")
+    public List<PersonDiary> queryPersonDiary(String nick){
+        return frontMapper.queryPersonDiary(nick);
     }
 
 //    @ReadThroughAssignCache(namespace = "frontDao",assignedKey = "queryIndexPhoto",expiration = 86400)
@@ -46,9 +46,9 @@ public class FrontDao {
     }
 
 //    @ReadThroughSingleCache(namespace = "frontDao:queryAlbumById",expiration = 86400)
-    @Cacheable(value = "memcached",key = "'frontDao:queryAlbumById:' + #id")
-    public Album queryAlbumById(int id){
-        return frontMapper.queryAlbumById(id);
+    @Cacheable(value = "memcached",key = "'frontDao:queryAlbumById:' + #albumId")
+    public Album queryAlbumById(int albumId){
+        return frontMapper.queryAlbumById(albumId);
     }
 
 //    @ReadThroughSingleCache(namespace = "frontDao:queryAlbumPhoto",expiration = 86400)
@@ -63,9 +63,9 @@ public class FrontDao {
         return frontMapper.queryPersonByNick(nick);
     }
 
-//    @ReadThroughSingleCache(namespace = "frontDao:queryMe",expiration = 86400)
-    @Cacheable(value = "memcached",key = "'frontDao:queryMe:' + #nick")
-    public List<About> queryMe(String nick){
-        return frontMapper.queryMe(nick);
+//    @ReadThroughSingleCache(namespace = "frontDao:queryPersonAbout",expiration = 86400)
+    @Cacheable(value = "memcached",key = "'frontDao:queryPersonAbout:' + #nick")
+    public List<PersonAbout> queryPersonAbout(String nick){
+        return frontMapper.queryPersonAbout(nick);
     }
 }

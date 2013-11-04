@@ -57,21 +57,21 @@
 </style>
 <section id=wraper>
     <section id=main>
-        <c:forEach items="${diaryList}" var="diary">
+        <c:forEach items="${personDiaryList}" var="personDiary">
             <article class='article'>
                 <div class='border'>
                     <div class='jarakgrid'>
-                        <h6>${diary.entryDate}</h6>
+                        <h6>${personDiary.entryDate}</h6>
                         <div class='hr'></div>
                         <p>
-                            ${diary.content}&nbsp;&nbsp;
-                            <a class="combtn" href="javascript:void(0)" onclick="showReply('comDiv${diary.id}')">回复</a>
+                            ${personDiary.content}&nbsp;&nbsp;
+                            <a class="combtn" href="javascript:void(0)" onclick="showReply('comDiv${personDiary.id}')">回复</a>
                         </p>
-                        <c:if test="${diary.pic != null && diary.pic != ''}">
-                            <p><img src="${diary.pic}" width="500" /></p>
+                        <c:if test="${personDiary.picPath != null && personDiary.picPath != ''}">
+                            <p><img src="${personDiary.picPath}" width="500" /></p>
                         </c:if>
-                        <div id="comDiv${diary.id}">
-                            <div class="ds-thread" data-thread-key="diary${diary.id}"></div>
+                        <div id="comDiv${personDiary.id}">
+                            <div class="ds-thread" data-thread-key="diary${personDiary.id}"></div>
                         </div>
                     </div>
                 </div>

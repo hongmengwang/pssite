@@ -4,21 +4,21 @@
 <jsp:include page="../base/menu.jsp" />
 <section id=wraper>
     <section id=main>
-        <c:forEach items="${aboutList}" var="about">
+        <c:forEach items="${personAboutList}" var="personAbout">
             <article class='article'>
                 <div class='border'>
                     <div class='jarakgrid'>
-                        <h6>${about.item}</h6>
+                        <h6>${personAbout.item}</h6>
                         <div class='hr'></div>
                         <p>
-                            <c:if test="${fn:contains(about.item,'标签')}">
-                                <c:set value="${fn:split(about.content, ',') }" var="tags" />
+                            <c:if test="${fn:contains(personAbout.item,'标签')}">
+                                <c:set value="${fn:split(personAbout.content, ',') }" var="tags" />
                                 <c:forEach items="${tags}" var="tag">
                                     <span class="label">${tag}</span>
                                 </c:forEach>
                             </c:if>
-                            <c:if test="${!fn:contains(about.item,'标签')}">
-                                ${about.content}
+                            <c:if test="${!fn:contains(personAbout.item,'标签')}">
+                                ${personAbout.content}
                             </c:if>
                         </p>
                     </div>

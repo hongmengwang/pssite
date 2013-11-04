@@ -11,11 +11,11 @@ import java.io.Serializable;
  * Time: 下午1:47
  * To change this template use File | Settings | File Templates.
  */
-public class Diary implements Serializable {
+public class PersonDiary implements Serializable {
     private int id;
     private int personId;
     private String content;
-    private String pic;
+    private String picPath;
     private String entryDate;
 
     public int getId() {
@@ -42,12 +42,12 @@ public class Diary implements Serializable {
         this.content = content;
     }
 
-    public String getPic() {
-        return pic == null ? "" : Constants.URL_STATIC_PREFIX + pic.trim();
+    public String getPicPath() {
+        return picPath == null ? "" : Constants.URL_STATIC_PREFIX + picPath.trim();
     }
 
-    public void setPic(String pic) {
-        this.pic = pic;
+    public void setPicPath(String picPath) {
+        this.picPath = picPath;
     }
 
     public String getEntryDate() {
@@ -63,13 +63,13 @@ public class Diary implements Serializable {
         if (obj == this){
             return true;
         }
-        if (!(obj instanceof Diary)){
+        if (!(obj instanceof PersonDiary)){
             return false;
         }
-        Diary diary = (Diary)obj;
-        return diary.getPersonId() == getPersonId()
-               && diary.getContent().equals(getContent())
-               && diary.getPic().equals(getPic());
+        PersonDiary personDiary = (PersonDiary)obj;
+        return personDiary.getPersonId() == getPersonId()
+               && personDiary.getContent().equals(getContent())
+               && personDiary.getPicPath().equals(getPicPath());
     }
 
     @Override
@@ -77,17 +77,17 @@ public class Diary implements Serializable {
         int result = 17;
         result = 37 * result + String.valueOf(getPersonId()).hashCode() ;
         result = 37 * result + getContent().hashCode();
-        result = 37 * result + getPic().hashCode();
+        result = 37 * result + getPicPath().hashCode();
         return result;
     }
 
     @Override
     public String toString() {
         StringBuilder str = new StringBuilder();
-        str.append("Diary=[");
+        str.append("PersonDiary=[");
         str.append("personId=").append(getPersonId()).append(",");
         str.append("content=").append(getContent()).append(",");
-        str.append("pic=").append(getPic()).append(",");
+        str.append("picPath=").append(getPicPath()).append(",");
         str.append("entryDate=").append(getEntryDate());
         str.append("]");
         return str.toString();

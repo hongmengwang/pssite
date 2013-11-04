@@ -9,7 +9,7 @@ import java.io.Serializable;
  * Time: 下午1:47
  * To change this template use File | Settings | File Templates.
  */
-public class About implements Serializable {
+public class PersonAbout implements Serializable {
     private int id;
     private int personId;
     private String item;
@@ -62,11 +62,11 @@ public class About implements Serializable {
         if (obj == this){
             return true;
         }
-        if (!(obj instanceof About)){
+        if (!(obj instanceof PersonAbout)){
             return false;
         }
-        About about = (About)obj;
-        return about.getPersonId() == getPersonId() && about.getItem().equals(getItem());
+        PersonAbout personAbout = (PersonAbout)obj;
+        return personAbout.getPersonId() == getPersonId() && personAbout.getItem().equals(getItem());
     }
 
     @Override
@@ -80,7 +80,7 @@ public class About implements Serializable {
     @Override
     public String toString() {
         StringBuilder str = new StringBuilder();
-        str.append("About=[");
+        str.append("PersonAbout=[");
         str.append("personId=").append(getPersonId()).append(",");
         str.append("item=").append(getItem()).append(",");
         str.append("content=").append(getContent()).append(",");

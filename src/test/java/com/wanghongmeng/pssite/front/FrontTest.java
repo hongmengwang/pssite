@@ -1,6 +1,6 @@
 package com.wanghongmeng.pssite.front;
 
-import com.wanghongmeng.pssite.front.model.Diary;
+import com.wanghongmeng.pssite.front.model.PersonDiary;
 import com.wanghongmeng.pssite.front.service.FrontService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -27,7 +27,7 @@ public class FrontTest {
 
     @Test
     public void testGetDiary(){
-        List<Diary> list = frontService.queryDiary("xiaowang");
+        List<PersonDiary> list = frontService.queryPersonDiary("xiaowang");
         System.out.println(list);
     }
 }

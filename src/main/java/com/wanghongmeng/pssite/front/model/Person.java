@@ -15,7 +15,7 @@ public class Person implements Serializable {
     private int id;
     private String name;
     private String nick;
-    private String pic;
+    private String picPath;
     private String comments;
     private String sex;
     private String marriage;
@@ -65,12 +65,12 @@ public class Person implements Serializable {
         this.orderNum = orderNum;
     }
 
-    public String getPic() {
-        return pic == null ? "" : Constants.URL_STATIC_PREFIX +  pic.trim();
+    public String getPicPath() {
+        return picPath == null ? "" : Constants.URL_STATIC_PREFIX +  picPath.trim();
     }
 
-    public void setPic(String pic) {
-        this.pic = pic;
+    public void setPicPath(String picPath) {
+        this.picPath = picPath;
     }
 
     public String getSex() {
@@ -147,7 +147,7 @@ public class Person implements Serializable {
         str.append("Person=[");
         str.append("name=").append(getName()).append(",");
         str.append("nick=").append(getNick()).append(",");
-        str.append("pic=").append(getPic()).append(",");
+        str.append("picPath=").append(getPicPath()).append(",");
         str.append("comments=").append(getComments()).append(",");
         str.append("sex=").append(getSex()).append(",");
         str.append("marriage=").append(getMarriage()).append(",");

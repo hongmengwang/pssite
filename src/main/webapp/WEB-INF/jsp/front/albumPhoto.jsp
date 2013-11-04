@@ -51,11 +51,11 @@
     });
 </script>
 <ul class="thumbnails">
-    <c:forEach items="${photoList}" var="photo">
+    <c:forEach items="${albumPhotoList}" var="albumPhoto">
         <li class="span3" style="width:20%">
             <div class="thumbnail">
-                <a class="popp" href="${photo.picPath}" title="${photo.comments}">
-                    <img style="width:100%" alt="${photo.comments}" src="${photo.picPath}" onclick="showImage('${photo.picPath}')" />
+                <a class="popp" href="${albumPhoto.picPath}" title="${albumPhoto.comments}">
+                    <img style="width:100%" alt="${albumPhoto.comments}" src="${albumPhoto.picPath}" onclick="showImage('${albumPhoto.picPath}')" />
                 </a>
             </div>
         </li>

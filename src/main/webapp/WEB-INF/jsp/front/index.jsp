@@ -9,15 +9,15 @@
             <div class="wrapper">
                 <div id="ps_container" class="ps_container">
                     <div class="ps_image_wrapper">
-                        <c:forEach items="${photoList}" var="photo" varStatus="status">
-                            <c:if test="${status.count == 1}"><img src="${photo.pic}"/></c:if>
+                        <c:forEach items="${indexPhotoList}" var="albumPhoto" varStatus="status">
+                            <c:if test="${status.count == 1}"><img src="${albumPhoto.picPath}"/></c:if>
                         </c:forEach>
                     </div>
                     <div class="ps_next"></div>
                     <div class="ps_prev"></div>
                     <ul class="ps_nav">
-                        <c:forEach items="${photoList}" var="photo">
-                            <li><a href="${photo.pic}" rel="${photo.pic}"></a></li>
+                        <c:forEach items="${indexPhotoList}" var="albumPhoto">
+                            <li><a href="${albumPhoto.picPath}" rel="${albumPhoto.picPath}"></a></li>
                         </c:forEach>
                     </ul>
                 </div>
@@ -30,7 +30,7 @@
                         <li class="span3">
                             <div class="thumbnail">
                                 <a href="front/${person.nick}/diary">
-                                    <img style="border: 0 none;height: auto;max-width: 100%;vertical-align: middle;" alt="${person.name}" src="${person.pic}" />
+                                    <img style="border: 0 none;height: auto;max-width: 100%;vertical-align: middle;" alt="${person.name}" src="${person.picPath}" />
                                 </a>
                                 <div class="caption">
                                     <h4 style="text-shadow:none;line-height: 20px;display: inline;">
