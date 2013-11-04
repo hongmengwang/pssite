@@ -33,10 +33,10 @@ public class FrontDao {
         return frontMapper.queryDiary(nick);
     }
 
-//    @ReadThroughAssignCache(namespace = "frontDao",assignedKey = "queryPhoto",expiration = 86400)
-    @Cacheable(value = "memcached",key = "'frontDao:queryPhoto'")
-    public List<IndexPhoto> queryPhoto(){
-        return frontMapper.queryPhoto();
+//    @ReadThroughAssignCache(namespace = "frontDao",assignedKey = "queryIndexPhoto",expiration = 86400)
+    @Cacheable(value = "memcached",key = "'frontDao:queryIndexPhoto'")
+    public List<IndexPhoto> queryIndexPhoto(){
+        return frontMapper.queryIndexPhoto();
     }
 
 //    @ReadThroughSingleCache(namespace = "frontDao:queryAlbum",expiration = 86400)

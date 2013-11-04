@@ -31,7 +31,7 @@
         ]]>
     </select>
 
-    <select id="queryPhoto" resultType="IndexPhoto">
+    <select id="queryIndexPhoto" resultType="IndexPhoto">
         <![CDATA[
             select id,pic from t_index_photo order by order_num
         ]]>

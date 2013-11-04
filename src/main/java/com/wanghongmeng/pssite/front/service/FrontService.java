@@ -27,8 +27,8 @@ public class FrontService {
         return frontDao.queryDiary(nick);
     }
 
-    public List<IndexPhoto> queryPhoto(){
-        return frontDao.queryPhoto();
+    public List<IndexPhoto> queryIndexPhoto(){
+        return frontDao.queryIndexPhoto();
     }
 
     public List<Album> queryAlbum(String nick){

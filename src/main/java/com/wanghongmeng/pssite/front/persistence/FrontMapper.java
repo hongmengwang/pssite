@@ -18,7 +18,7 @@ public interface FrontMapper {
 
     List<Diary> queryDiary(@Param("nick") String nick);
 
-    List<IndexPhoto> queryPhoto();
+    List<IndexPhoto> queryIndexPhoto();
 
     List<Album> queryAlbum(@Param("nick") String nick);
 

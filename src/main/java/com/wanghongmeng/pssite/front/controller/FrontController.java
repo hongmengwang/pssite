@@ -24,7 +24,7 @@ public class FrontController {
     @RequestMapping(value = "/" ,method = RequestMethod.GET)
     public ModelAndView index(ModelAndView modelAndView){
         modelAndView.addObject("title",Constants.TITLE);
-        modelAndView.addObject("photoList",frontService.queryPhoto());
+        modelAndView.addObject("photoList",frontService.queryIndexPhoto());
         modelAndView.addObject("personList", frontService.queryPerson());
         modelAndView.setViewName("front/index");
         return modelAndView;
@@ -33,7 +33,7 @@ public class FrontController {
 //    @RequestMapping(value = "/front/photo" ,method = RequestMethod.GET)
 //    @ResponseBody
 //    public List<Photo> getPhoto(){
-//        List<Photo> photoList = frontService.queryPhoto();
+//        List<Photo> photoList = frontService.queryIndexPhoto();
 //        return photoList;
 //    }
 //
