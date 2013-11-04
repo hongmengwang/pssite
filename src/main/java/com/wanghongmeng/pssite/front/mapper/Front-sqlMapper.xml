@@ -81,7 +81,7 @@
         ]]>
     </select>
 
-    <select id="queryAbout" resultMap="about">
+    <select id="queryMe" resultMap="about">
         <![CDATA[
             select a.id,a.person_id,a.item,a.content
             from t_person_about a inner join t_person p

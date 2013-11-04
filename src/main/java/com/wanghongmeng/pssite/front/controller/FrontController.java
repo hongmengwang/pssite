@@ -61,7 +61,7 @@ public class FrontController {
         }
         if(Constants.CATAGORY_ME.equals(catagory)){
             modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_ME);
-            modelAndView.addObject("aboutList",frontService.queryAbout(nick));
+            modelAndView.addObject("aboutList",frontService.queryMe(nick));
         }
         modelAndView.setViewName("front/" + catagory);
         return modelAndView;

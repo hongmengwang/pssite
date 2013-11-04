@@ -1,18 +1,9 @@
 package com.wanghongmeng.pssite.front.dao;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.google.code.ssm.api.ParameterValueKeyProvider;
-import com.google.code.ssm.api.ReadThroughAssignCache;
-import com.google.code.ssm.api.ReadThroughSingleCache;
-import com.google.code.ssm.api.ReturnValueKeyProvider;
-import com.google.code.ssm.api.format.Serialization;
-import com.google.code.ssm.api.format.SerializationType;
-import com.google.code.ssm.transcoders.JsonTranscoder;
 import com.wanghongmeng.pssite.front.model.*;
 import com.wanghongmeng.pssite.front.persistence.FrontMapper;
-import net.rubyeye.xmemcached.codec.MemcachedEncoder;
-import net.rubyeye.xmemcached.transcoders.Transcoder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -29,51 +20,52 @@ public class FrontDao {
     @Autowired
     private FrontMapper frontMapper;
 
-    @ReadThroughAssignCache(namespace = "frontDao",assignedKey = "queryPerson",expiration = 86400)
-    @Serialization(value = SerializationType.JSON)
+//    @ReadThroughAssignCache(namespace = "frontDao",assignedKey = "queryPerson",expiration = 86400)
+    @Cacheable(value = "memcached",key = "'frontDao:queryPerson'")
     public List<Person> queryPerson(){
         return frontMapper.queryPerson();
     }
 
-    @ReadThroughSingleCache(namespace = "frontDao:queryDiary",expiration = 86400)
-    @Serialization(value = SerializationType.JSON)
-    public List<Diary> queryDiary(@ParameterValueKeyProvider String nick){
+//    @ReadThroughSingleCache(namespace = "frontDao:queryDiary",expiration = 86400)
+//    public List<Diary> queryDiary(@ParameterValueKeyProvider String nick){
+    @Cacheable(value = "memcached",key = "'frontDao:queryDiary:' + #nick")
+    public List<Diary> queryDiary(String nick){
         return frontMapper.queryDiary(nick);
     }
 
-    @ReadThroughAssignCache(namespace = "frontDao",assignedKey = "queryPhoto",expiration = 86400)
-    @Serialization(value = SerializationType.JSON)
+//    @ReadThroughAssignCache(namespace = "frontDao",assignedKey = "queryPhoto",expiration = 86400)
+    @Cacheable(value = "memcached",key = "'frontDao:queryPhoto'")
     public List<IndexPhoto> queryPhoto(){
         return frontMapper.queryPhoto();
     }
 
-    @ReadThroughSingleCache(namespace = "frontDao:queryAlbum",expiration = 86400)
-    @Serialization(value = SerializationType.JSON)
-    public List<Album> queryAlbum(@ParameterValueKeyProvider String nick){
+//    @ReadThroughSingleCache(namespace = "frontDao:queryAlbum",expiration = 86400)
+    @Cacheable(value = "memcached",key = "'frontDao:queryAlbum:' + #nick")
+    public List<Album> queryAlbum(String nick){
         return frontMapper.queryAlbum(nick);
     }
 
-    @ReadThroughSingleCache(namespace = "frontDao:queryAlbumById",expiration = 86400)
-    @Serialization(value = SerializationType.JSON)
-    public Album queryAlbumById(@ParameterValueKeyProvider int id){
+//    @ReadThroughSingleCache(namespace = "frontDao:queryAlbumById",expiration = 86400)
+    @Cacheable(value = "memcached",key = "'frontDao:queryAlbumById:' + #id")
+    public Album queryAlbumById(int id){
         return frontMapper.queryAlbumById(id);
     }
 
-    @ReadThroughSingleCache(namespace = "frontDao:queryAlbumPhoto",expiration = 86400)
-    @Serialization(value = SerializationType.JSON)
-    public List<AlbumPhoto> queryAlbumPhoto(@ParameterValueKeyProvider int albumId){
+//    @ReadThroughSingleCache(namespace = "frontDao:queryAlbumPhoto",expiration = 86400)
+    @Cacheable(value = "memcached",key = "'frontDao:queryAlbumPhoto:' + #albumId")
+    public List<AlbumPhoto> queryAlbumPhoto(int albumId){
         return frontMapper.queryAlbumPhoto(albumId);
     }
 
-    @ReadThroughSingleCache(namespace = "frontDao:queryPersonByNick",expiration = 86400)
-    @Serialization(value = SerializationType.JSON)
-    public Person queryPersonByNick(@ParameterValueKeyProvider String nick){
+//    @ReadThroughSingleCache(namespace = "frontDao:queryPersonByNick",expiration = 86400)
+    @Cacheable(value = "memcached",key = "'frontDao:queryPersonByNick:' + #nick")
+    public Person queryPersonByNick(String nick){
         return frontMapper.queryPersonByNick(nick);
     }
 
-    @ReadThroughSingleCache(namespace = "frontDao:queryAbout",expiration = 86400)
-    @Serialization(value = SerializationType.JSON)
-    public List<About> queryAbout(@ParameterValueKeyProvider String nick){
-        return frontMapper.queryAbout(nick);
+//    @ReadThroughSingleCache(namespace = "frontDao:queryMe",expiration = 86400)
+    @Cacheable(value = "memcached",key = "'frontDao:queryMe:' + #nick")
+    public List<About> queryMe(String nick){
+        return frontMapper.queryMe(nick);
     }
 }

@@ -47,7 +47,7 @@ public class FrontService {
         return frontDao.queryPersonByNick(nick);
     }
 
-    public List<About> queryAbout(String nick){
-        return frontDao.queryAbout(nick);
+    public List<About> queryMe(String nick){
+        return frontDao.queryMe(nick);
     }
 }

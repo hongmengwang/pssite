@@ -28,5 +28,5 @@ public interface FrontMapper {
 
     Person queryPersonByNick(@Param("nick") String nick);
 
-    List<About> queryAbout(@Param("nick") String nick);
+    List<About> queryMe(@Param("nick") String nick);
 }
