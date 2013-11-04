@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.5.32, for debian-linux-gnu (x86_64)
+-- MySQL dump 10.13  Distrib 5.5.34, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: pssite
 -- ------------------------------------------------------
--- Server version	5.5.32-0ubuntu0.12.04.1
+-- Server version	5.5.34-0ubuntu0.12.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -60,7 +60,7 @@ CREATE TABLE `t_album` (
 
 LOCK TABLES `t_album` WRITE;
 /*!40000 ALTER TABLE `t_album` DISABLE KEYS */;
-INSERT INTO `t_album` VALUES (1,1,'婚纱照','/pssite/static/album/xiaowang/1.jpg','2013-10-16 14:52:48',1),(2,1,'篮球','/pssite/static/album/xiaowang/2.jpg','2013-10-16 14:52:48',2),(3,1,'香山','/pssite/static/album/xiaowang/3.jpg','2013-10-16 14:52:48',3),(4,1,'大连','/pssite/static/album/xiaowang/4.jpg','2013-10-16 14:52:48',4),(5,1,'海边','/pssite/static/album/xiaowang/5.jpg','2013-10-16 14:52:48',5),(6,1,'坝上','/pssite/static/album/xiaowang/6.jpg','2013-10-16 14:52:48',6),(7,1,'天安门','/pssite/static/album/xiaowang/7.jpg','2013-10-16 14:52:48',7);
+INSERT INTO `t_album` VALUES (1,1,'婚纱照','/album/xiaowang/1.jpg','2013-10-26 13:05:08',1),(2,1,'篮球','/album/xiaowang/2.jpg','2013-10-26 13:05:08',2),(3,1,'香山','/album/xiaowang/3.jpg','2013-10-26 13:05:08',3),(4,1,'大连','/album/xiaowang/4.jpg','2013-10-26 13:05:08',4),(5,1,'海边','/album/xiaowang/5.jpg','2013-10-26 13:05:08',5),(6,1,'坝上','/album/xiaowang/6.jpg','2013-10-26 13:05:08',6),(7,1,'天安门','/album/xiaowang/7.jpg','2013-10-26 13:05:08',7);
 /*!40000 ALTER TABLE `t_album` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -87,7 +87,7 @@ CREATE TABLE `t_album_photo` (
 
 LOCK TABLES `t_album_photo` WRITE;
 /*!40000 ALTER TABLE `t_album_photo` DISABLE KEYS */;
-INSERT INTO `t_album_photo` VALUES (23,7,'/pssite/static/album/xiaowang/1.jpg','5','2013-10-18 15:31:49'),(24,7,'/pssite/static/album/xiaowang/2.jpg','6','2013-10-18 15:31:49'),(25,7,'/pssite/static/album/xiaowang/3.jpg','7','2013-10-18 15:31:49'),(26,7,'/pssite/static/album/xiaowang/4.jpg','8','2013-10-18 15:31:49'),(27,7,'/pssite/static/album/xiaowang/5.jpg','9','2013-10-18 15:31:49'),(28,7,'/pssite/static/album/xiaowang/6.jpg','10','2013-10-18 15:31:49'),(29,7,'/pssite/static/album/xiaowang/7.jpg','11','2013-10-18 15:31:49'),(30,7,'/pssite/static/album/xiaowang/8.jpg','12','2013-10-18 15:31:49'),(31,7,'/pssite/static/album/xiaowang/9.jpg','13','2013-10-18 15:31:49');
+INSERT INTO `t_album_photo` VALUES (23,7,'/album/xiaowang/1.jpg','5','2013-10-26 13:05:18'),(24,7,'/album/xiaowang/2.jpg','6','2013-10-26 13:05:18'),(25,7,'/album/xiaowang/3.jpg','7','2013-10-26 13:05:18'),(26,7,'/album/xiaowang/4.jpg','8','2013-10-26 13:05:18'),(27,7,'/album/xiaowang/5.jpg','9','2013-10-26 13:05:18'),(28,7,'/album/xiaowang/6.jpg','10','2013-10-26 13:05:18'),(29,7,'/album/xiaowang/7.jpg','11','2013-10-26 13:05:18'),(30,7,'/album/xiaowang/8.jpg','12','2013-10-26 13:05:18'),(31,7,'/album/xiaowang/9.jpg','13','2013-10-26 13:05:18');
 /*!40000 ALTER TABLE `t_album_photo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -112,7 +112,7 @@ CREATE TABLE `t_index_photo` (
 
 LOCK TABLES `t_index_photo` WRITE;
 /*!40000 ALTER TABLE `t_index_photo` DISABLE KEYS */;
-INSERT INTO `t_index_photo` VALUES (1,'static/pic/index/3.jpg',1),(2,'static/pic/index/4.jpg',2),(3,'static/pic/index/5.jpg',3),(4,'static/pic/index/6.jpg',4),(5,'static/pic/index/7.jpg',5),(6,'static/pic/index/8.jpg',6),(7,'static/pic/index/9.jpg',7);
+INSERT INTO `t_index_photo` VALUES (1,'/pic/index/3.jpg',1),(2,'/pic/index/4.jpg',2),(3,'/pic/index/5.jpg',3),(4,'/pic/index/6.jpg',4),(5,'/pic/index/7.jpg',5),(6,'/pic/index/8.jpg',6),(7,'/pic/index/9.jpg',7);
 /*!40000 ALTER TABLE `t_index_photo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -146,7 +146,7 @@ CREATE TABLE `t_person` (
 
 LOCK TABLES `t_person` WRITE;
 /*!40000 ALTER TABLE `t_person` DISABLE KEYS */;
-INSERT INTO `t_person` VALUES (1,'小王','xiaowang','static/pic/9.jpg','凡所有像,皆为虚妄',1,'男','已婚','大连理工大学(软件工程-日语强化)','北京搜狐公司-无线事业部','啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊<br />bbbbbbbbbbbbbbbbbbbbbbbb','1986-11-10'),(2,'纪饼饼','jibingbing','static/pic/4.jpg','放纵不羁爱自由',2,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `t_person` VALUES (1,'小王','xiaowang','/pic/9.jpg','凡所有像,皆为虚妄',1,'男','已婚','大连理工大学(软件工程-日语强化)','北京搜狐公司-无线事业部','啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊<br />bbbbbbbbbbbbbbbbbbbbbbbb','1986-11-10'),(2,'纪饼饼','jibingbing','/pic/4.jpg','放纵不羁爱自由',2,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `t_person` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -191,7 +191,7 @@ CREATE TABLE `t_person_diary` (
   `entry_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '日期',
   `pic` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -200,7 +200,7 @@ CREATE TABLE `t_person_diary` (
 
 LOCK TABLES `t_person_diary` WRITE;
 /*!40000 ALTER TABLE `t_person_diary` DISABLE KEYS */;
-INSERT INTO `t_person_diary` VALUES (1,1,'今天天气正好','2013-09-21 05:14:41','static/pic/1.jpg'),(2,1,'老婆不在家','2013-09-21 05:14:57',NULL),(3,1,'努力测试','2013-09-21 05:15:09',NULL);
+INSERT INTO `t_person_diary` VALUES (1,1,'今天天气正好','2013-09-21 05:14:41','/pic/1.jpg'),(2,1,'老婆不在家','2013-09-21 05:14:57',NULL),(3,1,'努力测试','2013-09-21 05:15:09',NULL),(4,1,'测试proxy','2013-11-03 10:43:31',NULL);
 /*!40000 ALTER TABLE `t_person_diary` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -213,4 +213,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-10-24 22:55:44
+-- Dump completed on 2013-11-04 21:44:31
