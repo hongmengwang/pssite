@@ -1,0 +1,1 @@
+mvn install:install-file -Dfile=/home/xiaowang/java_memcached-release_2.6.6.jar -DgroupId=java-client-for-memcached -DartifactId=java-client-for-memcached -Dversion=2.6.6 -Dpackaging=jar
