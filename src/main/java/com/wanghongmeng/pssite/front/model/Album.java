@@ -2,6 +2,8 @@ package com.wanghongmeng.pssite.front.model;
 
 import com.wanghongmeng.pssite.base.util.Constants;
 
+import java.io.Serializable;
+
 /**
  * Created with IntelliJ IDEA.
  * User: wanghongmeng
@@ -9,7 +11,7 @@ import com.wanghongmeng.pssite.base.util.Constants;
  * Time: 10:02 PM
  * To change this template use File | Settings | File Templates.
  */
-public class Album {
+public class Album implements Serializable {
     private int id;
     private int personId;
     private String albumName;

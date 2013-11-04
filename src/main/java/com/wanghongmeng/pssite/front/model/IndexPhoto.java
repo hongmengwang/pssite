@@ -2,6 +2,8 @@ package com.wanghongmeng.pssite.front.model;
 
 import com.wanghongmeng.pssite.base.util.Constants;
 
+import java.io.Serializable;
+
 /**
  * Created with IntelliJ IDEA.
  * User: hongmengwang
@@ -9,7 +11,7 @@ import com.wanghongmeng.pssite.base.util.Constants;
  * Time: 下午1:47
  * To change this template use File | Settings | File Templates.
  */
-public class IndexPhoto {
+public class IndexPhoto implements Serializable {
     private int id;
     private String pic;
     private int orderNum;

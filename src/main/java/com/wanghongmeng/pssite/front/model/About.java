@@ -1,5 +1,7 @@
 package com.wanghongmeng.pssite.front.model;
 
+import java.io.Serializable;
+
 /**
  * Created with IntelliJ IDEA.
  * User: hongmengwang
@@ -7,7 +9,7 @@ package com.wanghongmeng.pssite.front.model;
  * Time: 下午1:47
  * To change this template use File | Settings | File Templates.
  */
-public class About {
+public class About implements Serializable {
     private int id;
     private int personId;
     private String item;

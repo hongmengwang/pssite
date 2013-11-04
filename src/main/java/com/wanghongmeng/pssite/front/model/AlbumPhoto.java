@@ -2,6 +2,7 @@ package com.wanghongmeng.pssite.front.model;
 
 import com.wanghongmeng.pssite.base.util.Constants;
 
+import java.io.Serializable;
 import java.lang.String;
 
 /**
@@ -11,7 +12,7 @@ import java.lang.String;
  * Time: 10:02 PM
  * To change this template use File | Settings | File Templates.
  */
-public class AlbumPhoto {
+public class AlbumPhoto implements Serializable {
     private int id;
     private int albumId;
     private String picPath;
