@@ -33,9 +33,13 @@
             </bean>
         </property>
         <property name="configuration">
-            <bean class="com.google.code.ssm.providers.CacheConfiguration">
+            <bean class="com.google.code.ssm.providers.xmemcached.XMemcachedConfiguration">
                 <property name="consistentHashing" value="true" />
                 <property name="useBinaryProtocol" value="true" />
+                <property name="connectionPoolSize" value="10"/>
+                <property name="connectionTimeout" value="30" />
+                <property name="enableHeartBeat" value="false"/>
+
             </bean>
         </property>
         <property name="jsonTranscoder">
