@@ -73,8 +73,6 @@ public class FrontController {
 
     @RequestMapping(value = "/front/{nick}/album/{albumId}" ,method = RequestMethod.GET)
     public ModelAndView albumPhoto(@PathVariable("nick") String nick,@PathVariable("albumId") int albumId,ModelAndView modelAndView){
-        Object o = frontService.queryAlbumById(albumId);
-        Album list = frontService.queryAlbumById(albumId);
         modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_ALBUM + "-" + frontService.queryAlbumById(albumId).getAlbumName());
         modelAndView.addObject("albumPhotoList",frontService.queryAlbumPhoto(albumId));
         modelAndView.setViewName("front/albumPhoto");

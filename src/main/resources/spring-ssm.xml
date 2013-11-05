@@ -29,7 +29,7 @@
         </property>
         <property name="addressProvider">
             <bean class="com.google.code.ssm.config.DefaultAddressProvider">
-                <property name="address" value="127.0.01:11111" />
+                <property name="address" value="10.11.29.73:11111" />
             </bean>
         </property>
         <property name="configuration">
@@ -45,7 +45,7 @@
         <property name="jsonTranscoder">
             <bean class="com.google.code.ssm.transcoders.JsonTranscoder">
                 <constructor-arg index="0">
-                    <bean class="org.codehaus.jackson.map.ObjectMapper"/>
+                    <bean class="com.google.code.ssm.mapper.JsonObjectMapper"/>
                 </constructor-arg>
             </bean>
         </property>
