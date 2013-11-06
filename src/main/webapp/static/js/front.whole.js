@@ -24,6 +24,7 @@ function showReply(id){
     }
     if($(raplybox).css("display") == "none"){
         $(raplybox).slideDown();
+        scroller(id,800);
     }else{
         $(raplybox).slideUp()
     }

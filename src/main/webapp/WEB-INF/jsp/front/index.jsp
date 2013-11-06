@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="../base/head.jsp" />
 <body>
-<table style="margin-left: 100px;">
+<table style="margin: 35px 0 0 100px;z-index: 10">
     <tr>
         <td>
             <div id="loader" class="loader"></div>
@@ -33,9 +33,9 @@
                                     <img style="border: 0 none;height: auto;max-width: 100%;vertical-align: middle;" alt="${person.name}" src="${person.picPath}" />
                                 </a>
                                 <div class="caption">
-                                    <h4 style="text-shadow:none;line-height: 20px;display: inline;">
+                                    <h5 style="text-shadow:none;line-height: 20px;display: inline;">
                                         <a href="front/${person.nick}/diary">${person.name}</a>
-                                    </h4>
+                                    </h5>
                                     <h5 style="text-shadow:none;display: inline;">- ${person.comments}</h5>
                                 </div>
                             </div>

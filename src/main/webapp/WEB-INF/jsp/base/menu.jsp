@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="head.jsp" />
 <body>
-<table style="margin-top: 10px;width:100%">
+<table style="margin-top: 35px;width:100%;z-index: 10;">
     <tr style="vertical-align: top;">
         <td style="width:25%;">
             <div style="width: 25%;position: fixed;_position: absolute;_top: expression(documentElement.scrollTop + 'px');">

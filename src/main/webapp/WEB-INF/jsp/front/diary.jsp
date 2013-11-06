@@ -63,7 +63,7 @@
                     <div class='jarakgrid'>
                         <h6>${personDiary.entryDate}</h6>
                         <div class='hr'></div>
-                        <p>
+                        <p style="font-size: 14px;">
                             ${personDiary.content}&nbsp;&nbsp;
                             <a class="combtn" href="javascript:void(0)" onclick="showReply('comDiv${personDiary.id}')">回复</a>
                         </p>
