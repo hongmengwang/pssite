@@ -20,6 +20,8 @@ public interface FrontMapper {
 
     List<PersonAbout> queryPersonAbout(@Param("nick") String nick);
 
+    List<PersonShare> queryPersonShare(@Param("nick") String nick);
+
     Person queryPersonByNick(@Param("nick") String nick);
 
     List<IndexPhoto> queryIndexPhoto();

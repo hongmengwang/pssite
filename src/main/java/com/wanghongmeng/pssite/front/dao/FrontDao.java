@@ -68,4 +68,11 @@ public class FrontDao {
     public List<PersonAbout> queryPersonAbout(String nick){
         return frontMapper.queryPersonAbout(nick);
     }
+
+    //    @ReadThroughSingleCache(namespace = "frontDao:queryPersonShare",expiration = 86400)
+    @Cacheable(value = "memcached",key = "'frontDao:queryPersonShare:' + #nick")
+    public List<PersonShare> queryPersonShare(String nick){
+        return frontMapper.queryPersonShare(nick);
+    }
+
 }

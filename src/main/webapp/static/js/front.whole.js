@@ -29,3 +29,12 @@ function showReply(id){
         $(raplybox).slideUp()
     }
 }
+
+function showShareDiv(){
+    var shareDiv = "#shareDiv";
+    if($(shareDiv).css("display") == "none"){
+        $(shareDiv).slideDown();
+    }else{
+        $(shareDiv).slideUp()
+    }
+}

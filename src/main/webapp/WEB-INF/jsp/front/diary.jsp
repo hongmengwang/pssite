@@ -44,7 +44,6 @@
         display: none;
     }
     #ds-thread #ds-reset .ds-comments{
-        background-color: #2D2D2D;
         border-bottom: 1px solid rgba(0, 0, 0, 0.13);
         width: 100%;
     }

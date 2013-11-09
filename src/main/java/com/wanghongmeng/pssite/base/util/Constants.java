@@ -10,11 +10,13 @@ package com.wanghongmeng.pssite.base.util;
 public class Constants {
     public static final String CATAGORY_DIARY = "diary";
     public static final String CATAGORY_ALBUM = "album";
+    public static final String CATAGORY_BLOG = "blog";
     public static final String CATAGORY_SHARE = "share";
     public static final String CATAGORY_ABOUT = "about";
     public static final String TITLE = "小王的空间";
     public static final String SUB_TITLE_DIARY = "心情日记";
     public static final String SUB_TITLE_ALBUM = "照片墙";
+    public static final String SUB_TITLE_BLOG = "博客";
     public static final String SUB_TITLE_SHARE = "分享";
     public static final String SUB_TITLE_ABOUT = "关于我";
     public static final String SEO_KEYWORD = "小王,王洪孟";

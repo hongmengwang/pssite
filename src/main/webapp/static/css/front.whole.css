@@ -19,7 +19,7 @@ body
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-o  ut;
 }
-a{color:#005580; text-decoration:none}
+a{color:#aaaaaa; text-decoration:underline}
 .jarakgrid{padding:10px}.article h2{font-size:1.2em;line-height:1.3em;}
 .jarakgrid p img{border: 1px solid #DDDDDD;
     border-radius: 4px 4px 4px 4px;
@@ -28,7 +28,7 @@ a{color:#005580; text-decoration:none}
     line-height: 20px;
     padding: 4px;
     transition: all 0.2s ease-in-out 0s;}
-.jarakgrid p a{font-size: 13px;color:#aaa;text-decoration: underline;}
+/*.jarakgrid p a{font-size: 13px;color:#aaa;text-decoration: underline;}*/
 .article p{text-align:justify;margin:5px 0 0;word-break: break-all;}
 .article h2,.more{font-family: 'Droid Sans', sans-serif;font-weight: 700;text-shadow: 1px 1px 0px #F2F2F2, 1px 2px 0px #B1B1B2;}.more{font-size:.9em;}
 .comdiv{margin-bottom: 8px;}

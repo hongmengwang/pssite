@@ -32,8 +32,16 @@
                         </a>
                     </li>
                     <li>
+                        <a href="/front/${nick}/blog" <c:if test="${catagory == 'blog'}">class="active"</c:if>>
+                            <span class="ca-icon">A</span>
+                            <div class="ca-content">
+                                <h2 class="ca-main">博客</h2>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
                         <a href="/front/${nick}/share" <c:if test="${catagory == 'share'}">class="active"</c:if>>
-                            <span class="ca-icon">R</span>
+                            <span class="ca-icon">M</span>
                             <div class="ca-content">
                                 <h2 class="ca-main">分享</h2>
                             </div>

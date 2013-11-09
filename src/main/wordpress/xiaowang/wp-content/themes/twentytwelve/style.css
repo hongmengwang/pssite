@@ -495,7 +495,6 @@ body.custom-font-enabled {
 }
 a {
 	outline: none;
-	color: #21759b;
 }
 a:hover {
 	color: #0f3647;
@@ -522,12 +521,12 @@ a:hover {
 	z-index: 100000; /* Above WP toolbar */
 }
 
-/* Page structure 
+/* Page structure*/ 
 .site {
 	padding: 0 24px;
 	padding: 0 1.714285714rem;
-	background-image:url("http://localhost:9090/wordpress/wp-content/uploads/2013/11/bg_JeHBS4CC1.gif")
-}*/
+	background-image:url("http://localhost:9090/wordpress/xiaowang/wp-content/uploads/2013/11/bg_JeHBS4CC1.gif")
+}
 .site-content {
 	margin: 24px 0 0;
 	margin: 1.714285714rem 0 0;
@@ -702,7 +701,7 @@ footer[role="contentinfo"] a:hover {
 	font-weight: normal;
 }
 .entry-header .entry-title a {
-	text-decoration: none;
+	color:#aaaaaa;
 }
 .entry-header .entry-format {
 	margin-top: 24px;
@@ -1545,7 +1544,7 @@ img#wpstats {
 	.main-navigation .current-menu-ancestor > a,
 	.main-navigation .current_page_item > a,
 	.main-navigation .current_page_ancestor > a {
-		color: #21759B;
+		text-decoration:underline;
 		font-weight: bold;
 	}
 	.menu-toggle {

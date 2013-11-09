@@ -59,8 +59,12 @@ public class FrontController {
             modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_ALBUM);
             modelAndView.addObject("albumList",frontService.queryAlbum(nick));
         }
+        if(Constants.CATAGORY_BLOG.equals(catagory)){
+            modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_BLOG);
+        }
         if(Constants.CATAGORY_SHARE.equals(catagory)){
             modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_SHARE);
+            modelAndView.addObject("personShareList",frontService.queryPersonShare(nick));
         }
         if(Constants.CATAGORY_ABOUT.equals(catagory)){
             modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_ABOUT);

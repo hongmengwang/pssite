@@ -9,7 +9,11 @@
                     <img style="width: 100%;" alt="${album.albumName}" src="${album.albumCover}" />
                 </a>
                 <div class="caption">
-                    <h5 style="text-shadow:none;display: inline;">${album.albumName}</h5>
+                    <h5 style="text-shadow:none;display: inline;">
+                        <a href="album/${album.id}">
+                            ${album.albumName}
+                        </a>
+                    </h5>
                 </div>
             </div>
         </li>
