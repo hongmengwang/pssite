@@ -75,4 +75,10 @@ public class FrontDao {
         return frontMapper.queryPersonShare(nick);
     }
 
+    //    @ReadThroughSingleCache(namespace = "frontDao:queryPersonShareById",expiration = 86400)
+    @Cacheable(value = "memcached",key = "'frontDao:queryPersonShareById:' + #shareId")
+    public PersonShare queryPersonShareById(int shareId){
+        return frontMapper.queryPersonShareById(shareId);
+    }
+
 }

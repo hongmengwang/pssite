@@ -14,8 +14,14 @@
             <article class='article'>
                 <div class='border'>
                     <div class='jarakgrid'>
-                        <p><a href="/front/${nick}/share/${personShare.id}"><img style="display: inline;" src="${personShare.picPath}" /></a></p>
-                        <p style="position:absolute;"><a style="font-size: 14px;" href="/front/${nick}/share/${personShare.id}">${personShare.shareComment}</a></p>
+                        <p>
+                            <a href="/front/${nick}/share/${personShare.id}" target="_blank">
+                                <img style="display: inline;" src="${personShare.picPath}" />
+                            </a>
+                        </p>
+                        <p style="position:absolute;">
+                            <a style="font-size: 14px;" href="/front/${nick}/share/${personShare.id}" target="_blank">${personShare.shareComment}</a>
+                        </p>
                         <p style="position:relative;font-size: 13px;">${personShare.entryDate}</p>
                     </div>
                 </div>

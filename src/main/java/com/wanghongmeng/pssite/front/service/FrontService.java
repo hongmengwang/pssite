@@ -54,4 +54,9 @@ public class FrontService {
     public List<PersonShare> queryPersonShare(String nick){
         return frontDao.queryPersonShare(nick);
     }
+
+    public PersonShare queryPersonShareById(int shareId){
+        return frontDao.queryPersonShareById(shareId);
+
+    }
 }

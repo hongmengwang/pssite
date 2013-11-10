@@ -31,4 +31,6 @@ public interface FrontMapper {
     Album queryAlbumById(@Param("id") int id);
 
     List<AlbumPhoto> queryAlbumPhoto(@Param("albumId") int albumId);
+
+    PersonShare queryPersonShareById(@Param("shareId") int shareId);
 }

@@ -2,6 +2,7 @@ package com.wanghongmeng.pssite.front.controller;
 
 import com.wanghongmeng.pssite.base.util.Constants;
 import com.wanghongmeng.pssite.front.model.Album;
+import com.wanghongmeng.pssite.front.model.PersonShare;
 import com.wanghongmeng.pssite.front.service.FrontService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -80,6 +81,16 @@ public class FrontController {
         modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_ALBUM + "-" + frontService.queryAlbumById(albumId).getAlbumName());
         modelAndView.addObject("albumPhotoList",frontService.queryAlbumPhoto(albumId));
         modelAndView.setViewName("front/albumPhoto");
+        return modelAndView;
+    }
+
+
+    @RequestMapping(value = "/front/{nick}/share/{shareId}" ,method = RequestMethod.GET)
+    public ModelAndView share(@PathVariable("nick") String nick,@PathVariable("shareId") int shareId,ModelAndView modelAndView){
+        PersonShare personShare = frontService.queryPersonShareById(shareId);
+        modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_SHARE + "-" + personShare.getShareComment());
+        modelAndView.addObject("personShare",personShare);
+        modelAndView.setViewName("front/shareContent");
         return modelAndView;
     }
 

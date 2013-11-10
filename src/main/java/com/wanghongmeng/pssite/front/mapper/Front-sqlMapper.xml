@@ -118,4 +118,12 @@
             order by s.entry_date desc
         ]]>
     </select>
+
+    <select id="queryPersonShareById" resultMap="personShare">
+        <![CDATA[
+            select id,person_id,pic_path,share_comment,share_link,share_source,entry_date
+            from t_person_share
+            where id = #{shareId}
+        ]]>
+    </select>
 </mapper>
