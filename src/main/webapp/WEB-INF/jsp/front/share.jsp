@@ -1,13 +1,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <jsp:include page="../base/menu.jsp" />
-
 <style type="text/css">
     .article p {
         display: inline;
     }
 </style>
-
 <section id=wraper>
     <section id=main>
         <c:forEach items="${personShareList}" var="personShare">
@@ -29,5 +27,4 @@
         </c:forEach>
     </section>
 </section>
-
 <jsp:include page="../base/footer.jsp" />
