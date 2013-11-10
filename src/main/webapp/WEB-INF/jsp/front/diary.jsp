@@ -55,8 +55,8 @@
     }
 </style>
 <div class="content">
-    <section id=wraper>
-        <section id=main>
+    <div id=wraper>
+        <div id=main>
             <c:forEach items="${personDiaryList}" var="personDiary">
                 <article class='article'>
                     <div class='border'>
@@ -77,7 +77,7 @@
                     </div>
                 </article>
             </c:forEach>
-        </section>
-    </section>
+        </div>
+    </div>
 </div>
 <jsp:include page="../base/footer.jsp" />

@@ -3,10 +3,10 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <jsp:include page="../base/menu.jsp" />
 <div class="content">
-    <section id=wraper>
-        <section id=main>
+    <div id=wraper>
+        <div id=main>
             <c:forEach items="${personAboutList}" var="personAbout">
-                <article class='article'>
+                <div class='article'>
                     <div class='border'>
                         <div class='jarakgrid'>
                             <h6>${personAbout.item}</h6>
@@ -24,9 +24,9 @@
                             </p>
                         </div>
                     </div>
-                </article>
+                </div>
             </c:forEach>
-        </section>
-    </section>
+        </div>
+    </div>
 </div>
 <jsp:include page="../base/footer.jsp" />

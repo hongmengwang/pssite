@@ -21,7 +21,7 @@
     <div style="margin:0 0 0 100px;">
         <ul class="thumbnails">
             <c:forEach items="${personList}" var="person">
-                <li class="span3" style="margin-left: 200px;">
+                <li class="span3" style="margin-left: 200px;margin-top: 20px;">
                     <div class="thumbnail">
                         <a href="front/${person.nick}/diary">
                             <img style="border: 0 none;height: auto;max-width: 100%;vertical-align: middle;" alt="${person.name}" src="${staticPrefix}${person.picPath}" />
