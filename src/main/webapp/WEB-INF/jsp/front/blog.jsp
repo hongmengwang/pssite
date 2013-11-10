@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <jsp:include page="../base/menu.jsp" />
-<iframe src="http://blog.wanghongmeng.com/${nick}" id="Iframe" frameborder="0" scrolling="auto" width="100%" height="540px" style="overflow-x: none;"></iframe>
+<div class="content">
+    <iframe src="http://blog.wanghongmeng.com/${nick}" id="Iframe" frameborder="0" scrolling="auto" width="100%" height="534px" style="overflow-x: none;"></iframe>
+</div>
 <%--<iframe src="./ue.html" id="Iframe" frameborder="0" scrolling="no" style="border:0px;width:1000px;" onload="autoHeight();"></iframe>--%>
 <%--<script type="text/javascript">--%>
     <%--function autoHeight(){--%>

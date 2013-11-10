@@ -66,7 +66,7 @@ public class Person implements Serializable {
     }
 
     public String getPicPath() {
-        return picPath == null ? "" : Constants.URL_STATIC_PREFIX +  picPath.trim();
+        return picPath == null ? "" : picPath.trim();
     }
 
     public void setPicPath(String picPath) {

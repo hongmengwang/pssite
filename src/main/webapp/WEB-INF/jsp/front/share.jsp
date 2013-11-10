@@ -6,25 +6,27 @@
         display: inline;
     }
 </style>
-<section id=wraper>
-    <section id=main>
-        <c:forEach items="${personShareList}" var="personShare">
-            <article class='article'>
-                <div class='border'>
-                    <div class='jarakgrid'>
-                        <p>
-                            <a href="/front/${nick}/share/${personShare.id}" target="_blank">
-                                <img style="display: inline;" src="${personShare.picPath}" />
-                            </a>
-                        </p>
-                        <p style="position:absolute;">
-                            <a style="font-size: 14px;" href="/front/${nick}/share/${personShare.id}" target="_blank">${personShare.shareComment}</a>
-                        </p>
-                        <p style="position:relative;font-size: 13px;">${personShare.entryDate}</p>
+<div class="content">
+    <section id=wraper>
+        <section id=main>
+            <c:forEach items="${personShareList}" var="personShare">
+                <article class='article'>
+                    <div class='border'>
+                        <div class='jarakgrid'>
+                            <p style="margin: 0;">
+                                <a href="/front/${nick}/share/${personShare.id}" target="_blank">
+                                    <img style="display: inline;" src="${staticPrefix}${personShare.picPath}" />
+                                </a>
+                            </p>
+                            <p style="position:absolute;">
+                                <a style="font-size: 14px;" href="/front/${nick}/share/${personShare.id}" target="_blank">${personShare.shareComment}</a>
+                            </p>
+                            <p style="position:relative;font-size: 13px;">${personShare.entryDate}</p>
+                        </div>
                     </div>
-                </div>
-            </article>
-        </c:forEach>
+                </article>
+            </c:forEach>
+        </section>
     </section>
-</section>
+</div>
 <jsp:include page="../base/footer.jsp" />

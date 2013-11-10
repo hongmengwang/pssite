@@ -36,7 +36,7 @@ public class AlbumPhoto implements Serializable {
     }
 
     public String getPicPath() {
-        return picPath == null ? "" : Constants.URL_STATIC_PREFIX  + picPath.trim();
+        return picPath == null ? "" : picPath.trim();
     }
 
     public void setPicPath(String picPath) {
@@ -52,7 +52,7 @@ public class AlbumPhoto implements Serializable {
     }
 
     public String getEntryDate() {
-        return entryDate == null ? "" : entryDate.trim().substring(0,entryDate.trim().length() - 2);
+        return entryDate == null ? "" : entryDate.trim();
     }
 
     public void setEntryDate(String entryDate) {

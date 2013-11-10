@@ -54,28 +54,30 @@
         visibility: hidden;
     }
 </style>
-<section id=wraper>
-    <section id=main>
-        <c:forEach items="${personDiaryList}" var="personDiary">
-            <article class='article'>
-                <div class='border'>
-                    <div class='jarakgrid'>
-                        <h6>${personDiary.entryDate}</h6>
-                        <div class='hr'></div>
-                        <p style="font-size: 14px;">
-                            ${personDiary.content}&nbsp;&nbsp;
-                            <a class="combtn" href="javascript:void(0)" onclick="showReply('comDiv${personDiary.id}')">回复</a>
-                        </p>
-                        <c:if test="${personDiary.picPath != null && personDiary.picPath != ''}">
-                            <p><img src="${personDiary.picPath}" width="500" /></p>
-                        </c:if>
-                        <div id="comDiv${personDiary.id}">
-                            <div class="ds-thread" data-thread-key="diary${personDiary.id}"></div>
+<div class="content">
+    <section id=wraper>
+        <section id=main>
+            <c:forEach items="${personDiaryList}" var="personDiary">
+                <article class='article'>
+                    <div class='border'>
+                        <div class='jarakgrid'>
+                            <h6>${personDiary.entryDate}</h6>
+                            <div class='hr'></div>
+                            <p style="font-size: 14px;">
+                                    ${personDiary.content}&nbsp;&nbsp;
+                                <a class="combtn" href="javascript:void(0)" onclick="showReply('comDiv${personDiary.id}')">回复</a>
+                            </p>
+                            <c:if test="${personDiary.picPath != null && personDiary.picPath != ''}">
+                                <p><img src="${staticPrefix}${personDiary.picPath}" width="500" /></p>
+                            </c:if>
+                            <div id="comDiv${personDiary.id}">
+                                <div class="ds-thread" data-thread-key="diary${personDiary.id}"></div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </article>
-         </c:forEach>
+                </article>
+            </c:forEach>
+        </section>
     </section>
-</section>
+</div>
 <jsp:include page="../base/footer.jsp" />
