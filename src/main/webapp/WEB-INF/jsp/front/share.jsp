@@ -13,12 +13,12 @@
                 <article class='article'>
                     <div class='border'>
                         <div class='jarakgrid'>
-                            <p style="margin: 0;">
+                            <p>
                                 <a href="/front/${nick}/share/${personShare.id}" target="_blank">
                                     <img style="display: inline;" src="${staticPrefix}${personShare.picPath}" />
                                 </a>
                             </p>
-                            <p style="position:absolute;">
+                            <p style="position:absolute;margin: 0;">
                                 <a style="font-size: 14px;" href="/front/${nick}/share/${personShare.id}" target="_blank">${personShare.shareComment}</a>
                             </p>
                             <p style="position:relative;font-size: 13px;">${personShare.entryDate}</p>
