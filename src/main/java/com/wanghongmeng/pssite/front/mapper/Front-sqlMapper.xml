@@ -71,7 +71,7 @@
             from t_album a inner join t_person p
             on a.person_id = p.id
             where p.nick = #{nick}
-            order by a.entry_date,a.order_num desc
+            order by a.order_num
         ]]>
     </select>
 

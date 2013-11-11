@@ -78,6 +78,7 @@ public class FrontController {
 
     @RequestMapping(value = "/front/{nick}/album/{albumId}" ,method = RequestMethod.GET)
     public ModelAndView albumPhoto(@PathVariable("nick") String nick,@PathVariable("albumId") int albumId,ModelAndView modelAndView){
+        modelAndView.addObject("catagory",Constants.CATAGORY_ALBUM);
         modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_ALBUM + "-" + frontService.queryAlbumById(albumId).getAlbumName());
         modelAndView.addObject("albumPhotoList",frontService.queryAlbumPhoto(albumId));
         modelAndView.setViewName("front/albumPhoto");
@@ -88,6 +89,7 @@ public class FrontController {
     @RequestMapping(value = "/front/{nick}/share/{shareId}" ,method = RequestMethod.GET)
     public ModelAndView share(@PathVariable("nick") String nick,@PathVariable("shareId") int shareId,ModelAndView modelAndView){
         PersonShare personShare = frontService.queryPersonShareById(shareId);
+        modelAndView.addObject("catagory",Constants.CATAGORY_SHARE);
         modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_SHARE + "-" + personShare.getShareComment());
         modelAndView.addObject("personShare",personShare);
         modelAndView.setViewName("front/shareContent");

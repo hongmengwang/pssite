@@ -47,11 +47,11 @@ CREATE TABLE `t_album` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `person_id` int(11) DEFAULT NULL,
   `album_name` varchar(10) DEFAULT NULL,
-  `album_cover` varchar(40) DEFAULT NULL,
+  `album_cover` varchar(50) DEFAULT NULL,
   `entry_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `order_num` tinyint(2) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -60,7 +60,7 @@ CREATE TABLE `t_album` (
 
 LOCK TABLES `t_album` WRITE;
 /*!40000 ALTER TABLE `t_album` DISABLE KEYS */;
-INSERT INTO `t_album` VALUES (1,1,'婚纱照','/album/xiaowang/1.jpg','2013-10-26 13:05:08',1),(2,1,'篮球','/album/xiaowang/2.jpg','2013-10-26 13:05:08',2),(3,1,'香山','/album/xiaowang/3.jpg','2013-10-26 13:05:08',3),(4,1,'大连','/album/xiaowang/4.jpg','2013-10-26 13:05:08',4),(5,1,'海边','/album/xiaowang/5.jpg','2013-10-26 13:05:08',5),(6,1,'坝上','/album/xiaowang/6.jpg','2013-10-26 13:05:08',6),(7,1,'天安门','/album/xiaowang/7.jpg','2013-10-26 13:05:08',7);
+INSERT INTO `t_album` VALUES (13,1,'朕','/album/1/20131110100000/20131110100001.jpg','2013-11-11 14:19:02',1),(14,1,'兄弟姐妹','/album/1/20131110100010/20131110100011.jpg','2013-11-11 16:06:53',3),(15,1,'阿拉斯加俊','/album/1/20131110100020/20131110100021.jpg','2013-11-11 16:07:00',4),(16,1,'小外甥女','/album/1/20131110100030/20131110100031.jpg','2013-11-11 16:07:06',2);
 /*!40000 ALTER TABLE `t_album` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -78,7 +78,7 @@ CREATE TABLE `t_album_photo` (
   `comments` varchar(20) DEFAULT NULL,
   `entry_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -87,7 +87,7 @@ CREATE TABLE `t_album_photo` (
 
 LOCK TABLES `t_album_photo` WRITE;
 /*!40000 ALTER TABLE `t_album_photo` DISABLE KEYS */;
-INSERT INTO `t_album_photo` VALUES (23,7,'/album/xiaowang/1.jpg','5','2013-10-26 13:05:18'),(24,7,'/album/xiaowang/2.jpg','6','2013-10-26 13:05:18'),(25,7,'/album/xiaowang/3.jpg','7','2013-10-26 13:05:18'),(26,7,'/album/xiaowang/4.jpg','8','2013-10-26 13:05:18'),(27,7,'/album/xiaowang/5.jpg','9','2013-10-26 13:05:18'),(28,7,'/album/xiaowang/6.jpg','10','2013-10-26 13:05:18'),(29,7,'/album/xiaowang/7.jpg','11','2013-10-26 13:05:18'),(30,7,'/album/xiaowang/8.jpg','12','2013-10-26 13:05:18'),(31,7,'/album/xiaowang/9.jpg','13','2013-10-26 13:05:18');
+INSERT INTO `t_album_photo` VALUES (32,13,'/album/1/20131110100000/20131110100001.jpg','朕','2013-11-11 15:03:50'),(33,13,'/album/1/20131110100000/20131110100002.jpg','又是朕','2013-11-11 15:03:50'),(34,13,'/album/1/20131110100000/20131110100003.jpg','还是朕','2013-11-11 15:03:50'),(35,14,'/album/1/20131110100010/20131110100011.jpg','我的兄弟姐妹','2013-11-11 15:07:32'),(36,14,'/album/1/20131110100010/20131110100012.jpg','我的兄弟姐妹','2013-11-11 15:07:32'),(37,14,'/album/1/20131110100010/20131110100013.jpg','我的兄弟姐妹','2013-11-11 15:07:32'),(38,14,'/album/1/20131110100010/20131110100014.jpg','我的兄弟姐妹','2013-11-11 15:07:32'),(39,15,'/album/1/20131110100020/20131110100021.jpg','彪乎乎的俊俊','2013-11-11 15:08:50'),(40,15,'/album/1/20131110100020/20131110100022.jpg','彪乎乎的俊俊','2013-11-11 15:08:50'),(41,15,'/album/1/20131110100020/20131110100023.jpg','彪乎乎的俊俊','2013-11-11 15:08:50'),(42,15,'/album/1/20131110100020/20131110100024.jpg','彪乎乎的俊俊','2013-11-11 15:08:50'),(43,15,'/album/1/20131110100020/20131110100025.jpg','彪乎乎的俊俊','2013-11-11 15:08:50'),(44,16,'/album/1/20131110100030/20131110100031.jpg','喜欢姨夫胜过小姨的外甥女','2013-11-11 15:53:50'),(45,16,'/album/1/20131110100030/20131110100032.jpg','喜欢姨夫胜过小姨的外甥女','2013-11-11 15:53:50'),(46,16,'/album/1/20131110100030/20131110100033.jpg','喜欢姨夫胜过小姨的外甥女','2013-11-11 15:53:50');
 /*!40000 ALTER TABLE `t_album_photo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -100,10 +100,10 @@ DROP TABLE IF EXISTS `t_index_photo`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `t_index_photo` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增长主键',
-  `pic` varchar(30) DEFAULT NULL COMMENT '人物id',
+  `pic_path` varchar(40) DEFAULT NULL,
   `order_num` tinyint(2) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -112,7 +112,7 @@ CREATE TABLE `t_index_photo` (
 
 LOCK TABLES `t_index_photo` WRITE;
 /*!40000 ALTER TABLE `t_index_photo` DISABLE KEYS */;
-INSERT INTO `t_index_photo` VALUES (1,'/pic/index/3.jpg',1),(2,'/pic/index/4.jpg',2),(3,'/pic/index/5.jpg',3),(4,'/pic/index/6.jpg',4),(5,'/pic/index/7.jpg',5),(6,'/pic/index/8.jpg',6),(7,'/pic/index/9.jpg',7);
+INSERT INTO `t_index_photo` VALUES (13,'/index/album/20131110110000.jpg',1),(14,'/index/album/20131110110001.jpg',2),(15,'/index/album/20131110110002.jpg',3),(16,'/index/album/20131110110003.jpg',4),(17,'/index/album/20131110110004.jpg',5);
 /*!40000 ALTER TABLE `t_index_photo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -127,7 +127,7 @@ CREATE TABLE `t_person` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增长主键',
   `name` varchar(10) DEFAULT NULL COMMENT '人物名称',
   `nick` varchar(10) DEFAULT NULL COMMENT '任务简称',
-  `pic` varchar(30) DEFAULT NULL COMMENT '图片',
+  `pic_path` varchar(30) DEFAULT NULL,
   `comments` varchar(50) DEFAULT NULL COMMENT '说明',
   `order_num` tinyint(1) DEFAULT NULL COMMENT '排序',
   `sex` char(1) DEFAULT NULL,
@@ -146,7 +146,7 @@ CREATE TABLE `t_person` (
 
 LOCK TABLES `t_person` WRITE;
 /*!40000 ALTER TABLE `t_person` DISABLE KEYS */;
-INSERT INTO `t_person` VALUES (1,'小王','xiaowang','/pic/9.jpg','凡所有像,皆为虚妄',1,'男','已婚','大连理工大学(软件工程-日语强化)','北京搜狐公司-无线事业部','啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊<br />bbbbbbbbbbbbbbbbbbbbbbbb','1986-11-10'),(2,'纪饼饼','jibingbing','/pic/4.jpg','放纵不羁爱自由',2,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `t_person` VALUES (1,'小王','xiaowang','/index/head/20131111100001.jpg','凡所有像,皆为虚妄',1,'男','已婚','大连理工大学(软件工程-日语强化)','北京搜狐公司-无线事业部','啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊<br />bbbbbbbbbbbbbbbbbbbbbbbb','1986-11-10'),(2,'纪饼饼','jibingbing','/index/head/20131111100002.jpg','放纵不羁爱自由',2,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `t_person` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -189,9 +189,9 @@ CREATE TABLE `t_person_diary` (
   `person_id` int(11) DEFAULT NULL COMMENT '人物id',
   `content` varchar(100) DEFAULT NULL COMMENT '心情',
   `entry_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '日期',
-  `pic` varchar(30) DEFAULT NULL,
+  `pic_path` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -200,8 +200,37 @@ CREATE TABLE `t_person_diary` (
 
 LOCK TABLES `t_person_diary` WRITE;
 /*!40000 ALTER TABLE `t_person_diary` DISABLE KEYS */;
-INSERT INTO `t_person_diary` VALUES (1,1,'今天天气正好','2013-09-21 05:14:41','/pic/1.jpg'),(2,1,'老婆不在家','2013-09-21 05:14:57',NULL),(3,1,'努力测试','2013-09-21 05:15:09',NULL),(4,1,'测试proxy','2013-11-03 10:43:31',NULL);
+INSERT INTO `t_person_diary` VALUES (6,1,'第一个心情日记','2013-08-11 12:21:30',NULL),(7,1,'可爱的外甥女','2013-10-15 14:13:06','/diary/1/20131110110001.jpg'),(8,1,'功能全部开发完毕!','2013-11-10 02:09:33',NULL);
 /*!40000 ALTER TABLE `t_person_diary` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `t_person_share`
+--
+
+DROP TABLE IF EXISTS `t_person_share`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `t_person_share` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `person_id` int(11) DEFAULT NULL,
+  `pic_path` varchar(30) DEFAULT NULL,
+  `share_comment` varchar(50) DEFAULT NULL,
+  `share_link` text,
+  `share_source` varchar(40) DEFAULT NULL,
+  `entry_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `t_person_share`
+--
+
+LOCK TABLES `t_person_share` WRITE;
+/*!40000 ALTER TABLE `t_person_share` DISABLE KEYS */;
+INSERT INTO `t_person_share` VALUES (1,1,'/share/1.jpg','忽然之间 & 广岛之恋 2011回蔚世界巡回演唱会台北小巨蛋站 现场版 -- 莫文蔚','<embed width=\"100%\" height=\"100%\" src=\"http://s.yytcdn.com/swf/common/playerloader.$5d384c.swf\" name=\"yinyuetaiplayer\" id=\"yinyuetaiplayer\" wmode=\"window\" allowscriptaccess=\"always\" allowfullscreen=\"true\" bgcolor=\"#000000\" flashvars=\"local=true&amp;amovid=5f4ffbc12418024&amp;refererdomain=i.yinyuetai.com&amp;hcVideoUrl=http%3A%2F%2Fhcflv.yinyuetai.com%2Fuploads%2Fvideos%2Fcommon%2F47832_43_mowenwei_huranzhijian.flv%3Fsc%3D096492c5e9e9c89c%26br%3D763&amp;videoId=51972&amp;showlyrics=false&amp;capturevideoavailable=false&amp;sendsnaplog=true&amp;usepromptbar=true&amp;popupwin=true&amp;markerlocation=http%3A%2F%2Fs.yytcdn.com%2Fswf%2Fcommon%2Fmarker.%24d12448.swf&amp;preamovid=true&amp;swflocation=http%3A%2F%2Fs.yytcdn.com%2Fswf%2Fcommon%2Fmvplayer.%248ba48b.swf\" type=\"application/x-shockwave-flash\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\">','http://v.yinyuetai.com/video/51972','2013-11-09 12:20:59'),(2,1,'/share/2.jpg','威尼斯迷路 -- 许慧欣','<embed width=\"100%\" height=\"100%\" src=\"http://s.yytcdn.com/swf/common/playerloader.$5d384c.swf\" name=\"yinyuetaiplayer\" id=\"yinyuetaiplayer\" wmode=\"window\" allowscriptaccess=\"always\" allowfullscreen=\"true\" bgcolor=\"#000000\" flashvars=\"local=true&amp;amovid=5f4ffbc12418024&amp;refererdomain=i.yinyuetai.com&amp;hcVideoUrl=http%3A%2F%2Fhcflv.yinyuetai.com%2Fuploads%2Fvideos%2Fcommon%2F47832_43_mowenwei_huranzhijian.flv%3Fsc%3D096492c5e9e9c89c%26br%3D763&amp;videoId=51972&amp;showlyrics=false&amp;capturevideoavailable=false&amp;sendsnaplog=true&amp;usepromptbar=true&amp;popupwin=true&amp;markerlocation=http%3A%2F%2Fs.yytcdn.com%2Fswf%2Fcommon%2Fmarker.%24d12448.swf&amp;preamovid=true&amp;swflocation=http%3A%2F%2Fs.yytcdn.com%2Fswf%2Fcommon%2Fmvplayer.%248ba48b.swf\" type=\"application/x-shockwave-flash\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\">','http://v.yinyuetai.com/video/51972','2013-11-09 12:20:59'),(3,1,'/share/3.jpg','魔鬼中的天使 To My Love音乐会 字幕版 -- 田馥甄','<embed width=\"100%\" height=\"100%\" src=\"http://s.yytcdn.com/swf/common/playerloader.$5d384c.swf\" name=\"yinyuetaiplayer\" id=\"yinyuetaiplayer\" wmode=\"window\" allowscriptaccess=\"always\" allowfullscreen=\"true\" bgcolor=\"#000000\" flashvars=\"local=true&amp;amovid=5f4ffbc12418024&amp;refererdomain=i.yinyuetai.com&amp;hcVideoUrl=http%3A%2F%2Fhcflv.yinyuetai.com%2Fuploads%2Fvideos%2Fcommon%2F47832_43_mowenwei_huranzhijian.flv%3Fsc%3D096492c5e9e9c89c%26br%3D763&amp;videoId=51972&amp;showlyrics=false&amp;capturevideoavailable=false&amp;sendsnaplog=true&amp;usepromptbar=true&amp;popupwin=true&amp;markerlocation=http%3A%2F%2Fs.yytcdn.com%2Fswf%2Fcommon%2Fmarker.%24d12448.swf&amp;preamovid=true&amp;swflocation=http%3A%2F%2Fs.yytcdn.com%2Fswf%2Fcommon%2Fmvplayer.%248ba48b.swf\" type=\"application/x-shockwave-flash\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\">','http://v.yinyuetai.com/video/51972','2013-11-09 12:20:59'),(4,1,'/share/4.jpg','My Last Serenade -- Joey Moe','<embed width=\"100%\" height=\"100%\" src=\"http://s.yytcdn.com/swf/common/playerloader.$5d384c.swf\" name=\"yinyuetaiplayer\" id=\"yinyuetaiplayer\" wmode=\"window\" allowscriptaccess=\"always\" allowfullscreen=\"true\" bgcolor=\"#000000\" flashvars=\"local=true&amp;amovid=5f4ffbc12418024&amp;refererdomain=i.yinyuetai.com&amp;hcVideoUrl=http%3A%2F%2Fhcflv.yinyuetai.com%2Fuploads%2Fvideos%2Fcommon%2F47832_43_mowenwei_huranzhijian.flv%3Fsc%3D096492c5e9e9c89c%26br%3D763&amp;videoId=51972&amp;showlyrics=false&amp;capturevideoavailable=false&amp;sendsnaplog=true&amp;usepromptbar=true&amp;popupwin=true&amp;markerlocation=http%3A%2F%2Fs.yytcdn.com%2Fswf%2Fcommon%2Fmarker.%24d12448.swf&amp;preamovid=true&amp;swflocation=http%3A%2F%2Fs.yytcdn.com%2Fswf%2Fcommon%2Fmvplayer.%248ba48b.swf\" type=\"application/x-shockwave-flash\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\">','http://v.yinyuetai.com/video/51972','2013-11-09 12:20:59'),(5,1,'/share/5.jpg','Bounce Totp 现场版 03/08/02 -- Sarah Connor','<embed width=\"100%\" height=\"100%\" src=\"http://s.yytcdn.com/swf/common/playerloader.$5d384c.swf\" name=\"yinyuetaiplayer\" id=\"yinyuetaiplayer\" wmode=\"window\" allowscriptaccess=\"always\" allowfullscreen=\"true\" bgcolor=\"#000000\" flashvars=\"local=true&amp;amovid=5f4ffbc12418024&amp;refererdomain=i.yinyuetai.com&amp;hcVideoUrl=http%3A%2F%2Fhcflv.yinyuetai.com%2Fuploads%2Fvideos%2Fcommon%2F47832_43_mowenwei_huranzhijian.flv%3Fsc%3D096492c5e9e9c89c%26br%3D763&amp;videoId=51972&amp;showlyrics=false&amp;capturevideoavailable=false&amp;sendsnaplog=true&amp;usepromptbar=true&amp;popupwin=true&amp;markerlocation=http%3A%2F%2Fs.yytcdn.com%2Fswf%2Fcommon%2Fmarker.%24d12448.swf&amp;preamovid=true&amp;swflocation=http%3A%2F%2Fs.yytcdn.com%2Fswf%2Fcommon%2Fmvplayer.%248ba48b.swf\" type=\"application/x-shockwave-flash\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\">','http://v.yinyuetai.com/video/51972','2013-11-09 12:20:59'),(6,1,'/share/6.jpg','忽然之间 & 广岛之恋 2011回蔚世界巡回演唱会台北小巨蛋站 现场版 -- 莫文蔚','<embed width=\"100%\" height=\"100%\" src=\"http://s.yytcdn.com/swf/common/playerloader.$5d384c.swf\" name=\"yinyuetaiplayer\" id=\"yinyuetaiplayer\" wmode=\"window\" allowscriptaccess=\"always\" allowfullscreen=\"true\" bgcolor=\"#000000\" flashvars=\"local=true&amp;amovid=5f4ffbc12418024&amp;refererdomain=i.yinyuetai.com&amp;hcVideoUrl=http%3A%2F%2Fhcflv.yinyuetai.com%2Fuploads%2Fvideos%2Fcommon%2F47832_43_mowenwei_huranzhijian.flv%3Fsc%3D096492c5e9e9c89c%26br%3D763&amp;videoId=51972&amp;showlyrics=false&amp;capturevideoavailable=false&amp;sendsnaplog=true&amp;usepromptbar=true&amp;popupwin=true&amp;markerlocation=http%3A%2F%2Fs.yytcdn.com%2Fswf%2Fcommon%2Fmarker.%24d12448.swf&amp;preamovid=true&amp;swflocation=http%3A%2F%2Fs.yytcdn.com%2Fswf%2Fcommon%2Fmvplayer.%248ba48b.swf\" type=\"application/x-shockwave-flash\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\">','http://v.yinyuetai.com/video/51972','2013-11-09 12:20:59'),(7,1,'/share/7.jpg','忽然之间 & 广岛之恋 2011回蔚世界巡回演唱会台北小巨蛋站 现场版 -- 莫文蔚','<embed width=\"100%\" height=\"100%\" src=\"http://s.yytcdn.com/swf/common/playerloader.$5d384c.swf\" name=\"yinyuetaiplayer\" id=\"yinyuetaiplayer\" wmode=\"window\" allowscriptaccess=\"always\" allowfullscreen=\"true\" bgcolor=\"#000000\" flashvars=\"local=true&amp;amovid=5f4ffbc12418024&amp;refererdomain=i.yinyuetai.com&amp;hcVideoUrl=http%3A%2F%2Fhcflv.yinyuetai.com%2Fuploads%2Fvideos%2Fcommon%2F47832_43_mowenwei_huranzhijian.flv%3Fsc%3D096492c5e9e9c89c%26br%3D763&amp;videoId=51972&amp;showlyrics=false&amp;capturevideoavailable=false&amp;sendsnaplog=true&amp;usepromptbar=true&amp;popupwin=true&amp;markerlocation=http%3A%2F%2Fs.yytcdn.com%2Fswf%2Fcommon%2Fmarker.%24d12448.swf&amp;preamovid=true&amp;swflocation=http%3A%2F%2Fs.yytcdn.com%2Fswf%2Fcommon%2Fmvplayer.%248ba48b.swf\" type=\"application/x-shockwave-flash\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\">','http://v.yinyuetai.com/video/51972','2013-11-09 12:20:59'),(8,1,'/share/8.jpg','忽然之间 & 广岛之恋 2011回蔚世界巡回演唱会台北小巨蛋站 现场版 -- 莫文蔚','<embed width=\"100%\" height=\"100%\" src=\"http://s.yytcdn.com/swf/common/playerloader.$5d384c.swf\" name=\"yinyuetaiplayer\" id=\"yinyuetaiplayer\" wmode=\"window\" allowscriptaccess=\"always\" allowfullscreen=\"true\" bgcolor=\"#000000\" flashvars=\"local=true&amp;amovid=5f4ffbc12418024&amp;refererdomain=i.yinyuetai.com&amp;hcVideoUrl=http%3A%2F%2Fhcflv.yinyuetai.com%2Fuploads%2Fvideos%2Fcommon%2F47832_43_mowenwei_huranzhijian.flv%3Fsc%3D096492c5e9e9c89c%26br%3D763&amp;videoId=51972&amp;showlyrics=false&amp;capturevideoavailable=false&amp;sendsnaplog=true&amp;usepromptbar=true&amp;popupwin=true&amp;markerlocation=http%3A%2F%2Fs.yytcdn.com%2Fswf%2Fcommon%2Fmarker.%24d12448.swf&amp;preamovid=true&amp;swflocation=http%3A%2F%2Fs.yytcdn.com%2Fswf%2Fcommon%2Fmvplayer.%248ba48b.swf\" type=\"application/x-shockwave-flash\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\">','http://v.yinyuetai.com/video/51972','2013-11-09 12:20:59'),(9,1,'/share/9.jpg','忽然之间 & 广岛之恋 2011回蔚世界巡回演唱会台北小巨蛋站 现场版 -- 莫文蔚','<embed width=\"100%\" height=\"100%\" src=\"http://s.yytcdn.com/swf/common/playerloader.$5d384c.swf\" name=\"yinyuetaiplayer\" id=\"yinyuetaiplayer\" wmode=\"window\" allowscriptaccess=\"always\" allowfullscreen=\"true\" bgcolor=\"#000000\" flashvars=\"local=true&amp;amovid=5f4ffbc12418024&amp;refererdomain=i.yinyuetai.com&amp;hcVideoUrl=http%3A%2F%2Fhcflv.yinyuetai.com%2Fuploads%2Fvideos%2Fcommon%2F47832_43_mowenwei_huranzhijian.flv%3Fsc%3D096492c5e9e9c89c%26br%3D763&amp;videoId=51972&amp;showlyrics=false&amp;capturevideoavailable=false&amp;sendsnaplog=true&amp;usepromptbar=true&amp;popupwin=true&amp;markerlocation=http%3A%2F%2Fs.yytcdn.com%2Fswf%2Fcommon%2Fmarker.%24d12448.swf&amp;preamovid=true&amp;swflocation=http%3A%2F%2Fs.yytcdn.com%2Fswf%2Fcommon%2Fmvplayer.%248ba48b.swf\" type=\"application/x-shockwave-flash\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\">','http://v.yinyuetai.com/video/51972','2013-11-09 12:20:59'),(10,1,'/share/10.jpg','忽然之间 & 广岛之恋 2011回蔚世界巡回演唱会台北小巨蛋站 现场版 -- 莫文蔚','<embed width=\"100%\" height=\"100%\" src=\"http://s.yytcdn.com/swf/common/playerloader.$5d384c.swf\" name=\"yinyuetaiplayer\" id=\"yinyuetaiplayer\" wmode=\"window\" allowscriptaccess=\"always\" allowfullscreen=\"true\" bgcolor=\"#000000\" flashvars=\"local=true&amp;amovid=5f4ffbc12418024&amp;refererdomain=i.yinyuetai.com&amp;hcVideoUrl=http%3A%2F%2Fhcflv.yinyuetai.com%2Fuploads%2Fvideos%2Fcommon%2F47832_43_mowenwei_huranzhijian.flv%3Fsc%3D096492c5e9e9c89c%26br%3D763&amp;videoId=51972&amp;showlyrics=false&amp;capturevideoavailable=false&amp;sendsnaplog=true&amp;usepromptbar=true&amp;popupwin=true&amp;markerlocation=http%3A%2F%2Fs.yytcdn.com%2Fswf%2Fcommon%2Fmarker.%24d12448.swf&amp;preamovid=true&amp;swflocation=http%3A%2F%2Fs.yytcdn.com%2Fswf%2Fcommon%2Fmvplayer.%248ba48b.swf\" type=\"application/x-shockwave-flash\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\">','http://v.yinyuetai.com/video/51972','2013-11-09 12:20:59');
+/*!40000 ALTER TABLE `t_person_share` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -213,4 +242,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-11-04 21:44:31
+-- Dump completed on 2013-11-12  0:17:17

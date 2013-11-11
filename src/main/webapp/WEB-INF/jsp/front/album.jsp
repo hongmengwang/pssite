@@ -4,7 +4,7 @@
 <div class="content">
     <ul class="thumbnails">
         <c:forEach items="${albumList}" var="album">
-            <li class="span4" style="width:30%;">
+            <li class="span3">
                 <div class="thumbnail">
                     <a href="album/${album.id}">
                         <img style="width: 100%;" alt="${album.albumName}" src="${staticPrefix}${album.albumCover}" />
