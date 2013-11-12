@@ -39,7 +39,6 @@
                 <property name="connectionPoolSize" value="10"/>
                 <property name="connectionTimeout" value="30" />
                 <property name="enableHeartBeat" value="false"/>
-
             </bean>
         </property>
         <property name="jsonTranscoder">
