@@ -8,33 +8,61 @@ var duoshuoQuery = {short_name:"wanghongmeng"};
         || document.getElementsByTagName('body')[0]).appendChild(ds);
 })();
 
-function showReply(id){
-//    var comDiv = "#" + id;
-//    if($(comDiv).css("display") == "none"){
-//        $(comDiv).slideDown();
+var front = (function(){
+    return {
+        showReply : function(id){
+            var toolbar = "#" + id + " .ds-toolbar";
+            var raplybox = "#" + id + " .ds-replybox";
+            if($(toolbar).css("display") == "none"){
+                $(toolbar).slideDown();
+            }else{
+                $(toolbar).slideUp()
+            }
+            if($(raplybox).css("display") == "none"){
+                $(raplybox).slideDown();
+                scroller(id,800);
+            }else{
+                $(raplybox).slideUp()
+            }
+        },
+        showShareDiv : function(){
+            var shareDiv = "#shareDiv";
+            if($(shareDiv).css("display") == "none"){
+                $(shareDiv).slideDown();
+            }else{
+                $(shareDiv).slideUp()
+            }
+        }
+    };
+})();
+//
+//function showReply(id){
+////    var comDiv = "#" + id;
+////    if($(comDiv).css("display") == "none"){
+////        $(comDiv).slideDown();
+////    }else{
+////        $(comDiv).slideUp()
+////    }
+//    var toolbar = "#" + id + " .ds-toolbar";
+//    var raplybox = "#" + id + " .ds-replybox";
+//    if($(toolbar).css("display") == "none"){
+//        $(toolbar).slideDown();
 //    }else{
-//        $(comDiv).slideUp()
+//        $(toolbar).slideUp()
 //    }
-    var toolbar = "#" + id + " .ds-toolbar";
-    var raplybox = "#" + id + " .ds-replybox";
-    if($(toolbar).css("display") == "none"){
-        $(toolbar).slideDown();
-    }else{
-        $(toolbar).slideUp()
-    }
-    if($(raplybox).css("display") == "none"){
-        $(raplybox).slideDown();
-        scroller(id,800);
-    }else{
-        $(raplybox).slideUp()
-    }
-}
-
-function showShareDiv(){
-    var shareDiv = "#shareDiv";
-    if($(shareDiv).css("display") == "none"){
-        $(shareDiv).slideDown();
-    }else{
-        $(shareDiv).slideUp()
-    }
-}
+//    if($(raplybox).css("display") == "none"){
+//        $(raplybox).slideDown();
+//        scroller(id,800);
+//    }else{
+//        $(raplybox).slideUp()
+//    }
+//}
+//
+//function showShareDiv(){
+//    var shareDiv = "#shareDiv";
+//    if($(shareDiv).css("display") == "none"){
+//        $(shareDiv).slideDown();
+//    }else{
+//        $(shareDiv).slideUp()
+//    }
+//}

@@ -8,7 +8,7 @@
                 <div class='border'>
                     <div class='jarakgrid' style="padding: 0;">
                         <p>${personShare.shareLink}</p>
-                        <p style="font-size: 14px;  ">${personShare.shareComment}</p>
+                        <p style="font-size: 14px;">${personShare.shareComment}</p>
                         <p style="font-size: 13px;">分享自:<a href="${personShare.shareSource}" target="_blank">${personShare.shareSource}</a></p>
                     </div>
                 </div>

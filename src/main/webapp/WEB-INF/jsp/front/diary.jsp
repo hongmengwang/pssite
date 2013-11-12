@@ -65,7 +65,7 @@
                             <div class='hr'></div>
                             <p style="font-size: 14px;">
                                     ${personDiary.content}&nbsp;&nbsp;
-                                <a class="combtn" href="javascript:void(0)" onclick="showReply('comDiv${personDiary.id}')">回复</a>
+                                <a class="combtn" href="javascript:void(0)" onclick="front.showReply('comDiv${personDiary.id}')">回复</a>
                             </p>
                             <c:if test="${personDiary.picPath != null && personDiary.picPath != ''}">
                                 <p><img src="${staticPrefix}${personDiary.picPath}" width="300" /></p>
