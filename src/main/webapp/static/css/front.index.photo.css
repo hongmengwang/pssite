@@ -43,13 +43,13 @@
 /* Preview Slider Gallery Style */
 .ps_container{
 	display:none;
-	width:680px;
+	width:700px;
 	height:500px;
 	margin:20px auto 0px auto;
 	position:relative;
 }
 .ps_image_wrapper{
-	width:680px;
+	width:700px;
 	height:450px;
 	overflow:hidden;
 	position:relative;

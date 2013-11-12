@@ -50,16 +50,18 @@
         $(".popp").colorbox({rel:'popp'});
     });
 </script>
-<ul class="thumbnails">
-    <c:forEach items="${albumPhotoList}" var="albumPhoto">
-        <li class="span3" style="width:20%">
-            <div class="thumbnail">
-                <a class="popp" href="${albumPhoto.picPath}" title="${albumPhoto.comments}">
-                    <img style="width:100%" alt="${albumPhoto.comments}" src="${albumPhoto.picPath}" onclick="showImage('${albumPhoto.picPath}')" />
-                </a>
-            </div>
-        </li>
-    </c:forEach>
-</ul>
-<div class="ds-thread"></div>
+<div class="content">
+    <ul class="thumbnails">
+        <c:forEach items="${albumPhotoList}" var="albumPhoto">
+            <li class="span3">
+                <div class="thumbnail">
+                    <a class="popp" href="${staticPrefix}${albumPhoto.picPath}" title="${albumPhoto.comments}">
+                        <img style="width:100%" alt="${albumPhoto.comments}" src="${staticPrefix}${albumPhoto.picPath}" onclick="showImage('${staticPrefix}${albumPhoto.picPath}')" />
+                    </a>
+                </div>
+            </li>
+        </c:forEach>
+    </ul>
+    <div class="ds-thread"></div>
+</div>
 <jsp:include page="../base/footer.jsp" />

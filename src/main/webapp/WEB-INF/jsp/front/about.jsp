@@ -2,29 +2,31 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <jsp:include page="../base/menu.jsp" />
-<section id=wraper>
-    <section id=main>
-        <c:forEach items="${personAboutList}" var="personAbout">
-            <article class='article'>
-                <div class='border'>
-                    <div class='jarakgrid'>
-                        <h6>${personAbout.item}</h6>
-                        <div class='hr'></div>
-                        <p>
-                            <c:if test="${fn:contains(personAbout.item,'标签')}">
-                                <c:set value="${fn:split(personAbout.content, ',') }" var="tags" />
-                                <c:forEach items="${tags}" var="tag">
-                                    <span class="label">${tag}</span>
-                                </c:forEach>
-                            </c:if>
-                            <c:if test="${!fn:contains(personAbout.item,'标签')}">
-                                ${personAbout.content}
-                            </c:if>
-                        </p>
+<div class="content">
+    <div id=wraper>
+        <div id=main>
+            <c:forEach items="${personAboutList}" var="personAbout">
+                <div class='article'>
+                    <div class='border'>
+                        <div class='jarakgrid'>
+                            <h6>${personAbout.item}</h6>
+                            <div class='hr'></div>
+                            <p>
+                                <c:if test="${fn:contains(personAbout.item,'标签')}">
+                                    <c:set value="${fn:split(personAbout.content, ',') }" var="tags" />
+                                    <c:forEach items="${tags}" var="tag">
+                                        <span class="label">${tag}</span>
+                                    </c:forEach>
+                                </c:if>
+                                <c:if test="${!fn:contains(personAbout.item,'标签')}">
+                                    ${personAbout.content}
+                                </c:if>
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </article>
-        </c:forEach>
-    </section>
-</section>
+            </c:forEach>
+        </div>
+    </div>
+</div>
 <jsp:include page="../base/footer.jsp" />

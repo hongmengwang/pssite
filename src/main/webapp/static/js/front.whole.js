@@ -24,7 +24,17 @@ function showReply(id){
     }
     if($(raplybox).css("display") == "none"){
         $(raplybox).slideDown();
+        scroller(id,800);
     }else{
         $(raplybox).slideUp()
+    }
+}
+
+function showShareDiv(){
+    var shareDiv = "#shareDiv";
+    if($(shareDiv).css("display") == "none"){
+        $(shareDiv).slideDown();
+    }else{
+        $(shareDiv).slideUp()
     }
 }

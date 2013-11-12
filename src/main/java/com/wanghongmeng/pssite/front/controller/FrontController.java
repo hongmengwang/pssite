@@ -2,6 +2,7 @@ package com.wanghongmeng.pssite.front.controller;
 
 import com.wanghongmeng.pssite.base.util.Constants;
 import com.wanghongmeng.pssite.front.model.Album;
+import com.wanghongmeng.pssite.front.model.PersonShare;
 import com.wanghongmeng.pssite.front.service.FrontService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -59,8 +60,12 @@ public class FrontController {
             modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_ALBUM);
             modelAndView.addObject("albumList",frontService.queryAlbum(nick));
         }
+        if(Constants.CATAGORY_BLOG.equals(catagory)){
+            modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_BLOG);
+        }
         if(Constants.CATAGORY_SHARE.equals(catagory)){
             modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_SHARE);
+            modelAndView.addObject("personShareList",frontService.queryPersonShare(nick));
         }
         if(Constants.CATAGORY_ABOUT.equals(catagory)){
             modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_ABOUT);
@@ -73,9 +78,21 @@ public class FrontController {
 
     @RequestMapping(value = "/front/{nick}/album/{albumId}" ,method = RequestMethod.GET)
     public ModelAndView albumPhoto(@PathVariable("nick") String nick,@PathVariable("albumId") int albumId,ModelAndView modelAndView){
+        modelAndView.addObject("catagory",Constants.CATAGORY_ALBUM);
         modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_ALBUM + "-" + frontService.queryAlbumById(albumId).getAlbumName());
         modelAndView.addObject("albumPhotoList",frontService.queryAlbumPhoto(albumId));
         modelAndView.setViewName("front/albumPhoto");
+        return modelAndView;
+    }
+
+
+    @RequestMapping(value = "/front/{nick}/share/{shareId}" ,method = RequestMethod.GET)
+    public ModelAndView share(@PathVariable("nick") String nick,@PathVariable("shareId") int shareId,ModelAndView modelAndView){
+        PersonShare personShare = frontService.queryPersonShareById(shareId);
+        modelAndView.addObject("catagory",Constants.CATAGORY_SHARE);
+        modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_SHARE + "-" + personShare.getShareComment());
+        modelAndView.addObject("personShare",personShare);
+        modelAndView.setViewName("front/shareContent");
         return modelAndView;
     }
 

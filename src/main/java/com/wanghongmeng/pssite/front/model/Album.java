@@ -44,7 +44,7 @@ public class Album implements Serializable {
     }
 
     public String getAlbumCover() {
-        return albumCover == null ? "" : Constants.URL_STATIC_PREFIX + albumCover.trim();
+        return albumCover == null ? "" : albumCover.trim();
     }
 
     public void setAlbumCover(String albumCover) {
@@ -52,7 +52,7 @@ public class Album implements Serializable {
     }
 
     public String getEntryDate() {
-        return entryDate == null ? "" : entryDate.trim().substring(0,entryDate.trim().length() - 2);
+        return entryDate == null ? "" : entryDate.trim();
     }
 
     public void setEntryDate(String entryDate) {

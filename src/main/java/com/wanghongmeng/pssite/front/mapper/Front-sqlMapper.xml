@@ -12,6 +12,15 @@
         <result column="entry_date" property="entryDate" />
     </resultMap>
 
+    <resultMap id="personShare" type="PersonShare">
+        <result column="person_id" property="personId" />
+        <result column="pic_path" property="picPath" />
+        <result column="share_comment" property="shareComment" />
+        <result column="share_link" property="shareLink" />
+        <result column="share_source" property="shareSource" />
+        <result column="entry_date" property="entryDate" />
+    </resultMap>
+
     <resultMap id="personAbout" type="PersonAbout">
         <result column="person_id" property="personId" />
     </resultMap>
@@ -62,7 +71,7 @@
             from t_album a inner join t_person p
             on a.person_id = p.id
             where p.nick = #{nick}
-            order by a.entry_date,a.order_num desc
+            order by a.order_num
         ]]>
     </select>
 
@@ -97,6 +106,24 @@
             on a.person_id = p.id
             where p.nick = #{nick}
             order by a.order_num
+        ]]>
+    </select>
+
+    <select id="queryPersonShare" resultMap="personShare">
+        <![CDATA[
+            select s.id,s.person_id,s.pic_path,s.share_comment,s.share_link,s.share_source,s.entry_date
+            from t_person_share s inner join t_person p
+            on s.person_id = p.id
+            where p.nick = #{nick}
+            order by s.entry_date desc
+        ]]>
+    </select>
+
+    <select id="queryPersonShareById" resultMap="personShare">
+        <![CDATA[
+            select id,person_id,pic_path,share_comment,share_link,share_source,entry_date
+            from t_person_share
+            where id = #{shareId}
         ]]>
     </select>
 </mapper>

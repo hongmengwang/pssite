@@ -1,15 +1,32 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <jsp:include page="../base/menu.jsp" />
-<iframe src="http://share.wanghongmeng.com" id="Iframe" frameborder="0" scrolling="auto" width="100%" height="520px" style="overflow-x: none;"></iframe>
-<%--<iframe src="./ue.html" id="Iframe" frameborder="0" scrolling="no" style="border:0px;width:1000px;" onload="autoHeight();"></iframe>--%>
-<%--<script type="text/javascript">--%>
-    <%--function autoHeight(){--%>
-        <%--var iframe = document.getElementById("Iframe");--%>
-        <%--if(iframe.Document){//ie自有属性--%>
-            <%--iframe.style.height = iframe.Document.documentElement.scrollHeight;--%>
-        <%--}else if(iframe.contentDocument){//ie,firefox,chrome,opera,safari--%>
-            <%--iframe.height = iframe.contentDocument.body.offsetHeight ;--%>
-        <%--}--%>
-    <%--}--%>
-<%--</script>--%>
+<style type="text/css">
+    .article p {
+        display: inline;
+    }
+</style>
+<div class="content">
+    <div id=wraper>
+        <div id=main>
+            <c:forEach items="${personShareList}" var="personShare">
+                <article class='article'>
+                    <div class='border'>
+                        <div class='jarakgrid'>
+                            <p>
+                                <a href="/front/${nick}/share/${personShare.id}" target="_blank">
+                                    <img style="display: inline;" src="${staticPrefix}${personShare.picPath}" />
+                                </a>
+                            </p>
+                            <p style="position:absolute;margin: 0;">
+                                <a style="font-size: 14px;" href="/front/${nick}/share/${personShare.id}" target="_blank">${personShare.shareComment}</a>
+                            </p>
+                            <p style="position:relative;font-size: 13px;">${personShare.entryDate}</p>
+                        </div>
+                    </div>
+                </article>
+            </c:forEach>
+        </div>
+    </div>
+</div>
 <jsp:include page="../base/footer.jsp" />
