@@ -34,7 +34,7 @@ var front = (function(){
             }
         },
         goTop : function(){
-            var obj=document.getElementById("goTop");
+            var obj=document.getElementById("goTopx");
             function getScrollTop(){
                 return document.documentElement.scrollTop;
             }
