@@ -21,7 +21,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class MemcachedTest {
     public static void main(String[] args) throws InterruptedException {
-        final int thread_num = 1000;
+        final int thread_num = 100;
         final AtomicInteger total = new AtomicInteger(0);
         ExecutorService executors = Executors.newFixedThreadPool(10);
         final CountDownLatch gate = new CountDownLatch(1);
