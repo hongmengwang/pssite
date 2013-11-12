@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="head.jsp" />
-<div style="width: 25%;position: fixed;_position: absolute;_top: expression(documentElement.scrollTop + 'px');">
+<div class="menu">
     <ul class="ca-menu">
         <li>
             <a href="/">

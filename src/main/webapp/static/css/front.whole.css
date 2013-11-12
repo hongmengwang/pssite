@@ -37,8 +37,9 @@ a.thumbnail:hover,a.thumbnail:focus{border-color:#0088cc;-webkit-box-shadow:0 1p
 .thumbnail .caption{padding:0 3px;color:#aaa;}
 .label, .badge {background-color: #999999;color: #FFFFFF;display: inline-block;font-size: 12px;line-height: 14px;padding: 2px 4px;text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);vertical-align: baseline;white-space: nowrap;border-radius: 4px;}
 .banner{box-shadow: 0 50px 50px rgba(0, 0, 0, 0.4) inset;font-size: 14px;padding: 6px;margin:1px;text-shadow: 0 1px #000000;width:100%;position: fixed;top: 0;z-index: 20;}
-.banner .tt{display:inline;}
-.banner .rt{float:right;margin-right: 15px;}
+.banner .left{display:inline;}
+.banner .right{float:right;margin-right: 15px;}
 .banner a{text-decoration: underline;color: #AAAAAA;}
-#goTopBtn {position: fixed;text-align: center;line-height: 30px;width: 30px;bottom: 35px;height: 33px;font-size: 12px;cursor: pointer;right: 0px;_position: absolute;_right: auto;}
+#goTopBtn {position: fixed;text-align: center;line-height: 30px;width: 30px;bottom: 35px;height: 33px;font-size: 12px;cursor: pointer;right: 0px;_position: absolute;_right: auto;display:none;z-index: 30;}
+.topblank{height:40px;}
 .content{float: right;width:75%;}

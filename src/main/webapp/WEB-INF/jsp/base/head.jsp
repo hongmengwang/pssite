@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en">
+<html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -22,12 +22,12 @@
         <script type="text/javascript" src="${staticPrefix}/js/front.scrolltop.js"></script>
     </head>
     <body>
-        <div style="display:none;z-index: 30;" id="goTopBtn">
+        <div id="goTopBtn">
             <img alt="返回顶部" border="0" onclick="goTopEx()" src="${staticPrefix}/images/lanren_top.jpg">
         </div>
         <script type=text/javascript>goTopEx();</script>
         <div class="banner">
-            <h5 class="tt">欢迎光临小王的空间</h5>
-            <h5 class="rt">如果您发现bug或有什么建议，请<a style="text-decoration:underline;" href="mailto:wang_hongmeng@126.com?subject=向小王同志提意见">联系小王</a></h5>
+            <h5 class="left">欢迎光临小王的空间</h5>
+            <h5 class="right">如果您发现bug或有什么建议，请<a style="text-decoration:underline;" href="mailto:wang_hongmeng@126.com?subject=向小王同志提意见">联系小王</a></h5>
         </div>
-        <div style="height:40px;"></div>
+        <div class="topblank"></div>
