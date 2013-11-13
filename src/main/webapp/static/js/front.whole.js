@@ -41,7 +41,15 @@ var front = (function(){
             var displayHeight = $(window).height();
             var heightPercentage = displayHeight / preferredHeight;
 
-            if(displayHeight<=430){
+            if(displayWidth <= 380){
+                $(".banner").css("display","none");
+                $(".topblank").css("display","none");
+            }else{
+                $(".banner").css("display","");
+                $(".topblank").css("display","");
+            }
+
+            if(displayHeight <= 340){
                 $(".footer").css("display","none");
             }else{
                 $(".footer").css("display","");

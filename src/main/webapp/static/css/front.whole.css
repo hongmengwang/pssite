@@ -10,8 +10,7 @@ a:hover{color:#005580;text-decoration: underline;}
 .content .diary .hr,.content .about .hr{content:""; height:1px; width:100%; background:#272727; background:-webkit-gradient(linear,left top,right top,color-stop(0%,transparent),color-stop(50%,#272727),color-stop(100%,#dfecaf)); background:-webkit-linear-gradient(left,transparent 0%,#272727 50%,transparent 100%); background:-moz-linear-gradient(left,transparent 0%,#272727 50%,transparent 100%); background:-ms-linear-gradient(left,transparent 0%,#272727 50%,transparent 100%); background:-o-linear-gradient(left,transparent 0%,#272727 50%,transparent 100%); background:linear-gradient(left,transparent 0%,#272727 50%,transparent 100%)}
 .content .diary a{font-size: 13px;text-decoration: underline;}
 .content .diary img{height: 300px;border: 1px solid #dddddd;border-radius: 3px;padding: 3px;}
-.content .share img{border: 1px solid #dddddd;border-radius: 3px;padding: 3px;}
-.content .share img{border: 1px solid #dddddd;border-radius: 3px;padding: 3px;}
+.content .share img{border: 1px solid #dddddd;border-radius: 3px;padding: 3px;width: 200px;}
 .content .share a.comment{font-size: 14px;position:absolute;top:10px;}
 .content .albums li{float:left;margin:0 0 20px 20px;list-style: none;}
 .content .albums li.span3{width:30%;}

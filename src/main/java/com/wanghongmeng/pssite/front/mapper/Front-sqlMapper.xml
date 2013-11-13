@@ -115,7 +115,6 @@
             from t_person_share s inner join t_person p
             on s.person_id = p.id
             where p.nick = #{nick}
-            order by s.entry_date desc
         ]]>
     </select>
 

@@ -266,10 +266,6 @@ input[type="submit"],
 input[type="button"],
 input[type="reset"] {
 	cursor: pointer;
-	background:none;
-	color:#aaaaaa;
-	height:30px;
-	font-size:12px;
 }
 button[disabled],
 input[disabled] {
@@ -281,9 +277,14 @@ input[type="submit"]:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 article.post-password-required input[type=submit]:hover {
-	background: none;
-	color:#005580;
-	text-decoration:underline;
+	color: #5e5e5e;
+	background-color: #ebebeb;
+	background-repeat: repeat-x;
+	background-image: -moz-linear-gradient(top, #f9f9f9, #ebebeb);
+	background-image: -ms-linear-gradient(top, #f9f9f9, #ebebeb);
+	background-image: -webkit-linear-gradient(top, #f9f9f9, #ebebeb);
+	background-image: -o-linear-gradient(top, #f9f9f9, #ebebeb);
+	background-image: linear-gradient(top, #f9f9f9, #ebebeb);
 }
 .menu-toggle:active,
 .menu-toggle.toggled-on,
@@ -304,7 +305,7 @@ input[type="reset"]:active {
 }
 .bypostauthor cite span {
 	color: #fff;
-	background-color: #005580;
+	background-color: #21759b;
 	background-image: none;
 	border: 1px solid #1f6f93;
 	border-radius: 2px;
@@ -494,9 +495,10 @@ body.custom-font-enabled {
 }
 a {
 	outline: none;
+	color: #21759b;
 }
 a:hover {
-	color: #005580;
+	color: #0f3647;
 }
 
 /* Assistive text */
@@ -552,7 +554,7 @@ a:hover {
 }
 .site-header h1 a:hover,
 .site-header h2 a:hover {
-	color: #005580;
+	color: #21759b;
 }
 .site-header h1 {
 	font-size: 24px;
@@ -590,7 +592,7 @@ a:hover {
 	color: #5e5e5e;
 }
 .main-navigation a:hover {
-	color: #005580;
+	color: #21759b;
 }
 .main-navigation ul.nav-menu,
 .main-navigation div.nav-menu > ul {
@@ -644,14 +646,13 @@ section[role="banner"] {
 	color: #757575;
 }
 .widget-area .widget a:hover {
-	color: #005580;
+	color: #21759b;
 }
 .widget-area .widget a:visited {
 	color: #9f9f9f;
 }
 .widget-area #s {
-	/*width: 53.66666666666%;  define a width to avoid dropping a wider submit button */
-	height:15px;	
+	width: 53.66666666666%; /* define a width to avoid dropping a wider submit button */
 }
 
 /* Footer */
@@ -675,7 +676,7 @@ footer[role="contentinfo"] a {
 	color: #686868;
 }
 footer[role="contentinfo"] a:hover {
-	color: #005580;
+	color: #21759b;
 }
 
 
@@ -701,10 +702,7 @@ footer[role="contentinfo"] a:hover {
 	font-weight: normal;
 }
 .entry-header .entry-title a {
-	color:#aaaaaa;
-}
-.entry-header .entry-title a:hover {
-	color:#005580;
+	text-decoration: none;
 }
 .entry-header .entry-format {
 	margin-top: 24px;
@@ -726,11 +724,7 @@ footer[role="contentinfo"] a:hover {
 }
 .comments-link a:hover,
 .entry-meta a:hover {
-	color: #005580;
-}
-.comments-link a:hover,
-.entry-meta a:hover {
-	color: #005580;
+	color: #21759b;
 }
 article.sticky .featured-post {
 	border-top: 4px double #ededed;
@@ -812,10 +806,6 @@ article.sticky .featured-post {
 .entry-content a:visited,
 .comment-content a:visited {
 	color: #9f9f9f;
-}
-.entry-content a:hover,
-.comment-content a:hover{
-	color: #005580;
 }
 .entry-content ol,
 .comment-content ol,
@@ -1166,7 +1156,7 @@ article.format-quote .entry-content blockquote {
 	color: #757575;
 }
 .format-status .entry-header header a:hover {
-	color: #005580;
+	color: #21759b;
 }
 .format-status .entry-header img {
 	float: left;
@@ -1228,7 +1218,7 @@ article.format-quote .entry-content blockquote {
 	color: #5e5e5e;
 }
 .comments-area article header a:hover {
-	color: #005580;
+	color: #21759b;
 }
 .comments-area article header cite a {
 	color: #444;
@@ -1277,7 +1267,7 @@ a.comment-edit-link {
 }
 a.comment-reply-link:hover,
 a.comment-edit-link:hover {
-	color: #005580;
+	color: #21759b;
 }
 .commentlist .pingback {
 	line-height: 1.714285714;
@@ -1373,7 +1363,7 @@ a.comment-edit-link:hover {
 	color: #757575;
 }
 .template-front-page .widget-area .widget li a:hover {
-	color: #005580;
+	color: #21759b;
 }
 .template-front-page .widget-area .widget_text img {
 	float: left;
@@ -1555,7 +1545,7 @@ img#wpstats {
 	.main-navigation .current-menu-ancestor > a,
 	.main-navigation .current_page_item > a,
 	.main-navigation .current_page_ancestor > a {
-		text-decoration:underline;
+		color: #21759B;
 		font-weight: bold;
 	}
 	.menu-toggle {
