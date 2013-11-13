@@ -34,7 +34,7 @@ var front = (function(){
             }
         },
         goTop : function(){
-            var obj=document.getElementById("goTop");
+            var obj=document.getElementById("gotop");
             function getScrollTop(){
                 return document.documentElement.scrollTop;
             }
@@ -42,10 +42,12 @@ var front = (function(){
                 document.documentElement.scrollTop=value;
             }
             window.onscroll=function(){getScrollTop()>0?obj.style.display="":obj.style.display="none";}
-            var goTop=setInterval(scrollMove,10);
-            function scrollMove(){
-                setScrollTop(getScrollTop()/1.1);
-                if(getScrollTop()<1)clearInterval(goTop);
+            obj.onclick=function(){
+                var goTop=setInterval(scrollMove,10);
+                function scrollMove(){
+                    setScrollTop(getScrollTop()/1.1);
+                    if(getScrollTop()<1)clearInterval(goTop);
+                }
             }
         }
     };
