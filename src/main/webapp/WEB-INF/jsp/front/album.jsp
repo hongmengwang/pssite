@@ -7,7 +7,7 @@
             <li class="span3">
                 <div class="album">
                     <a href="album/${album.id}">
-                        <img alt="${album.albumName}" src="${staticPrefix}${album.albumCover}" />
+                        <img alt="${album.albumName}" src="${staticPrefix}/images/imgbg.gif" style="background-image: url('${staticPrefix}${album.albumCover}');"/>
                     </a>
                     <div class="caption">
                         <h5 >

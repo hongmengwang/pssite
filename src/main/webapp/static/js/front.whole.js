@@ -2,6 +2,7 @@ $(function() {
     $(window).resize(function(){
         front.resize();
     }).trigger('resize');
+    $(".popp").colorbox({rel:'popp'});
 });
 
 var duoshuoQuery = {short_name:"wanghongmeng"};
