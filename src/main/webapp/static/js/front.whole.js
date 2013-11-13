@@ -1,3 +1,9 @@
+$(function() {
+    $(window).resize(function(){
+        front.resize();
+    }).trigger('resize');
+});
+
 var duoshuoQuery = {short_name:"wanghongmeng"};
 var duoshuo = (function(){
     var ds = document.createElement('script');
@@ -7,12 +13,6 @@ var duoshuo = (function(){
     (document.getElementsByTagName('head')[0]
         || document.getElementsByTagName('body')[0]).appendChild(ds);
 })();
-
-$(function() {
-    $(window).bind('resize', function(){
-        front.resize();
-    }).trigger('resize');
-});
 
 var front = (function(){
     return {
