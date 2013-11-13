@@ -8,6 +8,12 @@ var duoshuoQuery = {short_name:"wanghongmeng"};
         || document.getElementsByTagName('body')[0]).appendChild(ds);
 })();
 
+$(function() {
+    $(window).bind('resize', function(){
+        front.resize();
+    }).trigger('resize');
+});
+
 var front = (function(){
     return {
         showReply : function(id){
@@ -25,13 +31,36 @@ var front = (function(){
                 $(raplybox).slideUp()
             }
         },
-        showShareDiv : function(){
-            var shareDiv = "#shareDiv";
-            if($(shareDiv).css("display") == "none"){
-                $(shareDiv).slideDown();
+        resize : function(){
+            var preferredWidth = 1366;
+            var displayWidth = $(window).width();
+            var widthPercentage = displayWidth / preferredWidth;
+
+            var preferredHeight = 604;
+            var displayHeight = $(window).height();
+            var heightPercentage = displayHeight / preferredHeight;
+
+            if(displayHeight<=430){
+                $(".footer").css("display","none");
             }else{
-                $(shareDiv).slideUp()
+                $(".footer").css("display","");
             }
+
+            var iconSize = 40;
+            var newIconSize = (Math.floor(iconSize * widthPercentage) - 1) * 2;
+            newIconSize = newIconSize > iconSize ? iconSize : newIconSize;
+            $(".menu .ca-menu li a .ca-icon").css("font-size", newIconSize + "px");
+
+            var fontSize = 30;
+            var newFontSize = (Math.floor(fontSize * widthPercentage) - 1) * 2;
+            newFontSize = newFontSize > fontSize ? fontSize : newFontSize;
+            $(".menu .ca-menu li a .ca-main").css("font-size", newFontSize + "px");
+
+            var height = 85;
+            var newHeight = Math.floor(height * heightPercentage) - 1;
+            newHeight = newHeight > height ? height : newHeight;
+            $(".menu .ca-menu li").css("height", newHeight + "px");
+            $(".menu .ca-menu li a .ca-icon").css("line-height", newHeight + "px");
         },
         goTop : function(){
             var obj=document.getElementById("gotop");
@@ -52,34 +81,3 @@ var front = (function(){
         }
     };
 })();
-//
-//function showReply(id){
-////    var comDiv = "#" + id;
-////    if($(comDiv).css("display") == "none"){
-////        $(comDiv).slideDown();
-////    }else{
-////        $(comDiv).slideUp()
-////    }
-//    var toolbar = "#" + id + " .ds-toolbar";
-//    var raplybox = "#" + id + " .ds-replybox";
-//    if($(toolbar).css("display") == "none"){
-//        $(toolbar).slideDown();
-//    }else{
-//        $(toolbar).slideUp()
-//    }
-//    if($(raplybox).css("display") == "none"){
-//        $(raplybox).slideDown();
-//        scroller(id,800);
-//    }else{
-//        $(raplybox).slideUp()
-//    }
-//}
-//
-//function showShareDiv(){
-//    var shareDiv = "#shareDiv";
-//    if($(shareDiv).css("display") == "none"){
-//        $(shareDiv).slideDown();
-//    }else{
-//        $(shareDiv).slideUp()
-//    }
-//}
