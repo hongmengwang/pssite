@@ -7,5 +7,12 @@
                 </h4>
             </div>
         </div>
+        <script type="text/javascript" src="${staticPrefix}/js/jquery-1.4.4.min.js"></script>
+        <script type="text/javascript" src="${staticPrefix}/js/jquery.lazyloader.js"></script>
+        <script type="text/javascript" src="${staticPrefix}/js/front.index.photo.js"></script>
+        <script type="text/javascript" src="${staticPrefix}/js/front.person.photo.js"></script>
+        <script type="text/javascript" src="${staticPrefix}/js/front.alubm.js"></script>
+        <script type="text/javascript" src="${staticPrefix}/js/front.whole.js"></script>
+        <script type="text/javascript" src="${staticPrefix}/js/front.anchor.js"></script>
     </body>
 </html>

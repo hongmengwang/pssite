@@ -9,13 +9,6 @@
         <meta name="description" content="${description}" />
         <title>${title}</title>
         <link rel="stylesheet" href="${staticPrefix}/css/front.whole.css">
-        <script type="text/javascript" src="${staticPrefix}/js/jquery-1.4.4.min.js"></script>
-        <script type="text/javascript" src="${staticPrefix}/js/jquery.lazyloader.js"></script>
-        <script type="text/javascript" src="${staticPrefix}/js/front.index.photo.js"></script>
-        <script type="text/javascript" src="${staticPrefix}/js/front.person.photo.js"></script>
-        <script type="text/javascript" src="${staticPrefix}/js/front.alubm.js"></script>
-        <script type="text/javascript" src="${staticPrefix}/js/front.whole.js"></script>
-        <script type="text/javascript" src="${staticPrefix}/js/front.anchor.js"></script>
     </head>
     <body>
         <div id="gotop" style="display: none;">
