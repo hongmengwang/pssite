@@ -10,11 +10,11 @@
                         <img alt="${album.albumName}" data-original="${staticPrefix}/images/imgbg.gif" style="background-image: url('${staticPrefix}${album.albumCover}');"/>
                     </a>
                     <div class="caption">
-                        <h5 >
+                        <span class="size14">
                             <a href="album/${album.id}">
                                 ${album.albumName}
                             </a>
-                        </h5>
+                        </span>
                     </div>
                 </div>
             </li>

@@ -5,7 +5,7 @@
 <div class="content">
     <c:forEach items="${personDiaryList}" var="personDiary">
         <div class='diary'>
-            <h6>${personDiary.entryDate}</h6>
+            <h5>${personDiary.entryDate}</h5>
             <div class='hr'></div>
             <p class="size14">
                     ${personDiary.content}&nbsp;&nbsp;

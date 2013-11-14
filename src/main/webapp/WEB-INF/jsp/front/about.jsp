@@ -5,7 +5,7 @@
 <div class="content">
     <c:forEach items="${personAboutList}" var="personAbout">
         <div class='about'>
-            <h6>${personAbout.item}</h6>
+            <h5>${personAbout.item}</h5>
             <div class='hr'></div>
             <c:if test="${fn:contains(personAbout.item,'标签')}">
                 <c:set value="${fn:split(personAbout.content, ',') }" var="tags" />

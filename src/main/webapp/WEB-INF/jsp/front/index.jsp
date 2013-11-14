@@ -27,10 +27,9 @@
                             <img alt="${person.name}" src="${staticPrefix}${person.picPath}" />
                         </a>
                         <div class="caption">
-                            <h5>
-                                <a href="front/${person.nick}/diary">${person.name}</a>
-                            </h5>
-                            <h5>- ${person.comments}</h5>
+                            <span class="size14">
+                                <a href="front/${person.nick}/diary">${person.name}</a> - ${person.comments}
+                            </span>
                         </div>
                     </div>
                 </li>

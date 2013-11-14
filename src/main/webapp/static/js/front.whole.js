@@ -44,7 +44,7 @@ var front = (function(){
             var displayHeight = $(window).height();
             var heightPercentage = displayHeight / preferredHeight;
 
-            if(displayWidth <= 380){
+            if(displayWidth <= 408){
                 $(".banner").css("display","none");
                 $(".topblank").css("display","none");
             }else{
