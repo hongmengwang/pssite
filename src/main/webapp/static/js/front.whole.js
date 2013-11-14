@@ -58,21 +58,27 @@ var front = (function(){
                 $(".footer").css("display","");
             }
 
-            var iconSize = 40;
-            var newIconSize = (Math.floor(iconSize * widthPercentage) - 1) * 2;
-            newIconSize = newIconSize > iconSize ? iconSize : newIconSize;
-            $(".menu .ca-menu li a .ca-icon").css("font-size", newIconSize + "px");
+            var menuIconSize = 40;
+            var newMenuIconSize = (Math.floor(menuIconSize * widthPercentage) - 1) * 2;
+            newMenuIconSize = newMenuIconSize > menuIconSize ? menuIconSize : newMenuIconSize;
+            $(".menu .ca-menu li a .ca-icon").css("font-size", newMenuIconSize + "px");
 
-            var fontSize = 30;
-            var newFontSize = (Math.floor(fontSize * widthPercentage) - 1) * 2;
-            newFontSize = newFontSize > fontSize ? fontSize : newFontSize;
-            $(".menu .ca-menu li a .ca-main").css("font-size", newFontSize + "px");
+            var menuFontSize = 30;
+            var newMenuFontSize = (Math.floor(menuFontSize * widthPercentage) - 1) * 2;
+            newMenuFontSize = newMenuFontSize > menuFontSize ? menuFontSize : newMenuFontSize;
+            $(".menu .ca-menu li a .ca-main").css("font-size", newMenuFontSize + "px");
 
-            var height = 85;
-            var newHeight = Math.floor(height * heightPercentage) - 1;
-            newHeight = newHeight > height ? height : newHeight;
+            var menuHeight = 85;
+            var newHeight = Math.floor(menuHeight * heightPercentage) - 1;
+            newHeight = newHeight > menuHeight ? menuHeight : newHeight;
             $(".menu .ca-menu li").css("height", newHeight + "px");
             $(".menu .ca-menu li a .ca-icon").css("line-height", newHeight + "px");
+
+            var wrapImgHeight = 450;
+            var newWrapImgHeight = Math.floor(wrapImgHeight * heightPercentage * heightPercentage) - 1;
+            newWrapImgHeight = newWrapImgHeight > wrapImgHeight ? wrapImgHeight : newWrapImgHeight;
+            $(".wrapper .ps_image_wrapper").css("height", newWrapImgHeight + "px");
+
         },
         goTop : function(){
             function getScrollTop(){
