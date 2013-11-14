@@ -5,7 +5,7 @@
     <c:forEach items="${personShareList}" var="personShare">
         <div class='share'>
             <a href="/front/${nick}/share/${personShare.id}" target="_blank">
-                <img style="display: inline;" src="${staticPrefix}${personShare.picPath}" />
+                <img style="display: inline;" data-original="${staticPrefix}${personShare.picPath}" />
             </a>
             <a class="comment" href="/front/${nick}/share/${personShare.id}" target="_blank">${personShare.shareComment}</a>
             <span class="size13">${personShare.entryDate}</span>

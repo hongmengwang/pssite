@@ -8,7 +8,7 @@
             <li class="span3">
                 <div class="album">
                     <a class="popp" href="${staticPrefix}${albumPhoto.picPath}" title="${albumPhoto.comments}">
-                        <img alt="${albumPhoto.comments}" src="${staticPrefix}/images/imgbg.gif" style="background-image: url('${staticPrefix}${albumPhoto.picPath}');" onclick="showImage('${staticPrefix}${albumPhoto.picPath}')" />
+                        <img alt="${albumPhoto.comments}" data-original="${staticPrefix}/images/imgbg.gif" style="background-image: url('${staticPrefix}${albumPhoto.picPath}');" onclick="showImage('${staticPrefix}${albumPhoto.picPath}')" />
                     </a>
                 </div>
             </li>

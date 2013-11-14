@@ -12,7 +12,7 @@
                 <a class="combtn" href="javascript:void(0)" onclick="front.showReply('comDiv${personDiary.id}')">回复</a>
             </p>
             <c:if test="${personDiary.picPath != null && personDiary.picPath != ''}">
-                <p><img src="${staticPrefix}${personDiary.picPath}" /></p>
+                <p><img data-original="${staticPrefix}${personDiary.picPath}" /></p>
             </c:if>
             <div id="comDiv${personDiary.id}">
                 <div class="ds-thread" data-thread-key="diary${personDiary.id}"></div>
