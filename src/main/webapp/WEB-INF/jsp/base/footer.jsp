@@ -14,5 +14,6 @@
         <script type="text/javascript" src="${staticPrefix}/js/front.alubm.js"></script>
         <script type="text/javascript" src="${staticPrefix}/js/front.whole.js"></script>
         <script type="text/javascript" src="${staticPrefix}/js/front.anchor.js"></script>
+        <script type="text/javascript">front.goTop();</script>
     </body>
 </html>
