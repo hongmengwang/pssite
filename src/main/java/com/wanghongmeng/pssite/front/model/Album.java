@@ -18,6 +18,7 @@ public class Album implements Serializable {
     private String albumCover;
     private String entryDate;
     private int orderNum;
+    private int isShow;
 
     public int getId() {
         return id;
@@ -67,6 +68,14 @@ public class Album implements Serializable {
         this.orderNum = orderNum;
     }
 
+    public int getIsShow() {
+        return isShow;
+    }
+
+    public void setIsShow(int isShow) {
+        isShow = isShow;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (obj == this){
@@ -98,7 +107,8 @@ public class Album implements Serializable {
         str.append("albumName=").append(getAlbumName()).append(",");
         str.append("albumCover=").append(getAlbumCover()).append(",");
         str.append("entryDate=").append(getEntryDate()).append(".");
-        str.append("orderNum=").append(getOrderNum());
+        str.append("orderNum=").append(getOrderNum()).append(".");
+        str.append("isShow=").append(getIsShow());
         str.append("]");
         return str.toString();
     }

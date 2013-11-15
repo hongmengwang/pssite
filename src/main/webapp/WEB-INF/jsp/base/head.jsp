@@ -15,7 +15,7 @@
             <img alt="返回顶部" onclick="front.goTop()" src="${staticPrefix}/images/lanren_top.jpg">
         </div>
         <div class="banner">
-            <h5 class="left">欢迎光临${title    }</h5>
+            <h5 class="left">欢迎光临小王的空间</h5>
             <h5 class="right">如果您发现bug或有什么建议，请<a href="mailto:wang_hongmeng@126.com?subject=向小王同志提意见">联系小王</a></h5>
         </div>
         <div class="topblank"></div>
