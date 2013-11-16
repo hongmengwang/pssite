@@ -190,7 +190,6 @@ img {
     font-size: 0.785714286rem;
     line-height: 2.181818182;
     font-weight: bold;
-    text-transform: uppercase;
     color: #636363;
 }
 
@@ -524,7 +523,7 @@ a:hover {
 .site {
     padding: 0 24px;
     padding: 0 1.714285714rem;
-    background-image:url("http://localhost:9090/wordpress/xiaowang/wp-content/uploads/2013/11/bg_JeHBS4CC1.gif")
+    background-image:url("http://static.wanghongmeng.com/images/bg_jehbs4cc.gif")
 }
 .site-content {
     margin: 24px 0 0;
