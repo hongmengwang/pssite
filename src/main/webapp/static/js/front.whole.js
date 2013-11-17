@@ -86,7 +86,7 @@ var front = (function(){
             }
             function setScrollTop(value){
                 $(window).scrollTop(value);
-            } r
+            }
             $(window).scroll(function(){
                 getScrollTop() > 0 ? $("#gotop").css("display","") : $("#gotop").css("display","none");
             });
