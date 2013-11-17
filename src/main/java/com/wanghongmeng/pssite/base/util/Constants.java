@@ -10,6 +10,7 @@ package com.wanghongmeng.pssite.base.util;
 public class Constants {
     public static final String CATAGORY_DIARY = "diary";
     public static final String CATAGORY_ALBUM = "album";
+    public static final String CATAGORY_ALBUM_PHOTO = "albumPhoto";
     public static final String CATAGORY_BLOG = "blog";
     public static final String CATAGORY_SHARE = "share";
     public static final String CATAGORY_ABOUT = "about";

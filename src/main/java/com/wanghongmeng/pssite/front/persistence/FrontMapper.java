@@ -16,21 +16,21 @@ public interface FrontMapper {
 
     List<Person> queryPerson();
 
-    List<PersonDiary> queryPersonDiary(@Param("nick") String nick);
+    List<PersonDiary> queryPersonDiary(@Param("nick") String nick,@Param("start") int start,@Param("pageSize") int pageSize);
 
     List<PersonAbout> queryPersonAbout(@Param("nick") String nick);
 
-    List<PersonShare> queryPersonShare(@Param("nick") String nick);
+    List<PersonShare> queryPersonShare(@Param("nick") String nick,@Param("start") int start,@Param("pageSize") int pageSize);
 
     Person queryPersonByNick(@Param("nick") String nick);
 
     List<IndexPhoto> queryIndexPhoto();
 
-    List<Album> queryAlbum(@Param("nick") String nick);
+    List<Album> queryAlbum(@Param("nick") String nick,@Param("start") int start,@Param("pageSize") int pageSize);
 
     Album queryAlbumById(@Param("id") int id);
 
-    List<AlbumPhoto> queryAlbumPhoto(@Param("albumId") int albumId);
+    List<AlbumPhoto> queryAlbumPhoto(@Param("albumId") int albumId,@Param("start") int start,@Param("pageSize") int pageSize);
 
     PersonShare queryPersonShareById(@Param("shareId") int shareId);
 }

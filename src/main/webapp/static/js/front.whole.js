@@ -3,9 +3,6 @@ $(function() {
         front.resize();
     }).trigger('resize');
     $(".popp").colorbox({rel:'popp'});
-    $("img").lazyload({
-        effect:"fadeIn"
-    });
 });
 
 var duoshuoQuery = {short_name:"wanghongmeng"};

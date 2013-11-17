@@ -63,6 +63,7 @@
             on d.person_id = p.id
             where p.nick = #{nick}
             order by d.entry_date desc
+            limit #{start},#{pageSize}
         ]]>
     </select>
 
@@ -73,6 +74,7 @@
             on a.person_id = p.id
             where p.nick = #{nick} and is_show = 0
             order by a.order_num
+            limit #{start},#{pageSize}
         ]]>
     </select>
 
@@ -90,6 +92,7 @@
             from t_album_photo p left join t_album a
             on p.album_id = a.id
             where p.album_id = #{albumId} and a.is_show = 0
+            limit #{start},#{pageSize}
         ]]>
     </select>
 
@@ -117,6 +120,7 @@
             from t_person_share s inner join t_person p
             on s.person_id = p.id
             where p.nick = #{nick}
+            limit #{start},#{pageSize}
         ]]>
     </select>
 

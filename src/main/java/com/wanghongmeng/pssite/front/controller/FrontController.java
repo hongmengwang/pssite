@@ -9,9 +9,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created with IntelliJ IDEA.
@@ -34,38 +36,21 @@ public class FrontController {
         return modelAndView;
     }
 
-//    @RequestMapping(value = "/front/photo" ,method = RequestMethod.GET)
-//    @ResponseBody
-//    public List<Photo> getPhoto(){
-//        List<Photo> photoList = frontService.queryIndexPhoto();
-//        return photoList;
-//    }
-//
-//    @RequestMapping(value = "/front/person" ,method = RequestMethod.GET)
-//    @ResponseBody
-//    public List<Person> getPerson(){
-//        List<Person> personList = frontService.queryPersonAbout();
-//        return personList;
-//    }
-
     @RequestMapping(value = "/front/{nick}/{catagory}" ,method = RequestMethod.GET)
     public ModelAndView catagory(@PathVariable("nick") String nick,@PathVariable("catagory") String catagory,ModelAndView modelAndView){
         modelAndView.addObject("nick",nick);
         modelAndView.addObject("catagory",catagory);
         if(Constants.CATAGORY_DIARY.equals(catagory)){
             modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_DIARY);
-            modelAndView.addObject("personDiaryList",frontService.queryPersonDiary(nick));
         }
         if(Constants.CATAGORY_ALBUM.equals(catagory)){
             modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_ALBUM);
-            modelAndView.addObject("albumList",frontService.queryAlbum(nick));
         }
         if(Constants.CATAGORY_BLOG.equals(catagory)){
             modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_BLOG);
         }
         if(Constants.CATAGORY_SHARE.equals(catagory)){
             modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_SHARE);
-            modelAndView.addObject("personShareList",frontService.queryPersonShare(nick));
         }
         if(Constants.CATAGORY_ABOUT.equals(catagory)){
             modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_ABOUT);
@@ -75,19 +60,35 @@ public class FrontController {
         return modelAndView;
     }
 
-
     @RequestMapping(value = "/front/{nick}/album/{albumId}" ,method = RequestMethod.GET)
-    public ModelAndView albumPhoto(@PathVariable("nick") String nick,@PathVariable("albumId") int albumId,ModelAndView modelAndView){
+    public ModelAndView albumPhoto(@PathVariable("nick") String nick,@PathVariable("albumId") Integer albumId,ModelAndView modelAndView){
         modelAndView.addObject("catagory",Constants.CATAGORY_ALBUM);
         modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_ALBUM + "-" + frontService.queryAlbumById(albumId).getAlbumName());
-        modelAndView.addObject("albumPhotoList",frontService.queryAlbumPhoto(albumId));
+//        modelAndView.addObject("albumPhotoList",frontService.queryAlbumPhoto(albumId,0,20));
         modelAndView.setViewName("front/albumPhoto");
         return modelAndView;
     }
 
+    @RequestMapping(value = "/front/{nick}/ajax/{catagory}" ,method = RequestMethod.POST)
+    @ResponseBody
+    public List catagoryContent(@PathVariable("nick") String nick,@PathVariable("catagory") String catagory,Integer albumId,Integer start,Integer pageSize){
+        if(Constants.CATAGORY_DIARY.equals(catagory)){
+            return frontService.queryPersonDiary(nick,start,pageSize);
+        }
+        if(Constants.CATAGORY_ALBUM.equals(catagory)){
+            return frontService.queryAlbum(nick,start,pageSize);
+        }
+        if(Constants.CATAGORY_ALBUM_PHOTO.equals(catagory)){
+            return frontService.queryAlbumPhoto(albumId,start,pageSize);
+        }
+        if(Constants.CATAGORY_SHARE.equals(catagory)){
+            return frontService.queryPersonShare(nick,start,pageSize);
+        }
+        return null;
+    }
 
     @RequestMapping(value = "/front/{nick}/share/{shareId}" ,method = RequestMethod.GET)
-    public ModelAndView share(@PathVariable("nick") String nick,@PathVariable("shareId") int shareId,ModelAndView modelAndView){
+    public ModelAndView shareContent(@PathVariable("nick") String nick,@PathVariable("shareId") Integer shareId,ModelAndView modelAndView){
         PersonShare personShare = frontService.queryPersonShareById(shareId);
         modelAndView.addObject("catagory",Constants.CATAGORY_SHARE);
         modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_SHARE + "-" + personShare.getShareComment());
@@ -95,11 +96,4 @@ public class FrontController {
         modelAndView.setViewName("front/shareContent");
         return modelAndView;
     }
-
-//    @RequestMapping(value = "/front/{nick}/diary/list" ,method = RequestMethod.GET)
-//    @ResponseBody
-//    public List<Diary> getDiary(@PathVariable("nick") String nick){
-//        List<Diary> diaryList = frontService.queryPersonDiary(nick);
-//        return diaryList;
-//    }
 }

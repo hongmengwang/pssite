@@ -27,7 +27,7 @@ public class FrontTest {
 
     @Test
     public void testGetDiary(){
-        List<PersonDiary> list = frontService.queryPersonDiary("xiaowang");
-        System.out.println(list);
+//        List<PersonDiary> list = frontService.queryPersonDiary("xiaowang");
+//        System.out.println(list);
     }
 }

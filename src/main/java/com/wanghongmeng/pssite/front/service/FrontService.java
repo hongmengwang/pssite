@@ -23,24 +23,24 @@ public class FrontService {
         return frontDao.queryPerson();
     }
 
-    public List<PersonDiary> queryPersonDiary(String nick){
-        return frontDao.queryPersonDiary(nick);
+    public List<PersonDiary> queryPersonDiary(String nick,int start,int pageSize){
+        return frontDao.queryPersonDiary(nick,start,pageSize);
     }
 
     public List<IndexPhoto> queryIndexPhoto(){
         return frontDao.queryIndexPhoto();
     }
 
-    public List<Album> queryAlbum(String nick){
-        return frontDao.queryAlbum(nick);
+    public List<Album> queryAlbum(String nick,int start,int pageSize){
+        return frontDao.queryAlbum(nick,start,pageSize);
     }
 
     public Album queryAlbumById(int albumId){
         return frontDao.queryAlbumById(albumId);
     }
 
-    public List<AlbumPhoto> queryAlbumPhoto(int albumId){
-        return frontDao.queryAlbumPhoto(albumId);
+    public List<AlbumPhoto> queryAlbumPhoto(int albumId,int start,int pageSize){
+        return frontDao.queryAlbumPhoto(albumId,start,pageSize);
     }
 
     public Person queryPersonByNick(String nick){
@@ -51,8 +51,8 @@ public class FrontService {
         return frontDao.queryPersonAbout(nick);
     }
 
-    public List<PersonShare> queryPersonShare(String nick){
-        return frontDao.queryPersonShare(nick);
+    public List<PersonShare> queryPersonShare(String nick,int start,int pageSize){
+        return frontDao.queryPersonShare(nick,start,pageSize);
     }
 
     public PersonShare queryPersonShareById(int shareId){

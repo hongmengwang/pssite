@@ -1,5 +1,5 @@
 $(function() {
-    var ie 			= false;
+    var ie = false;
     if ($.browser.msie) {
         ie = true;
     }
