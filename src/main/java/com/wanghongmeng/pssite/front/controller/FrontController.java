@@ -36,21 +36,33 @@ public class FrontController {
         return modelAndView;
     }
 
+    @RequestMapping(value = "/error" ,method = RequestMethod.GET)
+    public ModelAndView error(ModelAndView modelAndView){
+        modelAndView.setViewName("base/error");
+        return modelAndView;
+    }
+
     @RequestMapping(value = "/front/{nick}/{catagory}" ,method = RequestMethod.GET)
     public ModelAndView catagory(@PathVariable("nick") String nick,@PathVariable("catagory") String catagory,ModelAndView modelAndView){
+        if(!frontService.isValidateNick(nick)){
+            return error(modelAndView);
+        }
         modelAndView.addObject("nick",nick);
         modelAndView.addObject("catagory",catagory);
         if(Constants.CATAGORY_DIARY.equals(catagory)){
             modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_DIARY);
+            modelAndView.addObject("pageSize",Constants.PAGE_SIZE_10);
         }
         if(Constants.CATAGORY_ALBUM.equals(catagory)){
             modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_ALBUM);
+            modelAndView.addObject("pageSize",Constants.PAGE_SIZE_9);
         }
         if(Constants.CATAGORY_BLOG.equals(catagory)){
             modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_BLOG);
         }
         if(Constants.CATAGORY_SHARE.equals(catagory)){
             modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_SHARE);
+            modelAndView.addObject("pageSize",Constants.PAGE_SIZE_5);
         }
         if(Constants.CATAGORY_ABOUT.equals(catagory)){
             modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_ABOUT);
@@ -62,8 +74,12 @@ public class FrontController {
 
     @RequestMapping(value = "/front/{nick}/album/{albumId}" ,method = RequestMethod.GET)
     public ModelAndView albumPhoto(@PathVariable("nick") String nick,@PathVariable("albumId") Integer albumId,ModelAndView modelAndView){
+        if(!frontService.isValidateNick(nick)){
+            return error(modelAndView);
+        }
         modelAndView.addObject("catagory",Constants.CATAGORY_ALBUM);
         modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_ALBUM + "-" + frontService.queryAlbumById(albumId).getAlbumName());
+        modelAndView.addObject("pageSize",Constants.PAGE_SIZE_9);
 //        modelAndView.addObject("albumPhotoList",frontService.queryAlbumPhoto(albumId,0,20));
         modelAndView.setViewName("front/albumPhoto");
         return modelAndView;
@@ -72,6 +88,9 @@ public class FrontController {
     @RequestMapping(value = "/front/{nick}/ajax/{catagory}" ,method = RequestMethod.POST)
     @ResponseBody
     public List catagoryContent(@PathVariable("nick") String nick,@PathVariable("catagory") String catagory,Integer albumId,Integer start,Integer pageSize){
+        if(!frontService.isValidateNick(nick)){
+            return null;
+        }
         if(Constants.CATAGORY_DIARY.equals(catagory)){
             return frontService.queryPersonDiary(nick,start,pageSize);
         }
@@ -89,6 +108,9 @@ public class FrontController {
 
     @RequestMapping(value = "/front/{nick}/share/{shareId}" ,method = RequestMethod.GET)
     public ModelAndView shareContent(@PathVariable("nick") String nick,@PathVariable("shareId") Integer shareId,ModelAndView modelAndView){
+        if(!frontService.isValidateNick(nick)){
+            return error(modelAndView);
+        }
         PersonShare personShare = frontService.queryPersonShareById(shareId);
         modelAndView.addObject("catagory",Constants.CATAGORY_SHARE);
         modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_SHARE + "-" + personShare.getShareComment());

@@ -1,5 +1,6 @@
 package com.wanghongmeng.pssite.front.service;
 
+import com.wanghongmeng.pssite.base.util.Constants;
 import com.wanghongmeng.pssite.front.dao.FrontDao;
 import com.wanghongmeng.pssite.front.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,12 @@ public class FrontService {
     }
 
     public List<PersonDiary> queryPersonDiary(String nick,int start,int pageSize){
+        if(start < 0){
+            return null;
+        }
+        if(Constants.PAGE_SIZE_10 != pageSize){
+            return null;
+        }
         return frontDao.queryPersonDiary(nick,start,pageSize);
     }
 
@@ -32,14 +39,30 @@ public class FrontService {
     }
 
     public List<Album> queryAlbum(String nick,int start,int pageSize){
+        if(start < 0){
+            return null;
+        }
+        if(Constants.PAGE_SIZE_9 != pageSize){
+            return null;
+        }
         return frontDao.queryAlbum(nick,start,pageSize);
     }
 
     public Album queryAlbumById(int albumId){
-        return frontDao.queryAlbumById(albumId);
+        Album album = frontDao.queryAlbumById(albumId);
+        if(null == album){
+            album = new Album();
+        }
+        return album;
     }
 
     public List<AlbumPhoto> queryAlbumPhoto(int albumId,int start,int pageSize){
+        if(start < 0){
+            return null;
+        }
+        if(Constants.PAGE_SIZE_9 != pageSize){
+            return null;
+        }
         return frontDao.queryAlbumPhoto(albumId,start,pageSize);
     }
 
@@ -52,11 +75,26 @@ public class FrontService {
     }
 
     public List<PersonShare> queryPersonShare(String nick,int start,int pageSize){
+        if(start < 0){
+            return null;
+        }
+        if(Constants.PAGE_SIZE_5 != pageSize){
+            return null;
+        }
         return frontDao.queryPersonShare(nick,start,pageSize);
     }
 
     public PersonShare queryPersonShareById(int shareId){
         return frontDao.queryPersonShareById(shareId);
+    }
 
+    public boolean isValidateNick(String nick){
+        List<Person> personList = frontDao.queryPerson();
+        for(Person p : personList){
+            if(p.getNick().equals(nick)){
+                return true;
+            }
+        }
+        return false;
     }
 }

@@ -1,4 +1,4 @@
-package com.wanghongmeng.pssite.front.interceptor;
+package com.wanghongmeng.pssite.base.interceptor;
 
 import com.wanghongmeng.pssite.base.util.Constants;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
  * Time: 11:18 AM
  * To change this template use File | Settings | File Templates.
  */
-public class FrontInterceptor implements HandlerInterceptor {
+public class FrontMenuInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         return true;

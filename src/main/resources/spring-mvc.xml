@@ -46,7 +46,7 @@
     <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/**"/>
-            <bean class="com.wanghongmeng.pssite.front.interceptor.FrontInterceptor" />
+            <bean class="com.wanghongmeng.pssite.base.interceptor.FrontMenuInterceptor" />
         </mvc:interceptor>
     </mvc:interceptors>
 
