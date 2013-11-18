@@ -8,12 +8,19 @@ $(function(){
         'contentData': {'pageSize':pageSize,'albumId':albumId},
         'scrollTarget': $(window),
         'heightOffset': 10,
+        'beforeLoad':function(){
+            $('#loading').fadeIn();
+        },
         'success' : function(data){
             if(data.length == 0){
                 $('.albums').stopScrollPagination();
+                $('#loading').fadeOut();
+                $("#noresult").fadeIn();
             }else{
                 if(data.length < pageSize){
                     $('.albums').stopScrollPagination();
+                    $('#loading').fadeOut();
+                    $("#noresult").fadeIn();
                 }
                 $.each(data,function(i,albumPhoto){
                     var li = $('<li />').attr('class','span3').appendTo('.albums');

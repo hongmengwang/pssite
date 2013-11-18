@@ -7,12 +7,19 @@ $(function(){
         'contentData': {"pageSize":pageSize},
         'scrollTarget': $(window),
         'heightOffset': 10,
+        'beforeLoad':function(){
+            $('#loading').fadeIn();
+        },
         'success' : function(data){
             if(data.length == 0){
                 $('.content').stopScrollPagination();
+                $('#loading').fadeOut();
+                $("#noresult").fadeIn();
             }else{
                 if(data.length < pageSize){
                     $('.content').stopScrollPagination();
+                    $('#loading').fadeOut();
+                    $("#noresult").fadeIn();
                 }
                 $.each(data,function(i,personDiary){
                     var diaryDiv = $('<div />').attr('class','diary').appendTo($('.content'));

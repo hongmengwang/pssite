@@ -6,5 +6,7 @@
         <input type="hidden" id="staticPrefix" value="${staticPrefix}" />
         <input type="hidden" id="pageSize" value="${pageSize}" />
         <div class="content"></div>
+        <div id="loading" class="loading">努力加载中。。。</div>
+        <div id="noresult" class="loading">加载完毕</div>
 <jsp:include page="../base/footer.jsp" />
 <script type="text/javascript" src="${staticPrefix}/js/front.ajax.diary.js"></script>
