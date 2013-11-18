@@ -24,8 +24,8 @@
 <jsp:include page="../base/footer.jsp" />
 <script type="text/javascript">
     $(function(){
-        var nick = "${nick}";
-        var staticPrefix = "${staticPrefix}";
+        var nick = '${nick}';
+        var staticPrefix = '${staticPrefix}';
         var pageSize = 9;
         $('.albums').scrollPagination({
             'contentPage': '/front/' + nick + '/ajax/album',
@@ -40,10 +40,13 @@
                         $('.albums').stopScrollPagination();
                     }
                     $.each(data,function(i,album){
-                        var albumStr = ' <li class="span3"><div class="album"><a href="album/' + album.id + '">';
-                        albumStr += '<img alt="' + album.albumName + '" src="' + staticPrefix + '/images/imgbg.gif" style="background-image: url(\'' + staticPrefix + album.albumCover +'\');"/>';
-                        albumStr += '</a><div class="caption"><span class="size14"><a href="album/' + album.id + '">' + album.albumName + '</a></span></div></div></li>';
-                        $(".albums").append(albumStr);
+                        var li = $('<li />').attr('class','span3').appendTo('.albums');
+                        var albumDiv = $('<div />').attr('class','album').appendTo($(li));
+                        var imgHref = $('<a />').attr('href','album/' + album.id).attr('target','_blank').appendTo($(albumDiv));
+                        var img = $('<img />').attr('alt',album.albumName).attr('src',staticPrefix + '/images/imgbg.gif').css('background-image','url(\'' + staticPrefix + album.albumCover + '\')').appendTo($(imgHref));
+                        var captionDiv = $('<div />').attr('class','caption').appendTo($(albumDiv));
+                        var span = $('<span />').attr('class','size14').appendTo($(captionDiv));
+                        var nameHref = $('<a />').attr('href', 'album/' + album.id).attr('target','_blank').html(album.albumName).appendTo($(span));
                     });
                 }
             }

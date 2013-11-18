@@ -40,15 +40,18 @@
                         $('.content').stopScrollPagination();
                     }
                     $.each(data,function(i,personDiary){
-                        var diaryStr = '<div class="diary"><h5>' + personDiary.entryDate + '</h5><div class="hr"></div>';
-                        diaryStr += '<p class="size14">' + personDiary.content + '&nbsp;&nbsp;';
-                        diaryStr += '<a class="combtn" href="javascript:void(0)" onclick="front.showReply(\'comDiv' + personDiary.id + '\')">回复</a></p>';
+                        var diaryDiv = $('<div />').attr('class','diary').appendTo($('.content'));
+                        var h5 = $('<h5 />').html(personDiary.entryDate).appendTo($(diaryDiv));
+                        var hr = $('<div />').attr('class','hr').appendTo($(diaryDiv));
+                        var replyP = $('<p />').attr('class','size14').html(personDiary.content).appendTo($(diaryDiv));
+                        var replyBtn = $('<a />').attr('class','combtn').attr('href','javascript:void(0)').html('回复').click(function(){front.showReply('comDiv' + personDiary.id)}).appendTo($(replyP));
                         if(personDiary.picPath != null && personDiary.picPath != ''){
-                            diaryStr += '<p><img src="' + staticPrefix + personDiary.picPath + '" /></p>';
+                            var imgP = $('<p />').appendTo($(diaryDiv));
+                            var img = $('<img />').attr('src',staticPrefix + personDiary.picPath).appendTo($(imgP));
 
                         }
-                        diaryStr += '<div id="comDiv' + personDiary.id + '"><div class="ds-thread" data-thread-key="diary' + personDiary.id + '"></div></div></div>';
-                        $(".content").append(diaryStr);
+                        var comDiv = $('<div />').attr('id','comDiv' + personDiary.id).appendTo($(diaryDiv));
+                        var duoshuoDiv = $('<div />').attr('class','ds-thread').attr('data-thread-key','diary' + personDiary.id).appendTo($(comDiv));
                     });
                 }
             }
