@@ -44,7 +44,7 @@
                         var h5 = $('<h5 />').html(personDiary.entryDate).appendTo($(diaryDiv));
                         var hr = $('<div />').attr('class','hr').appendTo($(diaryDiv));
                         var replyP = $('<p />').attr('class','size14').html(personDiary.content).appendTo($(diaryDiv));
-                        var replyBtn = $('<a />').attr('class','combtn').attr('href','javascript:void(0)').html('回复').click(function(){front.showReply('comDiv' + personDiary.id)}).appendTo($(replyP));
+                        var replyBtn = $('<a />').attr('class','combtn').attr('href','javascript:void(0)').html('回复').bind("click",function(){front.showReply('comDiv' + personDiary.id)}).appendTo($(replyP));
                         if(personDiary.picPath != null && personDiary.picPath != ''){
                             var imgP = $('<p />').appendTo($(diaryDiv));
                             var img = $('<img />').attr('src',staticPrefix + personDiary.picPath).appendTo($(imgP));

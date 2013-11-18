@@ -1,7 +1,5 @@
 $(function() {
-    $(window).resize(function(){
-        front.resize();
-    }).trigger('resize');
+    $(window).resize(function(){front.resize();}).trigger('resize');
     $(".popp").colorbox({rel:'popp'});
 });
 
