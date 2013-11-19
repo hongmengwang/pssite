@@ -15,12 +15,12 @@ $(function(){
             if(data.length == 0){
                 $('.albums').stopScrollPagination();
                 $('#loading').fadeOut();
-                $("#noresult").fadeIn();
+//                $("#noresult").fadeIn();
             }else{
                 if(data.length < pageSize){
                     $('.albums').stopScrollPagination();
                     $('#loading').fadeOut();
-                    $("#noresult").fadeIn();
+//                    $("#noresult").fadeIn();
                 }
                 $.each(data,function(i,albumPhoto){
                     var li = $('<li />').attr('class','span3').appendTo('.albums');

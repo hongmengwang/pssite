@@ -14,12 +14,12 @@ $(function(){
             if(data.length == 0){
                 $('.content').stopScrollPagination();
                 $('#loading').fadeOut();
-                $("#noresult").fadeIn();
+//                $("#noresult").fadeIn();
             }else{
                 if(data.length < pageSize){
                     $('.content').stopScrollPagination();
                     $('#loading').fadeOut();
-                    $("#noresult").fadeIn();
+//                    $("#noresult").fadeIn();
                 }
                 $.each(data,function(i,personShare){
                     var shareStr = '<div class="share">';

@@ -10,7 +10,9 @@
             <ul class="albums"></ul>
             <div class="ds-thread"></div>
         </div>
-        <div id="loading" class="loading">努力加载中。。。</div>
+        <div id="loading" class="loading">
+            <img src="${staticPrefix}/images/loading.gif" />
+        </div>
         <div id="noresult" class="loading">加载完毕</div>
 <jsp:include page="../base/footer.jsp" />
 <script type="text/javascript" src="${staticPrefix}/js/front.ajax.albumPhoto.js"></script>

@@ -14,12 +14,12 @@ $(function(){
             if(data.length == 0){
                 $('.content').stopScrollPagination();
                 $('#loading').fadeOut();
-                $("#noresult").fadeIn();
+//                $("#noresult").fadeIn();
             }else{
                 if(data.length < pageSize){
                     $('.content').stopScrollPagination();
                     $('#loading').fadeOut();
-                    $("#noresult").fadeIn();
+//                    $("#noresult").fadeIn();
                 }
                 $.each(data,function(i,personDiary){
                     var diaryDiv = $('<div />').attr('class','diary').appendTo($('.content'));

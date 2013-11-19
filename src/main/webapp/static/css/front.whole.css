@@ -30,7 +30,7 @@ a:hover{color:#005580;text-decoration: underline;}
 .footer{width:100%;}
 .footer .comment{width:100%;box-shadow:0 50px 50px rgba(0,0,0,.4) inset;padding:6px; text-align:center;font-size:13px;position: fixed;bottom: 0;}
 .topblank{height:40px;}
-.loading{float: right;width:75%;display: none;text-align: center;}
+.loading{float: right;width:75%;display: none;text-align: center;box-shadow: 0 1px 1px #EEEEEE inset;}
 .label{background-color: #999999;border-radius: 4px;color: #FFFFFF;display: inline-block;font-size: 13px;line-height: 15px;margin: 0 3px 5px 0;padding: 2px 4px;text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);vertical-align: baseline; white-space: nowrap;}
 #gotop {position: fixed;text-align: center;line-height: 30px;width: 30px;bottom: 35px;height: 33px;font-size: 12px;cursor: pointer;right: 0px;_position: absolute;_right: auto;z-index: 30;}
 
