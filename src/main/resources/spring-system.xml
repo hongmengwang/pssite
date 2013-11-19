@@ -45,7 +45,7 @@
 
     <bean id="pssiteMapper" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.wanghongmeng.pssite.*.persistence" />
-        <property name="sqlSessionFactoryBeanName" ref="pssiteSessionFactory"/>
+        <property name="sqlSessionFactoryBeanName" value="pssiteSessionFactory"/>
     </bean>
     <!--<bean id="pssiteMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">-->
         <!--<property name="mapperInterface" value="com.wanghongmeng.pssite.front.persistence.FrontMapper" />-->
