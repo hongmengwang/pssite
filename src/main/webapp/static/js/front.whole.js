@@ -69,10 +69,10 @@ var front = (function(){
             $(".menu .ca-menu li").css("height", newHeight + "px");
             $(".menu .ca-menu li a .ca-icon").css("line-height", newHeight + "px");
 
-            var wrapImgHeight = 450;
-            var newWrapImgHeight = Math.floor(wrapImgHeight * heightPercentage * heightPercentage) - 1;
-            newWrapImgHeight = newWrapImgHeight > wrapImgHeight ? wrapImgHeight : newWrapImgHeight;
-            $(".wrapper .ps_image_wrapper").css("height", newWrapImgHeight + "px");
+//            var wrapImgHeight = 450;
+//            var newWrapImgHeight = Math.floor(wrapImgHeight * heightPercentage * heightPercentage) - 1;
+//            newWrapImgHeight = newWrapImgHeight > wrapImgHeight ? wrapImgHeight : newWrapImgHeight;
+            $(".wrapper").css("height", widthPercentage * 100 + "%");
 
         },
         goTop : function(){
