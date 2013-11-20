@@ -1,11 +1,12 @@
 /*共用css*/
 *{margin:0;padding:0;}
+html{height: 100%;}
 body{background-image: url("../images/bg_jehbs4cc.gif");color: #aaa;font-family: Helvetica,Arial,sans-serif;}
 a{color:#aaaaaa; text-decoration:none;}
 a:hover{color:#005580;text-decoration: underline;}
 .size14{font-size: 15px;}
 .size13{font-size: 14px;}
-.content{float: right;width:75%;}
+.content{float: right;width:75%;height: 100%;}
 .content .error{margin:0 auto;font-size:200px;color:#aaaaaa;}
 .content .diary,.content .share,.content .about{position:relative;margin-bottom:10px;padding:10px;-moz-box-shadow:inset 0 1px 1px #eeeeee;-ms-box-shadow:inset 0 1px 1px #eeeeee;-o-box-shadow:inset 0 1px 1px #eeeeee;-webkit-box-shadow:inset 0 1px 1px #eee;box-shadow:inset 0 1px 1px #eee;-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;}
 .content .diary p,.content .share p,.content .about p{margin: 5px 0;}
@@ -19,16 +20,16 @@ a:hover{color:#005580;text-decoration: underline;}
 .content .albums li.span3 .album{display:block;padding:4px;line-height:20px;border:1px solid #ddd;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;-webkit-box-shadow:0 1px 3px rgba(0, 0, 0, 0.055);-moz-box-shadow:0 1px 3px rgba(0, 0, 0, 0.055);box-shadow:0 1px 3px rgba(0, 0, 0, 0.055);-webkit-transition:all 0.2s ease-in-out;-moz-transition:all 0.2s ease-in-out;-o-transition:all 0.2s ease-in-out;transition:all 0.2s ease-in-out;}
 .content .albums li.span3 .album img{width:100%;background-position:center 35%;background-repeat:no-repeat;}
 .content .albums li.span3 .album .caption{padding:0 3px;color:#aaa;}
-.head{margin: 10px 4% 20px 10%;width:20%;float:right;}
+.head{margin: 2.5% 4% 2% 10%;width:20%;float:right;}
 .head .albums li{list-style: none;float: left;margin: 0 0 30px 0;}
 .head .albums li .album{display:block;padding:4px;line-height:20px;border:1px solid #ddd;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;-webkit-box-shadow:0 1px 3px rgba(0, 0, 0, 0.055);-moz-box-shadow:0 1px 3px rgba(0, 0, 0, 0.055);box-shadow:0 1px 3px rgba(0, 0, 0, 0.055);-webkit-transition:all 0.2s ease-in-out;-moz-transition:all 0.2s ease-in-out;-o-transition:all 0.2s ease-in-out;transition:all 0.2s ease-in-out;}
 .head .albums li .album img{width:100%  ;}
-.banner{box-shadow: 0 50px 50px rgba(0, 0, 0, 0.4) inset;font-size: 16px;padding: 6px;margin:1px;text-shadow: 0 1px #000000;width:100%;position: fixed;top: 0;z-index: 20;}
+.banner{width:100%;position:fixed;box-shadow: 0 50px 50px rgba(0, 0, 0, 0.4) inset;font-size: 16px;padding: 6px;margin:1px 0 10px 0;text-shadow: 0 1px #000000;top: 0;z-index: 20;}
 .banner .left{display:inline;}
 .banner .right{float:right;margin-right: 15px;}
 .banner a{text-decoration: underline;color: #aaaaaa;}
-.footer{width:100%;}
-.footer .comment{width:100%;box-shadow:0 50px 50px rgba(0,0,0,.4) inset;padding:6px; text-align:center;font-size:13px;position: fixed;bottom: 0;}
+.footer{bottom: 0;height: 25px;position: fixed;width: 100%;z-index: 20;}
+.footer .comment{width:100%;box-shadow:0 50px 50px rgba(0,0,0,.4) inset;padding:6px; text-align:center;font-size:13px;}
 .topblank{height:40px;}
 .loading{float: right;width:75%;display: none;text-align: center;}
 .label{background-color: #999999;border-radius: 4px;color: #FFFFFF;display: inline-block;flont-size: 13px;line-height: 15px;margin: 0 3px 5px 0;padding: 2px 4px;text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);vertical-align: baseline; white-space: nowrap;}
@@ -56,7 +57,7 @@ a:hover{color:#005580;text-decoration: underline;}
 
 /*菜单css*/
 @font-face {font-family: 'WebSymbolsRegular';src: url('websymbols/websymbols-regular-webfont.eot');src: url('websymbols/websymbols-regular-webfont.eot?#iefix') format('embedded-opentype'),url('websymbols/websymbols-regular-webfont.woff') format('woff'),url('websymbols/websymbols-regular-webfont.ttf') format('truetype'),url('websymbols/websymbols-regular-webfont.svg#WebSymbolsRegular') format('svg');font-weight: normal;font-style: normal;}
-.menu{width: 24%;position: fixed;_position: absolute;_top: expression(documentElement.scrollTop + 'px');}
+.menu{z-index:20;width: 24%;position: fixed;_position: absolute;_top: expression(documentElement.scrollTop + 'px');}
 .menu .ca-menu{position:absolute;width: 100%;}
 .menu .ca-menu li{height: 85px;position: relative;display: block;-webkit-box-shadow: 1px 1px 2px rgba(0,0,0,0.2);-moz-box-shadow: 1px 1px 2px rgba(0,0,0,0.2);box-shadow: 1px 1px 2px rgba(0,0,0,0.2);margin-bottom: 4px;-webkit-transition: all 300ms linear;-moz-transition: all 300ms linear;-o-transition: all 300ms linear;-ms-transition: all 300ms linear;transition: all 300ms linear;}
 .menu .ca-menu li .active{background-color: #211111;color: #DBD6D6;}

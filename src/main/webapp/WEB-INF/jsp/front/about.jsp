@@ -13,7 +13,13 @@
                             <span class="label">${tag}</span>
                         </c:forEach>
                     </c:if>
-                    <c:if test="${!fn:contains(personAbout.item,'标签')}">
+                    <c:if test="${fn:contains(personAbout.item,'小说')}">
+                        <c:set value="${fn:split(personAbout.content, ',') }" var="novels" />
+                        <c:forEach items="${novels}" var="novel">
+                            <span>${novel}</span>
+                        </c:forEach>
+                    </c:if>
+                    <c:if test="${!fn:contains(personAbout.item,'标签')&&!fn:contains(personAbout.item,'小说')}">
                         <p class="size14">${personAbout.content}</p>
                     </c:if>
                 </div>
