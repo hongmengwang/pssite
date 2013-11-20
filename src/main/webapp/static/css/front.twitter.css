@@ -5,12 +5,13 @@
 #ds-thread #ds-reset a.ds-like-thread-button span{color:#aaa}
 #ds-thread #ds-reset a.ds-thread-liked{background:none;}
 #ds-thread #ds-reset .ds-login-buttons p{color:#aaa}
+#ds-thread #ds-reset .ds-login-buttons .ds-social-links{width:100%}
+#ds-wrapper #ds-reset .ds-logo{visibility: hidden;}
 #ds-thread #ds-reset .ds-comments-info{display: none;}
 #ds-thread #ds-reset .ds-toolbar{display: none;}
 #ds-thread #ds-reset .ds-replybox{display: none;}
 #ds-thread #ds-reset .ds-comments{border-bottom: 1px solid rgba(0, 0, 0, 0.13);width: 100%;}
 #ds-wrapper #ds-reset .ds-dialog-footer span{display:none;}
-#ds-wrapper #ds-reset .ds-logo{visibility: hidden;}
 /*#ds-thread #ds-reset li.ds-post-placeholder{font-size: 17px;}*/
 /*#ds-thread #ds-reset .ds-login-buttons p{font-size: 17px;}*/
 /*#ds-thread #ds-reset ul, #ds-thread #ds-reset ul li{font-size: 17px;}*/

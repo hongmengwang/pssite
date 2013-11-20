@@ -11,7 +11,7 @@ a:hover{color:#005580;text-decoration: underline;}
 .content .diary p,.content .share p,.content .about p{margin: 5px 0;}
 .content .diary .hr,.content .about .hr{content:""; height:1px; width:100%; background:#272727; background:-webkit-gradient(linear,left top,right top,color-stop(0%,transparent),color-stop(50%,#272727),color-stop(100%,#dfecaf)); background:-webkit-linear-gradient(left,transparent 0%,#272727 50%,transparent 100%); background:-moz-linear-gradient(left,transparent 0%,#272727 50%,transparent 100%); background:-ms-linear-gradient(left,transparent 0%,#272727 50%,transparent 100%); background:-o-linear-gradient(left,transparent 0%,#272727 50%,transparent 100%); background:linear-gradient(left,transparent 0%,#272727 50%,transparent 100%)}
 .content .diary a{font-size: 14px;text-decoration: underline;}
-.content .diary img{height: 300px;border: 1px solid #dddddd;border-radius: 3px;padding: 3px;}
+.content .diary img{width:40%;border: 1px solid #dddddd;border-radius: 3px;padding: 3px;}
 .content .share img{border: 1px solid #dddddd;border-radius: 3px;padding: 3px;width: 150px;margin: 0 10px 0 0;}
 .content .share a.comment{font-size: 16px;position:absolute;top:10px;}
 .content .albums li{float:left;margin:0 0 20px 20px;list-style: none;}
@@ -31,7 +31,7 @@ a:hover{color:#005580;text-decoration: underline;}
 .footer .comment{width:100%;box-shadow:0 50px 50px rgba(0,0,0,.4) inset;padding:6px; text-align:center;font-size:13px;position: fixed;bottom: 0;}
 .topblank{height:40px;}
 .loading{float: right;width:75%;display: none;text-align: center;}
-.label{background-color: #999999;border-radius: 4px;color: #FFFFFF;display: inline-block;font-size: 13px;line-height: 15px;margin: 0 3px 5px 0;padding: 2px 4px;text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);vertical-align: baseline; white-space: nowrap;}
+.label{background-color: #999999;border-radius: 4px;color: #FFFFFF;display: inline-block;flont-size: 13px;line-height: 15px;margin: 0 3px 5px 0;padding: 2px 4px;text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);vertical-align: baseline; white-space: nowrap;}
 #gotop {position: fixed;text-align: center;line-height: 30px;width: 30px;bottom: 35px;height: 33px;font-size: 12px;cursor: pointer;right: 0px;_position: absolute;_right: auto;z-index: 30;}
 
 /*首页图片css*/
