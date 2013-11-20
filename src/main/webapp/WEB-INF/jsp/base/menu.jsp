@@ -44,7 +44,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/front/${nick}/about" <c:if test="${catagory == 'me'}">class="active"</c:if>>
+                    <a href="/front/${nick}/about" <c:if test="${catagory == 'about'}">class="active"</c:if>>
                         <span class="ca-icon">Q</span>
                         <div class="ca-content">
                             <h2 class="ca-main">关于我</h2>
