@@ -28,13 +28,15 @@ $(function(){
                     var replyP = $('<p />').attr('class','size14').html(personDiary.content).appendTo($(diaryDiv));
                     var replyBtn = $('<a />').attr('class','combtn').attr('href','javascript:void(0)').html('回复').bind("click",function(){front.showReply('comDiv' + personDiary.id)}).appendTo($(replyP));
                     if(personDiary.picPath != null && personDiary.picPath != ''){
-                        var imgP = $('<p />').appendTo($(diaryDiv));
-                        var img = $('<img />').attr('src',staticPrefix + personDiary.picPath).appendTo($(imgP));
+                        var href = $('<a />').attr('class','popp').attr('href',staticPrefix + personDiary.picPath).attr('title',personDiary.content).appendTo($(diaryDiv));
+//                        var imgP = $('<p />').appendTo($(diaryDiv));
+                        var img = $('<img />').attr('src',staticPrefix + personDiary.picPath).appendTo($(href));
 
                     }
                     var comDiv = $('<div />').attr('id','comDiv' + personDiary.id).appendTo($(diaryDiv));
                     var duoshuoDiv = $('<div />').attr('class','ds-thread').attr('data-thread-key','diary' + personDiary.id).appendTo($(comDiv));
                 });
+                $(".popp").colorbox({rel:'popp'});
             }
         }
     });
