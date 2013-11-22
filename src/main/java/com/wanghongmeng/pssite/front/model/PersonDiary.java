@@ -51,8 +51,8 @@ public class PersonDiary implements Serializable {
     }
 
     public String getEntryDate() {
-        return entryDate.trim();
-//        return entryDate == null ? "" : entryDate.trim().substring(0,entryDate.trim().length() -2);
+//        return entryDate.trim();
+        return entryDate == null ? "" : entryDate.trim().substring(0,entryDate.trim().indexOf("."));
     }
 
     public void setEntryDate(String entryDate) {
