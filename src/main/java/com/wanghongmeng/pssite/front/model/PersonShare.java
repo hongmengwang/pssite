@@ -70,7 +70,11 @@ public class PersonShare implements Serializable {
 
     public String getEntryDate() {
 //        return entryDate.trim();
-        return entryDate == null ? "" : entryDate.trim().substring(0,entryDate.trim().indexOf("."));
+        int index = entryDate.trim().indexOf(".");
+        if(index != -1){
+            return entryDate == null ? "" : entryDate.trim().substring(0,entryDate.trim().indexOf("."));
+        }
+        return entryDate == null ? "" : entryDate.trim();
     }
 
     public void setEntryDate(String entryDate) {
