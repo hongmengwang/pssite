@@ -22,10 +22,10 @@ $(function(){
 //                   $("#noresult").fadeIn();
                }
                $.each(data,function(i,album){
-                   var li = $('<li />').attr('class','span3').appendTo('.albums');
+                   var li = $('<li />').attr('class','span3').appendTo($('.albums'));
                    var albumDiv = $('<div />').attr('class','album').appendTo($(li));
                    var imgHref = $('<a />').attr('href','album/' + album.id).appendTo($(albumDiv));
-                   var img = $('<img />').attr('alt',album.albumName).attr('src',staticPrefix + '/images/imgbg.gif').css('background-image','url(\'' + staticPrefix + album.albumCover + '\')').appendTo($(imgHref));
+                   var img = $('<img />').attr('alt',album.albumName).width('100%').height('100%').attr('src',staticPrefix + '/images/imgbg.gif').css('background-image','url(\'' + staticPrefix + album.albumCover + '\')').appendTo($(imgHref));
                    var captionDiv = $('<div />').attr('class','caption').appendTo($(albumDiv));
                    var span = $('<span />').attr('class','size14').appendTo($(captionDiv));
                    var nameHref = $('<a />').attr('href', 'album/' + album.id).html(album.albumName).appendTo($(span));

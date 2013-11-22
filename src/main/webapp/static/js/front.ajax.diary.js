@@ -34,18 +34,11 @@ $(function(){
 
                     }
                     var comDiv = $('<div />').attr('id','comDiv' + personDiary.id).appendTo($(diaryDiv));
-                    var duoshuoDiv = $('<div />').attr('class','ds-thread').attr('data-thread-key','diary' + personDiary.id).appendTo($(comDiv));
+                    var duoshuoDiv = $('<div />').attr('data-thread-key','diary' + personDiary.id).attr('data-url','http://wanghongmeng.com').attr('data-author-key','');
+                    DUOSHUO.EmbedThread($(duoshuoDiv));
+                    $(duoshuoDiv).appendTo($(comDiv));
                 });
                 $(".popp").colorbox({rel:'popp'});
-                var duoshuoQuery = {short_name:"wanghongmeng"};
-                var duoshuo = (function(){
-                    var ds = document.createElement('script');
-                    ds.type = 'text/javascript';ds.async = true;
-                    ds.src = 'http://static.duoshuo.com/embed.js';
-                    ds.charset = 'UTF-8';
-                    (document.getElementsByTagName('head')[0]
-                        || document.getElementsByTagName('body')[0]).appendChild(ds);
-                })();
             }
         }
     });

@@ -7,6 +7,7 @@
                 </h4>
             </div>
         </div>
+        <script type="text/javascript" src="http://static.duoshuo.com/embed.js"></script>
         <script type="text/javascript" src="${staticPrefix}/js/jquery-1.4.4.min.js"></script>
         <script type="text/javascript" src="${staticPrefix}/js/jquery.scrollpagination.js"></script>
         <script type="text/javascript" src="${staticPrefix}/js/front.index.photo.js"></script>

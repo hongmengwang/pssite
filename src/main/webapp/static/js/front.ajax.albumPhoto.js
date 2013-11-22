@@ -23,10 +23,10 @@ $(function(){
 //                    $("#noresult").fadeIn();
                 }
                 $.each(data,function(i,albumPhoto){
-                    var li = $('<li />').attr('class','span3').appendTo('.albums');
+                    var li = $('<li />').attr('class','span3').appendTo($('.albums'));
                     var div = $('<div />').attr('class','album').appendTo($(li));
                     var href = $('<a />').attr('class','popp').attr('href',staticPrefix + albumPhoto.picPath).attr('title',albumPhoto.comments).appendTo($(div));
-                    var img = $('<img />').attr('alt',albumPhoto.comments).attr('src',staticPrefix + '/images/imgbg.gif').css('background-image' ,'url(\'' + staticPrefix + albumPhoto.picPath + '\')').appendTo($(href));
+                    var img = $('<img />').attr('alt',albumPhoto.comments).width('100%').height('100%').attr('src',staticPrefix + '/images/imgbg.gif').css('background-image' ,'url(\'' + staticPrefix + albumPhoto.picPath + '\')').appendTo($(href));
                 });
                 $(".popp").colorbox({rel:'popp'});
             }

@@ -1,17 +1,9 @@
+var duoshuoQuery = {short_name:"wanghongmeng"};
+
 $(function() {
     $(window).resize(function(){front.resize();}).trigger('resize');
     $(".popp").colorbox({rel:'popp'});
 });
-
-var duoshuoQuery = {short_name:"wanghongmeng"};
-var duoshuo = (function(){
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';ds.async = true;
-    ds.src = 'http://static.duoshuo.com/embed.js';
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0]
-        || document.getElementsByTagName('body')[0]).appendChild(ds);
-})();
 
 var front = (function(){
     return {
