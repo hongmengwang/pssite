@@ -51,10 +51,12 @@ public class FrontController {
         modelAndView.addObject("catagory",catagory);
         if(Constants.CATAGORY_DIARY.equals(catagory)){
             modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_DIARY);
+            modelAndView.addObject("personDiaryList",frontService.queryPersonDiary(nick));
             modelAndView.addObject("pageSize",Constants.PAGE_SIZE_10);
         }
         if(Constants.CATAGORY_ALBUM.equals(catagory)){
             modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_ALBUM);
+            modelAndView.addObject("personAlbumList",frontService.queryAlbum(nick));
             modelAndView.addObject("pageSize",Constants.PAGE_SIZE_9);
         }
         if(Constants.CATAGORY_BLOG.equals(catagory)){
@@ -62,6 +64,7 @@ public class FrontController {
         }
         if(Constants.CATAGORY_SHARE.equals(catagory)){
             modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_SHARE);
+            modelAndView.addObject("personShareList",frontService.queryPersonShare(nick));
             modelAndView.addObject("pageSize",Constants.PAGE_SIZE_5);
         }
         if(Constants.CATAGORY_ABOUT.equals(catagory)){
@@ -80,31 +83,31 @@ public class FrontController {
         modelAndView.addObject("catagory",Constants.CATAGORY_ALBUM);
         modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_ALBUM + "-" + frontService.queryAlbumById(albumId).getAlbumName());
         modelAndView.addObject("pageSize",Constants.PAGE_SIZE_9);
-//        modelAndView.addObject("albumPhotoList",frontService.queryAlbumPhoto(albumId,0,20));
+        modelAndView.addObject("albumPhotoList",frontService.queryAlbumPhoto(albumId));
         modelAndView.setViewName("front/albumPhoto");
         return modelAndView;
     }
 
-    @RequestMapping(value = "/front/{nick}/ajax/{catagory}" ,method = RequestMethod.POST)
-    @ResponseBody
-    public List catagoryContent(@PathVariable("nick") String nick,@PathVariable("catagory") String catagory,Integer albumId,Integer start,Integer pageSize){
-        if(!frontService.isValidateNick(nick)){
-            return null;
-        }
-        if(Constants.CATAGORY_DIARY.equals(catagory)){
-            return frontService.queryPersonDiary(nick,start,pageSize);
-        }
-        if(Constants.CATAGORY_ALBUM.equals(catagory)){
-            return frontService.queryAlbum(nick,start,pageSize);
-        }
-        if(Constants.CATAGORY_ALBUM_PHOTO.equals(catagory)){
-            return frontService.queryAlbumPhoto(albumId,start,pageSize);
-        }
-        if(Constants.CATAGORY_SHARE.equals(catagory)){
-            return frontService.queryPersonShare(nick,start,pageSize);
-        }
-        return null;
-    }
+//    @RequestMapping(value = "/front/{nick}/ajax/{catagory}" ,method = RequestMethod.POST)
+//    @ResponseBody
+//    public List catagoryContent(@PathVariable("nick") String nick,@PathVariable("catagory") String catagory,Integer albumId,Integer start,Integer pageSize){
+//        if(!frontService.isValidateNick(nick)){
+//            return null;
+//        }
+//        if(Constants.CATAGORY_DIARY.equals(catagory)){
+//            return frontService.queryPersonDiary(nick,start,pageSize);
+//        }
+//        if(Constants.CATAGORY_ALBUM.equals(catagory)){
+//            return frontService.queryAlbum(nick,start,pageSize);
+//        }
+//        if(Constants.CATAGORY_ALBUM_PHOTO.equals(catagory)){
+//            return frontService.queryAlbumPhoto(albumId,start,pageSize);
+//        }
+//        if(Constants.CATAGORY_SHARE.equals(catagory)){
+//            return frontService.queryPersonShare(nick,start,pageSize);
+//        }
+//        return null;
+//    }
 
     @RequestMapping(value = "/front/{nick}/share/{shareId}" ,method = RequestMethod.GET)
     public ModelAndView shareContent(@PathVariable("nick") String nick,@PathVariable("shareId") Integer shareId,ModelAndView modelAndView){

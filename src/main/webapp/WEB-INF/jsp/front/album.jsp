@@ -1,15 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="../base/menu.jsp" />
-        <input type="hidden" id="nick" value="${nick}" />
-        <input type="hidden" id="staticPrefix" value="${staticPrefix}" />
-        <input type="hidden" id="pageSize" value="${pageSize}" />
-        <div class="content">
-            <ul class="albums"></ul>
-        </div>
-        <div id="loading" class="loading">
-            <img src="${staticPrefix}/images/loading.gif" />
-        </div>
-        <div id="noresult" class="loading">加载完毕</div>
+<div class="content">
+    <ul class="albums">
+        <c:forEach items="${personAlbumList}" var="album">
+            <li class="span3">
+                <div class="album">
+                    <a href="album/${album.id}">
+                        <img alt="${album.albumName}" src="${staticPrefix}/images/imgbg.gif" style="background-image: url('${staticPrefix}${album.albumCover}');"/>
+                    </a>
+                    <div class="caption">
+                        <span class="size14">
+                            <a href="album/${album.id}">${album.albumName}</a>
+                        </span>
+                    </div>
+                </div>
+            </li>
+        </c:forEach>
+    </ul>
+</div>
 <jsp:include page="../base/footer.jsp" />
-<script type="text/javascript" src="${staticPrefix}/js/front.ajax.album.js"></script>

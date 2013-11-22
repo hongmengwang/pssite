@@ -24,28 +24,16 @@ public class FrontService {
         return frontDao.queryPerson();
     }
 
-    public List<PersonDiary> queryPersonDiary(String nick,int start,int pageSize){
-        if(start < 0){
-            return null;
-        }
-        if(Constants.PAGE_SIZE_10 != pageSize){
-            return null;
-        }
-        return frontDao.queryPersonDiary(nick,start,pageSize);
+    public List<PersonDiary> queryPersonDiary(String nick){
+        return frontDao.queryPersonDiary(nick);
     }
 
     public List<IndexPhoto> queryIndexPhoto(){
         return frontDao.queryIndexPhoto();
     }
 
-    public List<Album> queryAlbum(String nick,int start,int pageSize){
-        if(start < 0){
-            return null;
-        }
-        if(Constants.PAGE_SIZE_9 != pageSize){
-            return null;
-        }
-        return frontDao.queryAlbum(nick,start,pageSize);
+    public List<Album> queryAlbum(String nick){
+        return frontDao.queryAlbum(nick);
     }
 
     public Album queryAlbumById(int albumId){
@@ -56,14 +44,8 @@ public class FrontService {
         return album;
     }
 
-    public List<AlbumPhoto> queryAlbumPhoto(int albumId,int start,int pageSize){
-        if(start < 0){
-            return null;
-        }
-        if(Constants.PAGE_SIZE_9 != pageSize){
-            return null;
-        }
-        return frontDao.queryAlbumPhoto(albumId,start,pageSize);
+    public List<AlbumPhoto> queryAlbumPhoto(int albumId){
+        return frontDao.queryAlbumPhoto(albumId);
     }
 
     public Person queryPersonByNick(String nick){
@@ -74,14 +56,8 @@ public class FrontService {
         return frontDao.queryPersonAbout(nick);
     }
 
-    public List<PersonShare> queryPersonShare(String nick,int start,int pageSize){
-        if(start < 0){
-            return null;
-        }
-        if(Constants.PAGE_SIZE_5 != pageSize){
-            return null;
-        }
-        return frontDao.queryPersonShare(nick,start,pageSize);
+    public List<PersonShare> queryPersonShare(String nick){
+        return frontDao.queryPersonShare(nick);
     }
 
     public PersonShare queryPersonShareById(int shareId){

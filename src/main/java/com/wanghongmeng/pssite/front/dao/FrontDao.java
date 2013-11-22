@@ -29,8 +29,8 @@ public class FrontDao {
 //    @ReadThroughSingleCache(namespac  e = "frontDao:queryPersonDiary",expiration = 86400)
 //    public List<Diary> queryPersonDiary(@ParameterValueKeyProvider String nick){
     @Cacheable(value = "memcached",key = "'frontDao:queryPersonDiary:' + #nick + ':' + #start")
-    public List<PersonDiary> queryPersonDiary(String nick,int start,int pageSize){
-        return frontMapper.queryPersonDiary(nick,start,pageSize);
+    public List<PersonDiary> queryPersonDiary(String nick){
+        return frontMapper.queryPersonDiary(nick);
     }
 
 //    @ReadThroughAssignCache(namespace = "frontDao",assignedKey = "queryIndexPhoto",expiration = 86400)
@@ -41,8 +41,8 @@ public class FrontDao {
 
 //    @ReadThroughSingleCache(namespace = "frontDao:queryAlbum",expiration = 86400)
     @Cacheable(value = "memcached",key = "'frontDao:queryAlbum:' + #nick + ':' + #start")
-    public List<Album> queryAlbum(String nick,int start,int pageSize){
-        return frontMapper.queryAlbum(nick,start,pageSize);
+    public List<Album> queryAlbum(String nick){
+        return frontMapper.queryAlbum(nick);
     }
 
 //    @ReadThroughSingleCache(namespace = "frontDao:queryAlbumById",expiration = 86400)
@@ -53,8 +53,8 @@ public class FrontDao {
 
 //    @ReadThroughSingleCache(namespace = "frontDao:queryAlbumPhoto",expiration = 86400)
     @Cacheable(value = "memcached",key = "'frontDao:queryAlbumPhoto:' + #albumId + ':' + #start")
-    public List<AlbumPhoto> queryAlbumPhoto(int albumId,int start,int pageSize){
-        return frontMapper.queryAlbumPhoto(albumId,start,pageSize);
+    public List<AlbumPhoto> queryAlbumPhoto(int albumId){
+        return frontMapper.queryAlbumPhoto(albumId);
     }
 
 //    @ReadThroughSingleCache(namespace = "frontDao:queryPersonByNick",expiration = 86400)
@@ -71,8 +71,8 @@ public class FrontDao {
 
     //    @ReadThroughSingleCache(namespace = "frontDao:queryPersonShare",expiration = 86400)
     @Cacheable(value = "memcached",key = "'frontDao:queryPersonShare:' + #nick + ':' + #start + ':' + #pageSize")
-    public List<PersonShare> queryPersonShare(String nick,int start,int pageSize){
-        return frontMapper.queryPersonShare(nick,start,pageSize);
+    public List<PersonShare> queryPersonShare(String nick){
+        return frontMapper.queryPersonShare(nick);
     }
 
     //    @ReadThroughSingleCache(namespace = "frontDao:queryPersonShareById",expiration = 86400)

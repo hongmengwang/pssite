@@ -1,13 +1,15 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <jsp:include page="../base/menu.jsp" />
-        <input type="hidden" id="nick" value="${nick}" />
-        <input type="hidden" id="staticPrefix" value="${staticPrefix}" />
-        <input type="hidden" id="pageSize" value="${pageSize}" />
-        <div class="content"></div>
-        <div id="loading" class="loading">
-            <img src="${staticPrefix}/images/loading.gif" />
+<div class="content">
+    <c:forEach items="${personShareList}" var="personShare">
+        <div class='share'>
+            <a href="/front/${nick}/share/${personShare.id}" target="_blank">
+                <img style="display: inline;" src="${staticPrefix}${personShare.picPath}" />
+            </a>
+            <a class="comment" href="/front/${nick}/share/${personShare.id}" target="_blank">${personShare.shareComment}</a>
+            <span class="size13">${personShare.entryDate}</span>
         </div>
-        <div id="noresult" class="loading">加载完毕</div>
+    </c:forEach>
+</div>
 <jsp:include page="../base/footer.jsp" />
-<script type="text/javascript" src="${staticPrefix}/js/front.ajax.share.js"></script>
