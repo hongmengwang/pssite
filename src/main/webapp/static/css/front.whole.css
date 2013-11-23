@@ -27,7 +27,7 @@ a:hover{color:#005580;}
 .banner{width:100%;position:fixed;box-shadow: 0 50px 50px rgba(0, 0, 0, 0.4) inset;font-size: 16px;padding: 6px;margin:1px 0 10px 0;text-shadow: 0 1px #000000;top: 0;z-index: 20;}
 .banner .left{display:inline;}
 .banner .right{float:right;margin-right: 15px;}
-.banner a{text-decoration: underline;color: #aaaaaa;}
+/*.banner a{text-decoration: underline;color: #aaaaaa;}*/
 .footer{bottom: 0;height: 25px;position: fixed;width: 100%;z-index: 20;}
 .footer .comment{width:100%;box-shadow:0 50px 50px rgba(0,0,0,.4) inset;padding:6px; text-align:center;font-size:13px;}
 .topblank{height:40px;}

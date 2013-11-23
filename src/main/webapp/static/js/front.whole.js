@@ -84,6 +84,11 @@ var front = (function(){
                     if(getScrollTop()<1)clearInterval(gotop);
                 }
             });
+        },
+        initHeight : function (){
+            var height = $(".content").parent().parent().css("height");
+            height = height.substr(0,height.length - 2  ) - 50;
+            $("#Iframe").attr("height",height);
         }
     };
 })();
