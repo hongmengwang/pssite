@@ -1,5 +1,9 @@
 package com.wanghongmeng.pssite.base.util;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: wanghongmeng
@@ -26,4 +30,25 @@ public class Constants {
     public static final String SEO_KEYWORD = "王洪孟,小王,小王的空间,小王family";
     public static final String SEO_DESCRIPTION= "欢迎光临小王的空间,本网站由小王挨行码成!";
     public static final String URL_STATIC_PREFIX = "http://static.wanghongmeng.com";
+    private static final List<String> MOBILE_AGENT_LIST = Arrays.asList(new String[]{"Android","iPhone","windows phone","symbian"});
+
+    public static boolean isMobile(String userAgent){
+        if(isNull(userAgent)){
+            return false;
+        }
+        for(String s : MOBILE_AGENT_LIST){
+            if(userAgent.contains(s)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static boolean isNull(String str){
+        if(null == str || "".equals(str)){
+            return true;
+        }
+        return false;
+    }
+
 }

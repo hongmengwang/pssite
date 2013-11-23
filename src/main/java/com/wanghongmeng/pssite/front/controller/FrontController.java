@@ -5,6 +5,7 @@ import com.wanghongmeng.pssite.front.model.Album;
 import com.wanghongmeng.pssite.front.model.PersonShare;
 import com.wanghongmeng.pssite.front.service.FrontService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
 
@@ -28,11 +30,18 @@ public class FrontController {
     private FrontService frontService;
 
     @RequestMapping(value = "/" ,method = RequestMethod.GET)
-    public ModelAndView index(ModelAndView modelAndView){
+    public ModelAndView index(ModelAndView modelAndView,HttpServletRequest request){
         modelAndView.addObject("title",Constants.TITLE);
         modelAndView.addObject("indexPhotoList",frontService.queryIndexPhoto());
         modelAndView.addObject("personList", frontService.queryPerson());
-        modelAndView.setViewName("front/index");
+
+        String userAgent = request.getHeader("user-agent");
+        if(Constants.isMobile(userAgent)){
+            modelAndView.addObject("isMobile","1");
+            modelAndView.setViewName("front/m.index");
+        }else{
+            modelAndView.setViewName("front/index");
+        }
         return modelAndView;
     }
 

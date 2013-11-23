@@ -64,7 +64,10 @@ var front = (function(){
 //            var wrapImgHeight = 450;
 //            var newWrapImgHeight = Math.floor(wrapImgHeight * heightPercentage * heightPercentage) - 1;
 //            newWrapImgHeight = newWrapImgHeight > wrapImgHeight ? wrapImgHeight : newWrapImgHeight;
-            $(".wrapper").css("height", widthPercentage * 100 + "%");
+            var isMobile = $("#isMobile").val();
+            if(isMobile != 1){
+                $(".wrapper").css("height", widthPercentage * 100 + "%");
+            }
 
         },
         goTop : function(){
