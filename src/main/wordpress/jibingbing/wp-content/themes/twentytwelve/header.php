@@ -21,6 +21,8 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
+<meta name="keywords" content="小王的空间,王洪孟,小王,小王family" />
+<meta name="description" content="欢迎光临小王的空间,本网站由小王挨行码成!" />
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
