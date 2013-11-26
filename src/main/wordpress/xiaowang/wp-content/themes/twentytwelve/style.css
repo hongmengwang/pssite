@@ -1616,6 +1616,7 @@ img#wpstats {
 @media screen and (min-width: 960px) {
 	body {
 		background-color: #e6e6e6;
+		background-image:url("http://static.wanghongmeng.com/images/bg_jehbs4cc.gif");
 	}
 	/*body .site {
 		padding: 0 40px;
