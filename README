@@ -1,1 +1,18 @@
-This file was created by IntelliJ IDEA 12.0.4 for binding GitHub repository
+个人网站，http://www.wanghongmeng.com
+
+标签：java、mysql、spring、spring mvc、mybatis、jquery、nginx、memcached、wordpress、resin、maven、git、idea
+
+使用阿里云ECS云服务器，单核、1G内存、1M带宽。
+
+主站:wanghongmeng.com
+静态资源:static.wanghongmeng.com
+博客:blog.wanghongmeng.com
+
+ngin做前端总负载
+wanghongmeng.com转发到8080端口，resin监听
+static.wanghongmeng.com转到文件系统
+blog.wanghongmeng.com转到9090端口，php-fpm监听
+
+
+
+
