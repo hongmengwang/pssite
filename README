@@ -2,7 +2,7 @@
 
 标签：java、mysql、spring、spring mvc、mybatis、jquery、nginx、memcached、wordpress、resin、maven、git、idea
 
-使用阿里云ECS云服务器，单核、1G内存、1M带宽。
+使用阿里云ECS云服务器，单核、1G内存、1M带宽、20G硬盘，最便宜的那种。
 
 主站:wanghongmeng.com
 静态资源:static.wanghongmeng.com
