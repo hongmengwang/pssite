@@ -9,10 +9,9 @@
 博客:blog.wanghongmeng.com
 
 ngin做前端总负载
-wanghongmeng.com转发到8080端口，resin监听
-static.wanghongmeng.com转到文件系统
+wanghongmeng.com转到8080端口，resin监听
 blog.wanghongmeng.com转到9090端口，php-fpm监听
-
+static.wanghongmeng.com转到文件系统
 
 
 
