@@ -1,4 +1,5 @@
 个人网站，http://www.wanghongmeng.com
+最新域名http://www.xiaowang.me做CNAME泛域名转发到wanghongmeng.com
 
 标签：java、mysql、spring、spring mvc、mybatis、jquery、nginx、memcached、wordpress、resin、maven、git、idea
 
@@ -8,7 +9,7 @@
 静态资源:static.wanghongmeng.com
 博客:blog.wanghongmeng.com
 
-ngin做前端总负载
+nginx做前端总负载
 wanghongmeng.com转到8080端口，resin监听
 blog.wanghongmeng.com转到9090端口，php-fpm监听
 static.wanghongmeng.com转到文件系统
