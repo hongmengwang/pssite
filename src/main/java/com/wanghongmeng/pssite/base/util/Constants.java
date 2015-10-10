@@ -18,7 +18,7 @@ public class Constants {
     public static final String CATAGORY_BLOG = "blog";
     public static final String CATAGORY_SHARE = "share";
     public static final String CATAGORY_ABOUT = "about";
-    public static final int PAGE_SIZE_5 = 5;
+    public static final int PAGE_SIZE_7 = 7;
     public static final int PAGE_SIZE_9 = 9;
     public static final int PAGE_SIZE_10 = 10;
     public static final String TITLE = "小王的空间";

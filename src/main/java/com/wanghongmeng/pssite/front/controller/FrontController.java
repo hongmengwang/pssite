@@ -1,11 +1,9 @@
 package com.wanghongmeng.pssite.front.controller;
 
 import com.wanghongmeng.pssite.base.util.Constants;
-import com.wanghongmeng.pssite.front.model.Album;
 import com.wanghongmeng.pssite.front.model.PersonShare;
 import com.wanghongmeng.pssite.front.service.FrontService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,7 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created with IntelliJ IDEA.
@@ -71,7 +68,7 @@ public class FrontController {
         }
         if(Constants.CATAGORY_SHARE.equals(catagory)){
             modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_SHARE);
-            modelAndView.addObject("pageSize",Constants.PAGE_SIZE_5);
+            modelAndView.addObject("pageSize",Constants.PAGE_SIZE_7);
         }
         if(Constants.CATAGORY_ABOUT.equals(catagory)){
             modelAndView.addObject("title",Constants.TITLE + "-" + Constants.SUB_TITLE_ABOUT);

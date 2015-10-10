@@ -78,7 +78,7 @@ public class FrontService {
         if(start < 0){
             return null;
         }
-        if(Constants.PAGE_SIZE_5 != pageSize){
+        if(Constants.PAGE_SIZE_7 != pageSize){
             return null;
         }
         return frontDao.queryPersonShare(nick,start,pageSize);
